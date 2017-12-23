@@ -9,20 +9,23 @@
 				<!-- Jurusan -->
 				<label for="jurusan" class="control-label col-md-4">Jurusan</label>
 				<div class="col-md-4">
-			     	<select name="jurusan" class="form-control">
-			      		<option value="TI">Informatika</option>
-			      		<option value="SI">Sistem Informasi</option>
+			     	<select name="jurusan" id="jurusan" class="form-control" onchange="prodi()" >
+			     		<option value="" selected>Pilih Jurusan</option>
+			      		<option value="415">Informatika</option>
+			      		<option value="418">Sistem Informasi</option>
 			      	</select>
 		      	</div>
 			</div>
 
 			<div class="form-group inline">
 				<!-- NIM -->
-				<label class="control-label col-md-4" for="nim">NIM</label>
-				<div class="col-md-1" style="margin-right:-30px">
-			 		<input type="text" class="form-control" style="width: 50px" disabled>
+				<label class="control-label col-md-4 col-xs-5" for="nim">NIM</label>
+				<div class="col-md-1">
+			 	<input type="text" class="form-control" id="fnim" readonly>
 			 	</div>
-			 	<input type="text" class="form-control" style="width: 307px" name="nim">
+			 	<div class="col-md-3">
+			 	<input type="text" class="form-control" name="nim" onkeypress="return no(event)">
+			 	</div>
 			</div>
 
 			<div class="form-group inline">
@@ -64,7 +67,7 @@
 			 	<label class="col-md-3" for="tambah" >Tambahan Orang (Jika Perlu)</label>
 			 	<div class="col-md-6">
 		 			<label class="col-md-2" for="nim+" style="margin-top: 8px">NIM</label>
-		 			<input type="text" name="nimadd" class="form-control" style="width: 250px;">
+		 			<input type="text" name="nimadd" class="form-control" style="width: 250px;" onkeypress="return no(event)">
 
 		 			<label class="col-md-2" for="nama+" style="margin-top: 15px">Nama</label>
 		 			<input type="text" name="namaadd" class="form-control" style="width: 250px; margin-top:10px">
@@ -85,3 +88,15 @@
 			</div>
 	</section>
 </div>
+<script>
+	function prodi(){
+		var jurusan=document.getElementById("jurusan").value;
+		document.getElementById("fnim").value=jurusan;
+	}
+
+	function no(evt) {
+		var charCode = (evt.which) ? evt.which : event.keyCode
+		if (charCode > 31 && (charCode < 48 || charCode > 57))
+			return false;
+	}
+</script>
