@@ -4,7 +4,7 @@
     <div class="col-md-8  col-xs-12 col-md-8 col-sm-offset-3 col-md-offset-3">
       <form class="form-horizontal">
         <div class="form-group">
-          <label for="prodi" class="col-sm-2 control-label">Program Studi</label>
+          <label for="prodi" class="col-sm-2 control-label">Program Studi Fasilkom</label>
           <div class="col-sm-6">
             <select class="form-control" name="prodi" id="prodi" >
               <option value="" selected>Pilih Jurusan</option>
