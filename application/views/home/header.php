@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/Ionicons/css/ionicons.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/font-awesome.min.css') ?>">
 </head>
 <body class="body">
 
