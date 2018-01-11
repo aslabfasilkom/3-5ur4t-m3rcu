@@ -17,7 +17,7 @@ body.body{
 	color:#EFF0FB
 }
 .navbar-brand{
-	line-height: 70px;
+	line-height:70px;
 		height: 70px; 
 		margin-top: -6px;
 }
@@ -25,7 +25,7 @@ body.body{
 	padding:28px 15px;
 }
 
-.navbar-nav li a{
+.navbar-nav li a.home{
 		line-height: 60px;
 		height: 70px;
 		padding: 6px 27px; 
@@ -33,7 +33,7 @@ body.body{
 		font-size: 1.3em;
 
 }
-.navbar-nav>li>a:hover{
+.navbar-nav>li>a.home:hover{
     border-bottom-color: coral;
     border-bottom-style: solid;
 }
@@ -210,6 +210,11 @@ background-color: #e7e7e7 !important;
   margin-top: 5px;
 }
 
+<<<<<<< HEAD
+.btn-finish{
+  font-size: 15px;
+}
+=======
 body.printkpta{
    font-family:Arial, Helvetica, sans-serif;
   font-size: 16pt;
@@ -250,3 +255,4 @@ p#kepadayth-1{
   font-size: 12pt;
   margin-bottom: 0;
 }
+>>>>>>> upstream/master

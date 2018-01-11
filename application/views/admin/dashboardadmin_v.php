@@ -9,7 +9,6 @@
               <li class="active"><a href="<?php echo base_url('admin')?>"><i class="fa fa-home"></i> Home</a></li>
             </ol>
           </section>
-
           <!-- Main content -->
           <section class="content">
             <div class="row">
@@ -36,22 +35,4 @@
           </section>
           <!-- /.content -->
         </div>
-     <!--  <script>
-             $(document).ready(function () {
-               $('.sidebar-menu').tree()
-             })
-           
-             $(function () {
-               $('#example1').DataTable()
-               $('#example2').DataTable({
-                 'paging'      : true,
-                 'lengthChange': false,
-                 'searching'   : false,
-                 'ordering'    : true,
-                 'info'        : true,
-                 'autoWidth'   : false
-               })
-             })
-           </script>
-            -->      <!-- jQuery 3 -->
-      
+ 

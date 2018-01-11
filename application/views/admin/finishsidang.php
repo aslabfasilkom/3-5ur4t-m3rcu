@@ -28,6 +28,7 @@
                     <table id="datatable" class="table table-bordered table-striped">
                       <thead>
                         <tr>
+                          <th width="20px">No.</th>
                           <th>Tanggal</th>
                           <th>NIM</th>
                           <th>Nama</th>
@@ -36,17 +37,18 @@
                       </thead>
                       <tbody>
                         <tr>
+                          <td>1.</td>
                           <td><?php echo date('d/m/Y');?></td>
                           <td>41xxxxxxxxx</td>
                           <td>Lorem</td>
                           <td>
-                            <button class="btn btn-success"><span class="fa fa-check"></span>Finish</button>
-                            <button class="btn btn-danger"><span class="fa fa-times"></span>Unfinish</button>
+                            <a class="btn btn-primary col-sm-10 col-sm-offset-1 btn-finish" href="#"><span class="fa fa-check"></span>Take</a>
                           </td>
                         </tr>
                       </tbody>
                       <tfoot>
                         <tr>
+                          <th>No.</th>
                           <th>Tanggal</th>
                           <th>NIM</th>
                           <th>Nama</th>
