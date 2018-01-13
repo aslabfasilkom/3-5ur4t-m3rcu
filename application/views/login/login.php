@@ -7,8 +7,17 @@
           <div class="login-logo">
           </div>
           <!-- /.login-logo -->
+          <?php echo form_open('login/ceklogin'); ?>
           <div class="login-box-body">
-            <p class="login-box-msg">Silahkan Login Dengan Username</p>
+            <p class="login-box-msg">Silahkan Login Dengan Menggunakan <b>NIM/EMAIL</b></p>
+            <?php if($this->session->flashdata('info')): ?>
+              <div class="row">
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    Maaf username/nim dan password salah
+                </div>
+              </div>
+            <?php endif; ?>
               <div class="form-group has-feedback">
                 <input type="text" class="form-control" placeholder="NIM/email" name="username">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -20,11 +29,13 @@
               <div class="row">
                 <!-- /.col -->
                 <div class="col-md-4 col-md-offset-8">
-                  <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                  <input type="submit" class="btn btn-primary btn-block btn-flat" value="Login" />
                 </div>
                 <!-- /.col -->
               </div>
           </div>
+
+          <?php echo form_close(); ?>
           <!-- /.login-box-body -->
         </div>
       </div>

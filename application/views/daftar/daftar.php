@@ -39,11 +39,12 @@
           <div class="col-sm-6">
             <div class="row">
               <span class="text-danger"><?=form_error('kodenim')?></span>
+               <span class="text-danger"><?=form_error('nimmhs')?></span>
               <div class="col-sm-3 col-xs-4">
                 <input type="text" class="form-control"  value="<?=set_value('kodenim')?>" id="kodenim" name="kodenim" readonly >
               </div>
               <div class="col-sm-9 col-xs-8">
-                <input type="text" class="form-control" id="nim" value="<?=set_value('nimmhs')?>" name="nimmhs" placeholder="NIM" onkeypress="return no(event)">
+                <input type="text" class="form-control" id="nim" value="<?=set_value('nimmhs')?>" name="nimmhs" placeholder="NIM" maxlength="8" onkeypress="return no(event)">
               </div>
             </div>
           </div>
@@ -60,6 +61,13 @@
           <div class="col-sm-6">
             <span class="text-danger"><?=form_error('email')?></span>
             <input type="email" class="form-control" id="email" name="email" value="<?=set_value('email')?>" placeholder="Email">
+          </div>
+        </div>
+         <div class="form-group">
+          <label for="email" class="col-sm-2 control-label">Re-Email</label>
+          <div class="col-sm-6">
+            <span class="text-danger"><?=form_error('reemail')?></span>
+            <input type="email" class="form-control" id="reemail" name="reemail" placeholder="Re-Email">
           </div>
         </div>
         <div class="form-group">
@@ -86,7 +94,8 @@
       <div class="form-group">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 col-md-8 col-xs-8">
-         <label class="control-label">Sudah Punya Akun? Silahkan <a href="<?php echo site_url('login') ?>">Login</a></label>
+         <label class="control-label">Sudah Punya Akun? Silahkan. <a href="<?php echo site_url('login') ?>">Login</a></label>
+         <label class="control-label">Admin? <a href="<?php echo site_url('admin') ?>">Admin</a></label>
        </div>
        <div class="col-sm-2"></div>
      </div>
@@ -94,26 +103,4 @@
    <div class="col-md-2"></div>
  </div>
 </div>
-<script src="<?php echo base_url('assets/plugins/jquery/dist/jquery.min.js') ?>"></script>
-<script src="<?php echo base_url('assets/plugins/bootstrap/dist/js/bootstrap.min.js')?>" ></script>
-<script>
-  // Event handler for text input
-  $('#kodenim').on('input', function() {
-    //TODO Getiing option based on input value and setting it as selected
-    $('#prodi option:contains(' + this.value + ')').eq(0).prop('selected', true);
-  });
-
-  // Event handler for select
-  $('#prodi').change(function() {
-      // Updating text input based on selected value
-      $('#kodenim').val($('option:selected', this).val());
-    });
-
-  function no(evt) {
-    var charCode = (evt.which) ? evt.which : event.keyCode
-    if (charCode > 31 && (charCode < 48 || charCode > 57))
-      return false;
-  }
-
-</script>
 

@@ -1,4 +1,3 @@
-
 <div class="footer">
 	<div class="container-fluid">
 		<div class="row">
@@ -24,5 +23,26 @@
   });
 
 </script>
+<script>
+  // Event handler for text input
+  $('#kodenim').on('input', function() {
+    //TODO Getiing option based on input value and setting it as selected
+    $('#prodi option:contains(' + this.value + ')').eq(0).prop('selected', true);
+  });
+
+  // Event handler for select
+  $('#prodi').change(function() {
+      // Updating text input based on selected value
+      $('#kodenim').val($('option:selected', this).val());
+    });
+
+  function no(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
+  }
+
+</script>
+
 </body>
 </html>

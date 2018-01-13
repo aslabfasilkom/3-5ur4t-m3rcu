@@ -8,7 +8,7 @@
 			<div class="form-group">
 				<!-- Jurusan -->
 				<label for="jurusan" class="control-label col-md-4 col-xs-3">Jurusan</label>
-				<div class="col-md-4 col-xs-6">
+				<div class="col-md-4 col-xs-8">
 			     	<select name="jurusan" id="jurusan" class="form-control" onchange="prodi()" >
 			     		<option value="" selected>Pilih Jurusan</option>
 			      		<option value="415">Informatika</option>
@@ -16,6 +16,8 @@
 			      	</select>
 		      	</div>
 			</div>
+		
+				
 
 			<div class="form-group">
 				<!-- NIM -->
@@ -37,6 +39,15 @@
 			</div>
 
 		<div class="box">
+			<div class="form-group inline">
+				<!-- Nama Perusahaan -->
+			 	<label class="col-md-3" for="nomorsurat">Nomor Surat</label>
+			 	<div class="col-md-6">
+		 			<input type="text" name="nomorsurat" value="<?=$nomorsuratkp?>" class="form-control" readonly>
+		 		</div>
+			</div>
+
+
 			<div class="form-group inline">
 				<!-- Nama Perusahaan -->
 			 	<label class="col-md-3" for="namaperusahaan">Nama Perusahaan yang dituju</label>
@@ -102,7 +113,7 @@
 
 			<div class="form-group">
 			 	<!-- Button -->
-			 	<div class="text-right">
+			 	<div class="col-xs-offset-5">
 			 		<button class="btn btn-primary">Submit</button>
 			 	</div>
 			</div>

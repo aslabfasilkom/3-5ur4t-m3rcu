@@ -5,13 +5,14 @@ class Daftar extends CI_Controller {
 	public function index()
 	{
 		//form validasi
-		$this->form_validation->set_rules('nama','nama','trim|required');
-		$this->form_validation->set_rules('nimmhs','nimmhs','trim|required|exact_length[8]|numeric');
-		$this->form_validation->set_rules('password', 'password', 'trim|required|min_length[8]|alpha_numeric');
-		$this->form_validation->set_rules('repassword', 'repassword', 'trim|required|matches[password]');
-		$this->form_validation->set_rules('email', 'email', 'required');
-		$this->form_validation->set_rules('kodenim', 'kodenim', 'required');
-		$this->form_validation->set_rules('prodi', 'prodi', 'required');
+		$this->form_validation->set_rules('nama','Nama','trim|required');
+		$this->form_validation->set_rules('nimmhs','NIM', 'trim|required|exact_length[8]|numeric');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|alpha_numeric');
+		$this->form_validation->set_rules('repassword', 'Re-Password', 'trim|required|matches[password]');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('reemail', 'Re-Email', 'trim|required|matches[email]');
+		$this->form_validation->set_rules('kodenim', 'Program Studi', 'required');
+		$this->form_validation->set_rules('prodi', 'Program Studi', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('home/header');

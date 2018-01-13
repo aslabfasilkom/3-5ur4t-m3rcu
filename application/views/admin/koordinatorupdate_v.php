@@ -1,0 +1,78 @@
+         <!-- Content Wrapper. Contains page content -->
+         <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+          <section class="content-header">
+            <h1>
+              Update Koordinator
+            </h1>
+            <ol class="breadcrumb">
+              <li><a href="<?php echo base_url('admin') ?>"><i class="fa fa-home"></i> Dashboard</a></li>
+              <li><a href="<?php echo base_url('admin/koordinatorsetting') ?>"><i class="fa fa-building-o"></i> Setting Koordinator</a></li>
+              <li class="active"><i class="fa fa-table"></i> Form Update</li>
+            </ol>
+<br>
+            <div class="alert alert-warning alert-dismissable" class="close" role="alert">Pastikan Masukan Nama dengan <strong>BENAR</strong> <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button></div>
+          </section>
+
+          <!-- Main content -->
+          <section class="content">
+            <div class="row">
+              <div class="col-xs-12">
+                <!-- /.box -->
+
+                <div class="box">
+                  <div class="box-header">
+                    <h3 class="box-title"></h3>
+
+                    <form class="form-horizontal" >
+  <div class="form-group">
+    <label for="nama" class="col-sm-2 control-label">Nama Koordinator</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" name="" placeholder="Nama Koordinator">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="nik" class="col-sm-2 control-label">NIK</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" name="nik" placeholder="Nomor Induk Karyawan" maxlength="8">
+    </div>
+  </div>
+  <div class="form-group">
+     <label for="status" class="col-sm-2 control-label">Prodi</label>
+    <div class="col-sm-2">
+     <select name="status" class="form-control">
+  <option selected="selected">Pilih Prodi</option>
+  <option value="Sistem Informasi">Sistem Informasi</option>
+  <option value="Teknik Informasi">Teknik Informatika</option>
+</select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="nik" class="col-sm-2 control-label">Jabatan</label>
+    <div class="col-sm-3">
+      <select name="jabatan" class="form-control">
+  <option selected="selected">Pilih Jabatan</option>
+  <option value="Koordinator KP">Koordinator KP (Kerja Praktek)</option>
+  <option value="Koordinator TA">Koordinator TA(Tugas Akhir)</option>
+</select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-4 col-sm-6">
+      <input type="submit" onclick="return confirm('Apa Anda Yakin?')" class="btn btn-success" value="UPDATE"/>
+    </div>
+  </div>
+</form>
+                  </div>
+                
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </section>
+          <!-- /.content -->
+        </div>
+      </body>

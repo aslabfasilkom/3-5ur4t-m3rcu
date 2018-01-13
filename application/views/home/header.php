@@ -30,8 +30,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo site_url('')?>">Beranda</a></li>
        <li><a href="#">Tentang</a></li>
-       <li><a href="">Bantuan</a></li>
-       <li> <a href="">Kontak</a></li>
+       <li><a href="#">Bantuan</a></li>
       </ul>
     
     </div><!-- /.navbar-collapse -->
