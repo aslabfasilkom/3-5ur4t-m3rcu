@@ -94,7 +94,7 @@
       <div class="form-group">
         <div class="col-sm-2"></div>
         <div class="col-sm-8 col-md-8 col-xs-8">
-         <label class="control-label">Sudah Punya Akun? Silahkan <a href="<?php echo site_url('login') ?>">Login</a></label>
+         <label class="control-label">Sudah Punya Akun? Silahkan. <a href="<?php echo site_url('login') ?>">Login</a></label>
          <label class="control-label">Admin? <a href="<?php echo site_url('admin') ?>">Admin</a></label>
        </div>
        <div class="col-sm-2"></div>
