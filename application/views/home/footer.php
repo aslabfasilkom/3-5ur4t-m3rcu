@@ -5,7 +5,7 @@
 			<p class="text-center"> 
 		Copyright &copy; <?php echo date("Y"); ?> Aslab Fasilkom <br>
 		Fakultas Ilmu Komputer <br>
-		Universitas Mercu Buana</p>
+		Universitas Mercu Buana edit</p>
 			</div>
 		</div>
 	</div>
