@@ -29,7 +29,7 @@
 		<div class="row">
 			<h1 class="text-center">SELAMAT DATANG DI WEBSITE E-SURAT FAKULTAS ILMU KOMPUTER</h1>
 			<hr>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui sed porro, aliquam hic! Quidem iusto, et impedit, nobis consequuntur dicta repellat perspiciatis, eius ipsam laborum ullam autem nostrum sint fugit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis cumque doloribus eveniet saepe error fuga dolore quidem ut, delectus. Dolores tempore nesciunt culpa amet architecto, ea itaque odit neque eligendi.</p>
+			<p>ini lagi diganti yak gan ini ditambahin</p>
 		</div>
 	</div>
 </div>
