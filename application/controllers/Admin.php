@@ -14,7 +14,6 @@ class Admin extends CI_Controller {
 			redirect('mahasiswa');
 		}
 	}
-
    public function index()
 	{
 		$this->load->view('admin/header');
@@ -56,14 +55,16 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/proseskp');
+		$data['surat'] = $this->tampilsurat_model->tampil_datakp_proses();		
+		$this->load->view('admin/proseskp',$data);
 		$this->load->view('admin/footer');
 	}
 	public function prosesTA()
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/prosesta');
+		$data['surat'] = $this->tampilsurat_model->tampil_datata_proses();
+		$this->load->view('admin/prosesta',$data);
 		$this->load->view('admin/footer');
 	}
 	public function finishkp()
