@@ -44,6 +44,21 @@
                         </tr>
                       </thead>
                       <tbody>
+                        <?php $no =1;
+                          foreach ($surat as $u) {
+                          ?>
+                        <tr>
+                          <td><?php echo $no++; ?></td>
+                          <td><?php echo date('d-M-Y',strtotime($u->tanggal_diajukan))?></td>
+                          <td><?php echo $u->nim; ?></td>
+                          <td><?php echo $u->nama_mahasiswa; ?></td>
+                          <td><?php echo $u->email; ?></td>
+                          <td><?php echo $u->prodi; ?></td>
+                          <td>
+                            <a class="btn btn-success col-sm-5 col-sm-offset-1 btn-finish" href="#"><span class="fa fa-check"></span>Finish</a><a class="btn btn-primary col-sm-5 col-sm-offset-1 btn-finish" href="#">Print <span class="glyphicon glyphicon-print"></span></a>
+                          </td>
+                        </tr>
+                       <?php } ?> 
                         <?php $no=1; ?>
                         <?php foreach ($surat as $v): ?>
                           <tr>

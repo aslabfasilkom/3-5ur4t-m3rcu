@@ -14,7 +14,6 @@ class Admin extends CI_Controller {
 			redirect('mahasiswa');
 		}
 	}
-
    public function index()
 	{
 		// Jumlah Surat Kerja Praktek
@@ -68,7 +67,7 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_proses();
+		$data['surat'] = $this->tampilsurat_model->tampil_datakp_proses();		
 		$this->load->view('admin/proseskp',$data);
 		$this->load->view('admin/footer');
 	}
@@ -76,7 +75,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/prosesta');
+		$data['surat'] = $this->tampilsurat_model->tampil_datata_proses();
+		$this->load->view('admin/prosesta',$data);
 		$this->load->view('admin/footer');
 	}
 	public function finishkp()

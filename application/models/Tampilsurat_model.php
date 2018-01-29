@@ -39,8 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			return $query->result(); 
 		}
 		# Query menampilkan Data TA Status = 'Proses'
-		public function tampil_datata_proses(){
-			$sql = "SELECT a.tanggal_diajukan, a.nim,b.nama_mahasiswa,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Proses' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
+		function tampil_datata_proses(){
+			$sql = "SELECT a.tanggal_diajukan, a.nim,b.nama_mahasiswa,b.email,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Proses' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
 			$query = $this->db->query($sql);
 
 			return $query->result(); 
