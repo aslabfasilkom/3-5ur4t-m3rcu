@@ -10,167 +10,81 @@ class Tester extends CI_Controller {
     $this->load->library('Recaptcha');
   }
 
-	public function index()
-	{
-		$kodesurat = $this->nomorsurat_model->NomorSuratKP();
-		echo $kodesurat;		
-	}
+  public function phpinfo()
+  {
+  	echo phpinfo();
+  }
 
-	public function testsurat()
-    {
-        echo $this->daftarsurat_model->GetIdSuratToMahasiswa($this->session->userdata('nim'))->id_surat;
-        
-    }
-    
-    public function tiket()
-    {
-        $data= $this->tampilsurat_model->GetIdentitasMahasiswa('SR0001');
-        $this->load->view('tiket/pdf',$data);
-    }
+  public function captcha()
+  {
+     $data = array(
+          'action' => site_url('tester/logintest'),
+          'username' => set_value('username'),
+          'password' => set_value('password'),
+          'captcha' => $this->recaptcha->getWidget(), // menampilkan recaptcha
+          'script_captcha' => $this->recaptcha->getScriptTag(), // javascript recaptcha ditaruh di head
+      );
 
-    public function teststring()
-    {
-        $nim = ("41814010066@student.mercubuana.ac.id");
-        echo substr($nim,11);
-    }
+      $this->load->view('tester/welcome_message', $data);
+  }
 
-    public function lupapassword()
-    {
-        $this->load->view('tester/lupapassword');
-    }
-
-    public function kirim_email(){
-      date_default_timezone_set("Asia/jakarta");
-      $email = $this->input->post('email');
-      $rs = $this->tester_model->getByEmail($email);
-     
-      // cek apakah ada email di mahasiswa
-      if (!$rs->num_rows() > 0){
-        echo "maaf email tidak ditemukan";
-      }else{
-          $user = $rs->row();
-          // get nim mahasiswa
-          $user_token = $user->nim;
-          //buat umur token expirednya
-          $date_create_token = date("Y-m-d H:i");
-          $date_expired_token = date('Y-m-d H:i',strtotime('+2 hour',strtotime($date_create_token)));
-          // membuat token string
-          $tokenstring = md5(($user_token.$date_create_token));
-          // simpan data token
-          $data = array(
-                        'token'=>$tokenstring,
-                        'nim'=>$user_token,
-                        'created'=>$date_create_token,
-                        'expired'=>$date_expired_token
-                  );
-          $simpan = $this->tester_model->simpanToken($data);
-           if ($simpan > 0){
-               echo "Token ini berlaku untuk 2 jam dari pengiriman token ini:
-               Klik disini untuk reset password anda : http://localhost/surat-e-mercu/tester/reset/token/".$tokenstring;
-           }else{
-            echo "something wrong";
-           }
-       }
-    }
-
-    public function reset(){
-      date_default_timezone_set("Asia/jakarta");
-      $token = $this->uri->segment(4);
-     
-      // get cek tokennya
-      $cekToken = $this->tester_model->cekToken($token);
-      $rs = $cekToken->num_rows();
-     
-      // cek token ada atau engga
-      if ($rs > 0){
-     
-        $data = $cekToken->row();
-        $tokenExpired = $data->expired;
-        $timenow = date("Y-m-d H:i:s");
-     
-        // cek token expired atau engga
-        if ($timenow < $tokenExpired){
-     
-          // tampilkan form reset
-          $datatoken['token'] = $token;
-          $this->load->view('tester/resetpassword',$datatoken);
-        }else{
-          // redirect form forgot
-          echo "token expired";
-        }
-      }else{
-          echo "token tidak ditemukan";
-      }
-    }
-
-
-    public function kirim_reset(){
- 
-      $password = $this->input->post('password');
-      $token = $this->input->post('token');
-      $cekToken = $this->tester_model->cekToken($token);
-      $data = $cekToken->row();
-      $nim = $data->nim;
+  public function logintest()
+  {
+     // validasi form
+      $this->form_validation->set_rules('username', ' ', 'trim|required');
+      $this->form_validation->set_rules('password', ' ', 'trim|required');
       
-      // ubah password
-      $data = array ('password'=>md5($password));
-      $simpan = $this->tester_model->ResetPasswordMahasiswa($data,$nim);
-     
-      if ($simpan > 0){
-        echo "oke berhasil";
-      }else{
-       echo "maaf gagal";
+      $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+
+      $recaptcha = $this->input->post('g-recaptcha-response');
+      $response = $this->recaptcha->verifyResponse($recaptcha);
+
+      if ($this->form_validation->run() == FALSE || !isset($response['success']) || $response['success'] <> true) {
+          echo "gagal";
+      } else {
+          // lakukan proses validasi login disini
+          // pada contoh ini saya anggap login berhasil dan saya hanya menampilkan pesan berhasil
+          // tapi ini jangan di contoh ya menulis echo di controller hahahaha
+          echo 'Berhasil';
       }
+  }
 
-    }
+  public function chart()
+  {
+    $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
+    $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
+    // Jumlah Surat Kerja Praktek
+    $data['kpwaiting'] = $this->report_model->ReportJumlahSuratKpWaiting($startdate,$enddate);
+    $data['kpproses']  = $this->report_model->ReportJumlahSuratKpProses($startdate,$enddate);
+    $data['kpfinish']  = $this->report_model->ReportJumlahSuratKpFinish($startdate,$enddate);
+    $data['kptake']    = $this->report_model->ReportJumlahSuratKpTake($startdate,$enddate); 
+    $data['kptolak']   = $this->report_model->ReportJumlahSuratKpTolak($startdate,$enddate);
 
-    public function tokenExpired()
-    {
-      $this->load->view('errors/tokenexpired');
-    }
-    public function tokennotfound(){
-      $this->load->view('errors/tokennotfound');
-    }
+    // Data Jumlah mahasiswa Sistem Informasi Kerja Praktek
+    $data['siwaiting'] = $this->report_model->MahasiswaSIKpWaiting($startdate,$enddate);
+    $data['siproses']  = $this->report_model->MahasiswaSIKpProses($startdate,$enddate);
+    $data['sifinish']  = $this->report_model->MahasiswaSIKpFinish($startdate,$enddate);
+    $data['sitake']    = $this->report_model->MahasiswaSIKpTake($startdate,$enddate);
+    $data['sitolak']   = $this->report_model->MahasiswaSIKpTolak($startdate,$enddate);
 
+    // Data Jumlah Mahasiswa Teknik Informatika Kerja Praktek
+    $data['tiwaiting']    = $this->report_model->MahasiswaTIKpWaiting($startdate,$enddate);
+    $data['tiproses']     = $this->report_model->MahasiswaTIKpProses($startdate,$enddate);
+    $data['tifinish']     = $this->report_model->MahasiswaTIKpFinish($startdate,$enddate);
+    $data['titake']       = $this->report_model->MahasiswaTIKpTake($startdate,$enddate);
+    $data['titolak']      = $this->report_model->MahasiswaTIKpTolak($startdate,$enddate);
 
-    public function phpinfo()
-    {
-    	echo phpinfo();
-    }
+    // Data nama mahasiswa
+    $data['suratwaiting'] = $this->report_model->SuratWaiting($startdate,$enddate);
+    $data['suratproses'] = $this->report_model->SuratProses($startdate,$enddate);
+    $data['suratfinish'] = $this->report_model->SuratFinish($startdate,$enddate);
+    $data['surattake'] = $this->report_model->SuratTake($startdate,$enddate);
+    $data['suratolak'] = $this->report_model->SuratTolak($startdate,$enddate);
 
-    public function captcha()
-    {
-       $data = array(
-            'action' => site_url('tester/logintest'),
-            'username' => set_value('username'),
-            'password' => set_value('password'),
-            'captcha' => $this->recaptcha->getWidget(), // menampilkan recaptcha
-            'script_captcha' => $this->recaptcha->getScriptTag(), // javascript recaptcha ditaruh di head
-        );
- 
-        $this->load->view('tester/welcome_message', $data);
-    }
-
-    public function logintest()
-    {
-       // validasi form
-        $this->form_validation->set_rules('username', ' ', 'trim|required');
-        $this->form_validation->set_rules('password', ' ', 'trim|required');
-        
-        $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
- 
-        $recaptcha = $this->input->post('g-recaptcha-response');
-        $response = $this->recaptcha->verifyResponse($recaptcha);
- 
-        if ($this->form_validation->run() == FALSE || !isset($response['success']) || $response['success'] <> true) {
-            echo "gagal";
-        } else {
-            // lakukan proses validasi login disini
-            // pada contoh ini saya anggap login berhasil dan saya hanya menampilkan pesan berhasil
-            // tapi ini jangan di contoh ya menulis echo di controller hahahaha
-            echo 'Berhasil';
-        }
-    }
+    $this->load->view('tester/headerChart');
+    $this->load->view('tester/chartjs_v',$data);
+    $this->load->view('tester/footerChart',$data);
+  }
 
     
 

@@ -215,7 +215,7 @@ class Admin extends CI_Controller {
 		$jurusan = $this->input->post('jurusan');
 
 		if ($startdate < $enddate) {
-			$data= $this->tampilsurat_model->printLAPORAN($startdate,$enddate,$jurusan);
+			$data= $this->report_model->printLAPORAN($startdate,$enddate,$jurusan);
 			$this->load->view('admin/cetaklaporan',array('data'=>$data));
 		}else{
 			$this->session->set_flashdata('gagal_tanggal','true');
@@ -245,7 +245,7 @@ class Admin extends CI_Controller {
 		$jurusan = $this->input->post('jurusan');
 		
 		if ($startdate < $finishdate) {
-			$data['data']= $this->tampilsurat_model->printLAPORANkp($startdate,$finishdate,$jurusan);
+			$data['data']= $this->report_model->printLAPORANkp($startdate,$finishdate,$jurusan);
 			$data['jurusan'] = $jurusan;
 			$data['dari'] = $startdate;
 			$data['sampai'] = $finishdate;

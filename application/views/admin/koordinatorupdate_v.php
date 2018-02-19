@@ -10,7 +10,7 @@
               <li><a href="<?php echo base_url('admin/koordinatorsetting') ?>"><i class="fa fa-building-o"></i> Setting Koordinator</a></li>
               <li class="active"><i class="fa fa-table"></i> Form Update</li>
             </ol>
-<br>
+            <br>
             <div class="alert alert-warning alert-dismissable" class="close" role="alert">Pastikan Masukan Nama dengan <strong>BENAR</strong> <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button></div>
           </section>
 
@@ -34,7 +34,7 @@
                         <div class="form-group">
                           <label for="nik" class="col-sm-2 control-label" >NIK</label>
                           <div class="col-sm-4">
-                            <input type="text" class="form-control" name="nik" placeholder="Nomor Induk Karyawan" maxlength="8" value="<?php echo $nik; ?>">
+                            <input type="text" class="form-control" name="nik" placeholder="Nomor Induk Karyawan"  value="<?php echo $nik; ?>" onkeypress="return no(event)">
                           </div>
                         </div>
                         
