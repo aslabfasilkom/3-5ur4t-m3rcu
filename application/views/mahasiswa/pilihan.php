@@ -57,8 +57,7 @@
 					</p>	
 				<?php endif ?> -->
 				<p class="dash-text">
-
-						Surat untuk membuat pengajuan Kerja Praktek
+					Surat untuk membuat pengajuan Kerja Praktek
 					</p>
 				<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">PILIH</a>
 
