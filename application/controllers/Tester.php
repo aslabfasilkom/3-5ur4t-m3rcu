@@ -46,11 +46,10 @@ class Tester extends CI_Controller {
 
   public function manipulasinim()
   {
-    $nim = '41814010066@student.mercubuana.ac.id';
-    echo substr($nim,0,3)."<br>";
-    echo substr($nim,0,11)."<br>";
-    echo substr($nim,12);
-    $this->session->sess_destroy();
+    $nama ="MOH";
+
+    echo ucwords(strtolower($nama)) ;
+
   }
 
   public function testhtml()
@@ -60,7 +59,55 @@ class Tester extends CI_Controller {
     echo html_entity_decode($string2);
   }
 
+  
+  public function cektranskrip()
+  {
+      $headers = array(
+      'Content-Type: application/json',
+      'sia:mercubuana2017!'
+    );
+    // query string
+    
+    $url = 'https://api.mercubuana.ac.id/akademik/transkripmhs/41814010026';
+    // Open connection
+    $ch = curl_init();
+    // Set the url, number of GET vars, GET data
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, false);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true );
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    // Execute request
+    $result = curl_exec($ch);
+    // Close connection
+    curl_close($ch);
+    // get the result and parse to JSON
+    echo $result;
 
+    // $result_arr = json_decode($result, true);
+    // print_r($result_arr);
+  }
+
+  public function testwebservice()
+  {
+    $this->load->library('webservice');
+
+    echo $this->webservice->CheckMatkulKP('41814010066','raka hikmah ramadhan');
+    // echo $this->webservice->CheckSKSKp('41814010204');
+    // echo $this->webservice->CheckSKSKp('41814010066');
+  }
+
+  // public function CheckMatkulKP($nim)
+  // {
+  //   // request list of contacts from Web API
+  //   $url="https://api.mercubuana.ac.id/akademik/esurat/".$nim;
+
+    
+  //   $json = file_get_contents($url);
+    
+  //   echo $this->wenservice->
+    
+  // }
 
 
 

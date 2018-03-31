@@ -1,5 +1,6 @@
 <?php echo $script_captcha; ?>
 <div class="container form-login">
+
   <div class="row">
     <h1 class="text-center">Daftar Akun E-surat</h1>
     <hr>
@@ -18,6 +19,12 @@
               <h4><i class="icon fa fa-close"></i>Informasi</h4>
               Maaf akun ini sudah terbuat
             </div>
+          <?php elseif($this->session->flashdata('tidak_bisa')): ?>
+            <div class="alert alert-danger alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <h4><i class="icon fa fa-close"></i>Informasi</h4>
+              Maaf anda tidak bisa daftar dikarenakan anda belum klik TA atau KP ataupun nim anda tidak sesusai dengan nama anda
+           </div>  
           <?php endif ?>
         </div>
       </div>
@@ -72,7 +79,7 @@
           <label for="email" class="col-sm-2 control-label">Re-Email</label>
           <div class="col-sm-6">
             <span class="text-danger"><?=form_error('reemail')?></span>
-            <input type="email" class="form-control" id="reemail" name="reemail" placeholder="Re-Email">
+            <input type="email" class="form-control" id="reemail" name="reemail" placeholder="Re-Email" value="<?=set_value('email')?>">
           </div>
         </div>
         <div class="form-group">
@@ -107,6 +114,6 @@
     <h5 class="text-center">Sudah punya akun? silahkan <b><a class="link-daftar" href="<?php echo site_url('login') ?>">login</a></b></h5>
                         </div>
   </div>
-</div>
 
+</div>
 

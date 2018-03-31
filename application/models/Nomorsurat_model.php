@@ -39,18 +39,12 @@ class Nomorsurat_model extends CI_Model {
         return $kodejadi;
 	}
 
-    // public function NomorSuratTA()
-    // {
-    //     $bulan     = array ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII');
-    //     $tahun     = date('Y');
 
-
-    //     if ($jurusan == 'Teknik Informatika') {
-    //           $kodeprodi = "16-1";
-    //     }elseif($jurusan == 'Sistem Informasi'){
-    //           $kodeprodi = "16-2";
-    //     }
-
+    public function NomorSuratTugasAkhir()
+    {
+        $bulan     = array ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII');
+        $tahun     = date('Y');
+        $kodeprodi = "16-2-2";
         
     //     $this->db->select("SUBSTRING(no_surat,6,3) AS nomorsuratta ");
     //     $this->db->where('prodi',$jurusan);
@@ -89,6 +83,14 @@ class Nomorsurat_model extends CI_Model {
         $kodejadi  = "SR".$kodemax;
         return $kodejadi;
 	}
+
+    public function CheckNoSrtExist($nosurat)
+    {
+        $this->db->select('*');
+        $this->db->where('no_surat');
+        $query = $this->db->get('surat');
+        return $query->num_rows();
+    }
 
 
 }

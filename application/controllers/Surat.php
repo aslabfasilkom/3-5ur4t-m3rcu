@@ -13,45 +13,54 @@ class Surat extends CI_Controller {
 		}
 	}
 
+	public function test($param)
+	{
+		echo $param;
+	}
+
 	public function ubahProsesKP($id_surat)
 	{
 		$data = $this->tampilsurat_model->detailKP($id_surat);
-		$isi= html_entity_decode(
-			"Halo, ".$data['nama_mahasiswa']." pengajuan surat kerja praktek Anda sudah masuk ke tahap proses untuk dapat mengambil surat kerja praktek Anda diharapkan untuk menunggu hingga pemberitahuan selanjutnya, Terimakasih
-
-			<br><br>
-			Salam,
-			TU FASILKOM"
-		) ;
-
-		$config = Array(  
-	        'protocol' => 'smtp',  
-	        'smtp_host' => 'https://www.mohagustiar.info/',  
-	        'smtp_port' =>  465,  
-	        'smtp_user' => 'contactme@mohagustiar.info',   
-	        'smtp_pass' => 'project2m123!@#',  
-	        'smtp_keepalive'=>'TRUE',
-	        'mailtype' => 'html',   
-	        'charset' => 'iso-8859-1'  
-        );
-
-        $this->load->library('email', $config);  
-        $this->email->set_newline("\r\n");  
-	    $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
-		$this->email->to($data['email']); 
-			
-		$this->email->subject("Surat Anda Sedang Di Proses");
-		$this->email->message($isi);
-		$this->email->set_mailtype("html");
-		$this->email->send();
+		
 
 		$SelectSurat 		= $this->tampilsurat_model->SelectSurat($id_surat);
 		$nomorsuratkp       = $this->nomorsurat_model->NomorSuratKP($SelectSurat->prodi);
 
-		$ubahStatusToProses	= $this->statussurat_model->SuratKpToProses($id_surat,$nomorsuratkp);
+		$ceknomorsurat = $this->nomorsurat_model->CheckNoSrtExist($nomorsuratkp);
 
-		$this->session->set_flashdata('info','true');
-		redirect('admin/waitingkp');	
+		$isi= html_entity_decode(
+				"Halo, ".$data['nama_mahasiswa']." pengajuan surat kerja praktek Anda sudah masuk ke tahap proses untuk dapat mengambil surat kerja praktek Anda diharapkan untuk menunggu hingga pemberitahuan selanjutnya, Terimakasih
+
+				<br><br>
+				Salam,
+				TU FASILKOM"
+			) ;
+
+			$config = Array(  
+		        'protocol' => 'smtp',  
+		        'smtp_host' => 'https://www.mohagustiar.info/',  
+		        'smtp_port' =>  465,  
+		        'smtp_user' => 'contactme@mohagustiar.info',   
+		        'smtp_pass' => 'project2m123!@#',  
+		        'smtp_keepalive'=>'TRUE',
+		        'mailtype' => 'html',   
+		        'charset' => 'iso-8859-1'  
+	        );
+
+	        $this->load->library('email', $config);  
+	        $this->email->set_newline("\r\n");  
+		    $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
+			$this->email->to($data['email']); 
+				
+			$this->email->subject("Surat Anda Sedang Di Proses");
+			$this->email->message($isi);
+			$this->email->set_mailtype("html");
+			$this->email->send();
+			$ubahStatusToProses	= $this->statussurat_model->SuratKpToProses($id_surat,$nomorsuratkp);
+
+			$this->session->set_flashdata('info','true');
+			redirect('admin/waitingkp');	
+
 	}
 
 	public function ubahFinishKP($id_surat)

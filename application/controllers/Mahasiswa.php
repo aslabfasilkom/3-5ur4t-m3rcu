@@ -16,8 +16,15 @@ class Mahasiswa extends CI_Controller {
 	
 	public function index()
 	{
+		$this->load->library('webservice');
+		$data['checkmatkulkp'] 	= $this->webservice->CheckMatkulKp($this->session->userdata('nim'),$this->session->userdata('nama_mahasiswa'));
+		$data['checkmatkulta']	= $this->webservice->CheckMatkulTA($this->session->userdata('nim'),$this->session->userdata('nama_mahasiswa'));
+
+		$data['checktranskripkp'] = $this->webservice->CheckTranskripKp($this->session->userdata('nim')); 
+		$data['checktranskripta'] = $this->webservice->CheckTranskripTA($this->session->userdata('nim'));
+
 		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/pilihan');
+		$this->load->view('mahasiswa/pilihan',$data);
 		$this->load->view('home/footer');
 	}
 
@@ -67,6 +74,9 @@ class Mahasiswa extends CI_Controller {
   		$jumlahmahasiswa = $hasil+$jumlahmahasiswa;
 	 }
 
+	   
+
+	 
 
 	  if ($jumlahmahasiswa > 0 ) {
 		  	$this->session->set_flashdata('gagal', 'true');
