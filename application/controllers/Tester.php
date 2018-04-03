@@ -68,7 +68,7 @@ class Tester extends CI_Controller {
     );
     // query string
     
-    $url = 'https://api.mercubuana.ac.id/akademik/transkripmhs/41814010026';
+    $url = 'https://api.mercubuana.ac.id/akademik/transkripmhs/41814010040';
     // Open connection
     $ch = curl_init();
     // Set the url, number of GET vars, GET data
@@ -95,6 +95,17 @@ class Tester extends CI_Controller {
     echo $this->webservice->CheckMatkulKP('41814010066','raka hikmah ramadhan');
     // echo $this->webservice->CheckSKSKp('41814010204');
     // echo $this->webservice->CheckSKSKp('41814010066');
+  }
+
+  public function testcsrf()
+  {
+    $this->load->view('tester/csrf');
+  }
+
+  public function cekcsrf()
+  {
+    echo $this->input->post('csrf_test_name');
+    echo $this->input->post('test');
   }
 
   // public function CheckMatkulKP($nim)
