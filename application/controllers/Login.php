@@ -28,50 +28,48 @@ class Login extends CI_Controller {
 
 	public function ceklogin()
 	{
-			$username = $this->input->post('username');
-			$password = md5($this->input->post('password'));
+		$username = $this->input->post('username');
+		$password = md5($this->input->post('password'));
 
-			$whereadmin = array(
-		    					'username'=>$username,
-		    					'password'=>$password
-		    		);
+		$whereadmin = array(
+	    					'username'=>$username,
+	    					'password'=>$password
+	    		);
 
 
-			$hasiladmin = $this->login_model->cekloginadmin('admin',$whereadmin);
-			
-			$hasiluser = $this->login_model->cekloginuser('user',$username,$password);
-
-		    if ($hasiladmin == 1) {
-		    	 	$result=$this->db->get_where('admin',$whereadmin)->row_array();
-		    	 	$data_session = array(
-		    	 					'id_admin'=>$result['id_admin'],
-		    	 					'username'=>$result['username'],
-		    	 					'status'=>'login',
-		    	 					'role'=>$result['role']
-		    	 	);
-		    	 	$this->session->set_userdata($data_session);
-		    	 	redirect('admin');
-		    	 	
-		   	}elseif ($hasiluser == 1) {
-		   			$result=$this->login_model->datauser('user',$username,$password);
-		   			$data_session = array(
-		   							'nim'=>$result['nim'],
-		   							'nama_mahasiswa'=>$result['nama_mahasiswa'],
-		   							'status'=>'login',
-		   							'jurusan'=>$result['prodi'],
-		   							'email'=>$result['email'],
-		   							'role'=>'mahasiswa'
-		   			);
-		   			$this->session->set_userdata($data_session);
-		   			redirect('mahasiswa');
-		    	 	
-		   	}else{
-		   		$this->session->set_flashdata('info', 'true');
-		   		redirect('login');
-		   	}		
+		$hasiladmin = $this->login_model->cekloginadmin('admin',$whereadmin);
 		
-	}
+		$hasiluser = $this->login_model->cekloginuser('user',$username,$password);
 
+	    if ($hasiladmin == 1) {
+	    	 	$result=$this->db->get_where('admin',$whereadmin)->row_array();
+	    	 	$data_session = array(
+	    	 					'id_admin'=>$result['id_admin'],
+	    	 					'username'=>$result['username'],
+	    	 					'status'=>'login',
+	    	 					'role'=>$result['role']
+	    	 	);
+	    	 	$this->session->set_userdata($data_session);
+	    	 	redirect('admin');
+	    	 	
+	   	}elseif ($hasiluser == 1) {
+	   			$result=$this->login_model->datauser('user',$username,$password);
+	   			$data_session = array(
+	   							'nim'=>$result['nim'],
+	   							'nama_mahasiswa'=>$result['nama_mahasiswa'],
+	   							'status'=>'login',
+	   							'jurusan'=>$result['prodi'],
+	   							'email'=>$result['email'],
+	   							'role'=>'mahasiswa'
+	   			);
+	   			$this->session->set_userdata($data_session);
+	   			redirect('mahasiswa');
+	    	 	
+	   	}else{
+	   		$this->session->set_flashdata('info', 'true');
+	   		redirect('login');
+	   	}
+	}
 	public function resetpassword(){
 		 $data = array(
             'captcha' => $this->recaptcha->getWidget(), // menampilkan recaptcha
@@ -95,11 +93,11 @@ class Login extends CI_Controller {
       $recaptcha = $this->input->post('g-recaptcha-response');
       $response = $this->recaptcha->verifyResponse($recaptcha);	
 
-      
+      // cek apakah ada email di mahasiswa
       if(!isset($response['success']) || $response['success'] <> true){
       	$this->session->set_flashdata('validasi_captcha','true');
       	redirect('login/resetpassword','refresh');
-      }elseif (!$rs->num_rows() > 0){ // cek apakah ada email di mahasiswa
+      }elseif (!$rs->num_rows() > 0){
         $this->session->set_flashdata('email_tidak_ada','true');
         redirect('login/resetpassword');
       }else{

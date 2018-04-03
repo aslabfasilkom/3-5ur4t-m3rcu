@@ -79,7 +79,7 @@
 						$tanggal_fix = $pecah[2]." ".$bulanindo." ".$pecah[0];
 					?>
 
-					<span class="pull-right tanggal">Jakarta, <?php cetak($tanggal_fix)?></span>
+					<span class="pull-right tanggal">Jakarta, <?=$tanggal_fix?></span>
 				</div><!-- /.col-xs-6 -->
 			</div>
 			<span class="hidden-print warning"><h1 class="text-center">Direkomendasikan Menggunakan Chrome Versi 64 Atau Lebih</h1></span>
@@ -92,7 +92,7 @@
 
 		<div class="container idsurat">
 			<div class="row">
-				<div class="col-xs-12"><p class="nomor"><?php cetak($surat['no_surat']); ?></p></div>
+				<div class="col-xs-12"><p class="nomor"><?=$surat['no_surat']; ?></p></div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12"><p class="lampiran">Lampiran	:------------</p></div>
@@ -106,11 +106,11 @@
 
 		<div class="container kepadayth-cover">
 			<p>Kepada Yth,</p>
-			<p><?php cetak($surat['nama_perusahaan'])?></p>
-			<p id="kepadayth"><?php cetak($surat['alamat_perusahaan'])?></p>
-			<p id="kepadayth"><?php cetak($surat['kota'])?> <?php cetak($surat['kodepos'])?></p>
-			<p>UP. <?php cetak($surat['orang_dituju'])?></p>
-			<p><?php cetak($surat['jabatan_dituju'])?></p>
+			<p><?=$surat['nama_perusahaan']?></p>
+			<p id="kepadayth"><?=$surat['alamat_perusahaan']?></p>
+			<p id="kepadayth"><?=$surat['kota']?> <?=$surat['kodepos']?></p>
+			<p>UP. <?=$surat['orang_dituju']?></p>
+			<p><?=$surat['jabatan_dituju']?></p>
 		</div>
 		<br /><br />
 		<div class="container isipesan">
@@ -130,10 +130,10 @@
 				<?php $no=1; ?>
 				<?php foreach ($mahasiswa as $vmahasiswa): ?>
 				<tr>
-						<td><?php cetak($no++)?></td>
-						<td><?php cetak($vmahasiswa['nama_mahasiswa'])?></td>
-						<td><?php cetak($vmahasiswa['nim'])?></td>
-						<td><?php cetak($vmahasiswa['nohp'])?></td>
+						<td><?=$no++?></td>
+						<td><?=$vmahasiswa['nama_mahasiswa']?></td>
+						<td><?=$vmahasiswa['nim']?></td>
+						<td><?=$vmahasiswa['nohp']?></td>
 					</tr>
 				
 			<?php endforeach ?>
@@ -146,9 +146,9 @@
 		<div class="container ttd">
 			<p>Hormat Kami,</p>
 			<p>Fakultas Ilmu Komputer</p>
-			<p><b>Sek. Program Studi <?php cetak($surat['prodi'])?></b></p>
+			<p><b>Sek. Program Studi <?=$surat['prodi']?></b></p>
 			<br><br><br>
-			<p><b><u><?php cetak($surat['nama_dosen'])?></u></b></p>
+			<p><b><u><?=$surat['nama_dosen']?></u></b></p>
 			<p class="koordinator">Koordinator Kerja Praktek</p>
 
 		</div>

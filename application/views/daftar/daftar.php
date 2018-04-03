@@ -29,8 +29,7 @@
         </div>
       </div>
       <form class="form-horizontal" action="<?=site_url('daftar') ?>" method="post">
-      <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
-      <div class="form-group">
+        <div class="form-group">
           <label for="prodi" class="col-sm-2 control-label">Program Studi</label>
           <div class="col-sm-6">
             <span class="text-danger"><?=form_error('prodi')?></span>

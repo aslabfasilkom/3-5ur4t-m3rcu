@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+asaa<div class="content-wrapper">
   <section class="content-header">
     <h1>
       Tabel Kerja Praktek
@@ -24,16 +24,16 @@
             <!-- Detail Box-->
             <div class="box-body">
               <strong>Tanggal Usul</strong>
-              <p class="text-muted"><?php cetak(date('d-M-Y',strtotime($surat['tanggal_diajukan'])))?></p>
+              <p class="text-muted"><?=date('d-M-Y',strtotime($surat['tanggal_diajukan']))?></p>
               <hr>
               <strong>NIM</strong>
-              <p class="text-muted"><?php cetak($surat['nim'])?></p>
+              <p class="text-muted"><?=$surat['nim']?></p>
               <hr>
               <strong>Nama</strong>
-              <p class="text-muted"><?php cetak($surat['nama_mahasiswa'])?></p>
+              <p class="text-muted"><?=$surat['nama_mahasiswa']?></p>
               <hr>
               <strong>Program Studi</strong>
-              <p><?php cetak($surat['prodi'])?></p>
+              <p><?=$surat['prodi']?></p>
             </div>
           </div>
         </section>
@@ -49,16 +49,16 @@
             <!-- Detail Box-->
             <div class="box-body">
               <strong>Nama Perusahaan</strong>
-              <p class="text-muted"><?php cetak($surat['nama_perusahaan'])?></p>
+              <p class="text-muted"><?=$surat['nama_perusahaan']?></p>
               <hr>
               <strong>Alamat Perusahaan</strong>
-              <p class="text-muted"><?php cetak($surat['alamat_perusahaan'])."<br>".cetak($surat['kota'])."-".cetak($surat['kodepos'])?> </p>
+              <p class="text-muted"><?=$surat['alamat_perusahaan']."<br>".$surat['kota']."-",$surat['kodepos']?> </p>
               <hr>
               <strong>Untuk</strong>
-              <p class="text-muted"><?php cetak($surat['orang_dituju'])?></p>
+              <p class="text-muted"><?=$surat['orang_dituju']?></p>
               <hr>
               <strong>Jabatan</strong>
-              <p class="text-muted"><?php cetak($surat['jabatan_dituju'])?></p>
+              <p class="text-muted"><?=$surat['jabatan_dituju']?></p>
             </div>
           </div>
         </section>
@@ -74,10 +74,10 @@
             <!-- Detail Box-->
             <div class="box-body">
               <?php foreach ($mahasiswa as $value): ?>
-              <strong><?php cetak($value['nim'])?></strong>
+              <strong><?=$value['nim']?></strong>
               <p class="text-muted">
-                <?php cetak($value['nama_mahasiswa'])?><br>
-                <?php cetak($value['nohp'])?>
+                <?=$value['nama_mahasiswa']?><br>
+                <?=$value['nohp']?>
               </p>
               <hr>  
               <?php endforeach ?>
