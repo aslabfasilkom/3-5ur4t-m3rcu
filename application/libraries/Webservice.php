@@ -68,7 +68,7 @@ class Webservice {
 			
 
 			foreach ($jsonToArray as $value) {
-				if ($value->namamk=="KERJA PRAKTEK" AND $value->nhuruf != null) {
+				if ($value->namamk=="KERJA PRAKTEK") {
 					$hasil = 1;
 				}
 			}

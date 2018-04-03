@@ -67,7 +67,6 @@
 <!--UNTUK LOCALHOST-->
 <script src="<?php echo base_url('assets/plugins/jquery/dist/jquery.min.js') ?>"></script>
 <script src="<?php echo base_url('assets/plugins/bootstrap/dist/js/bootstrap.min.js')?>" ></script>
-<script src="<?php echo base_url('assets/plugins/jquery/dist/jquery.cookie.js') ?>"></script>
 <script src="<?php echo base_url('assets/plugins/datatables.net/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?php echo base_url('assets/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js')?>"></script>
 <script src="<?php echo base_url('assets/dist/js/wow.min.js') ?>"></script>
@@ -159,38 +158,36 @@ new WOW().init();
   });
 
 
-
-$(function(){
-
-  
+   $(function(){
     $.ajaxSetup({
       type:"POST",
       url: "<?php echo base_url('mahasiswa/select_daerah') ?>",
+      cache: false,
     });
 
     $("#provinsi").change(function(){
       var value=$(this).val();
-      if(value != 0){
+      if(value>0){
         $.ajax({
-          data:{modul:'kabupaten',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kabupaten',id:value},
           success: function(respond){
             $("#kabupaten-kota").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kecamatan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kecamatan',id:value},
           success: function(respond){
             $("#kecamatan").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kelurahan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kelurahan',id:value},
           success: function(respond){
             $("#kelurahan-desa").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kodepos',id:value},
           success: function(respond){
             $("#kodepos").html(respond);
           }
@@ -198,32 +195,32 @@ $(function(){
 
       }else{
         $.ajax({
-          data:{modul:'kabupaten',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kabupaten',id:value},
           success: function(respond){
             $("#kabupaten-kota").html(respond);
           }
         })
 
         $.ajax({
-          data:{modul:'kecamatan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kecamatan',id:value},
           success: function(respond){
             $("#kecamatan").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kelurahan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kelurahan',id:value},
           success: function(respond){
             $("#kelurahan-desa").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kodepos',id:value},
           success: function(respond){
             $("#kodepos").html(respond);
           }
         })
       } 
-    })
+    });
 
 
 
@@ -232,39 +229,39 @@ $(function(){
       var value=$(this).val();
       if(value != ""){
         $.ajax({
-          data:{modul:'kecamatan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kecamatan',id:value},
           success: function(respond){
             $("#kecamatan").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kelurahan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kelurahan',id:value},
           success: function(respond){
             $("#kelurahan-desa").html(respond);
           }
         })  
         $.ajax({
-          data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kodepos',id:value},
           success: function(respond){
             $("#kodepos").html(respond);
           }
         })
       }else{
         $.ajax({
-          data:{modul:'kecamatan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kecamatan',id:value},
           success: function(respond){
             $("#kecamatan").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kelurahan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kelurahan',id:value},
           success: function(respond){
             $("#kelurahan-desa").html(respond);
           }
         })
 
         $.ajax({
-          data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kodepos',id:value},
           success: function(respond){
             $("#kodepos").html(respond);
           }
@@ -276,55 +273,52 @@ $(function(){
       var value=$(this).val();
       if(value !=""){
         $.ajax({
-          data:{modul:'kelurahan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kelurahan',id:value},
           success: function(respond){
             $("#kelurahan-desa").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kodepos',id:value},
           success: function(respond){
             $("#kodepos").html(respond);
           }
         })
       }else{
         $.ajax({
-          data:{modul:'kelurahan',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kelurahan',id:value},
           success: function(respond){
             $("#kelurahan-desa").html(respond);
           }
         })
         $.ajax({
-          data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          data:{modul:'kodepos',id:value},
           success: function(respond){
             $("#kodepos").html(respond);
           }
         })
       } 
     })
-
+  })
 
   $("#kelurahan-desa").change(function(){
     var value=$(this).val();
     if(value != ""){
       $.ajax({
-        data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+        data:{modul:'kodepos',id:value},
         success: function(respond){
           $("#kodepos").html(respond);
         }
       })
     }else{
      $.ajax({
-      data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+      data:{modul:'kodepos',id:value},
       success: function(respond){
         $("#kodepos").html(respond);
       }
     })
    } 
  })
-
-})
-
 </script>
 <script>
   $(window).scroll(function(){

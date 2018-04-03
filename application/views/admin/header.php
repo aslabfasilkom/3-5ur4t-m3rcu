@@ -1,94 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<title>E-Surat Mercu Buana</title>
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets/favicon/apple-touch-icon.png') ?>">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('assets/favicon/favicon-32x32.png') ?>">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/favicon/favicon-16x16.png') ?>">
-  <link rel="manifest" href="<?php echo base_url('assets/favicon/site.webmanifest') ?>">
-  <link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title><?php if($this->uri->segment(2)==""){echo "Dashboard - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="waitingkp"){echo "Menunggu (KP) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="tolakemail"){echo "Tolak (KP) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="proseskp"){echo "Proses (KP) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="finishkp"){echo "Selesai (KP) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="takekp"){echo "Terima (KP) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="tolakkp"){echo "Arsip Penolakan (KP) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="waitingta"){echo "Menunggu (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="tolakemail"){echo "Tolak (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="prosesta"){echo "Proses (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="finishta"){echo "Selesai (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="taketa"){echo "Terima (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="tolakta"){echo "Arsip Penolakan (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="koordinatorsetting"){echo "Pengaturan Koordinator - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="teknikinfo"){echo "Mahasiswa (TI) - Admin E-Surat Mercu Buana";} 
-  else if($this->uri->segment(2)=="sisteminfo"){echo "Mahasiswa (SI) - Admin E-Surat Mercu Buana";} ?></title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('assets/favicon/favicon-32x32.png') ?>">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/favicon/favicon-16x16.png') ?>">
+<link rel="manifest" href="<?php echo base_url('assets/favicon/site.webmanifest') ?>">
+<link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- UNTUK HOSTING -->
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> 
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> -->
+  <!--UNTUK LOCALHOST-->
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/dist/css/bootstrap.min.css') ?>">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/font-awesome/css/font-awesome.min.css') ?>">
-  <!-- Ionicons -->
+  
+   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/animate.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/Ionicons/css/ionicons.min.css') ?>">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/AdminLTE.min.css')?>">
-  <!-- Morris charts -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/morris.js/morris.css')?>">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-   folder instead of downloading all of them to reduce the load. -->
-   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/_all-skins.min.css')?>">
-   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css')?>">
-   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css')?>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css">
-   <!-- Untuk meng-email yang ditolak -->
-   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')?>">
-
-   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-<!-- Google Font -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-
+  <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
+  <script defer src="<?php echo base_url('assets/plugins/font-awesome/svg-with-js/js/fontawesome-all.js') ?>"></script>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-  <!-- Site wrapper -->
-  <div class="wrapper">
-    <header class="main-header">
-      <!-- Logo -->
-      <a href="<?php echo site_url('admin')?>" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>U</b>MB</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b> E-Surat</span>
-      </a>
-      <!-- Header Navbar: style can be found in header.less -->
-      <nav class="navbar navbar-static-top">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+<body class="body">
+
+  <nav style="transition: padding .3s;" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </a>
-        <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-            <!-- User Account: style can be found in dropdown.less -->
-            <li class="dropdown user user-menu">
-              <a href="<?php echo site_url('login?logout=signout')?>">
-                <!-- <img src="<?php echo base_url('assets/image/UMB.png')?>" class="user-image" alt="User Image"> -->
-                Keluar
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+        </button>
+        
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="home" href="<?php echo site_url('')?>">Beranda</a></li>
+          <li><a class="home" href="<?php echo site_url('infomagang')?>">Info Magang</a></li>
+          <li><a class="home" href="<?php echo site_url('login')?>">Login</a></li>
+        </ul>
+        
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
