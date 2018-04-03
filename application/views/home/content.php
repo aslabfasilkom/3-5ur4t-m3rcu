@@ -23,7 +23,7 @@
 		<div class="row">
 			<h1 class="text-center intro">APA ITU E-SURAT?</h1>
 			<div class="col-md-6">
-				<img src="<?php echo base_url('assets/image/logoesurat4.png')?>" class="center-block img-responsive wow fadeIn" alt="">
+				<img src="<?php echo base_url('assets/image/logoesurat7v2.png')?>" class="center-block img-responsive wow fadeIn" alt="">
 			</div>
 			
 			<div class="col-md-6">
@@ -54,7 +54,7 @@
 		</div>
 		<div class="row">
 			<div clas="col-md-12">
-				<a class="btn btn-more col-md-8 col-md-offset-2 btn-lg wow fadeIn" data-wow-delay="1.5s" href="">ALUR PROSES PENGAJUAN <span class="hidden-xs">SURAT</span> <i class="fas fa-arrow-circle-right fa-lg"></i></a>
+				<a class="btn btn-more col-md-8 col-md-offset-2 btn-lg wow fadeIn" data-wow-delay="1s" href="<?php echo site_url('panduan')?>">ALUR PROSES PENGAJUAN <span class="hidden-xs">SURAT</span> <i class="fas fa-arrow-circle-right fa-lg"></i></a>
 			</div>
 		</div>
 	</div>

@@ -38,19 +38,19 @@
         $class="label-success";
         break;     
         case 'Ambil':
-        $class="label-default";
+        $class="label-terima";
         break;
       }
       ?>
       <tr>
-        <td><?=$value->nama_mahasiswa?></td>
-        <td><?=$value->jenis_surat?></td>
-        <td><?=date('d-M-Y',strtotime($value->tanggal_diajukan))?></td>
+        <td><?php cetak($value->nama_mahasiswa)  ?></td>
+        <td><?php cetak($value->jenis_surat)  ?></td>
+        <td><?php cetak(date('d-M-Y',strtotime($value->tanggal_diajukan)))  ?></td>
         <td class=<?=$class?> style="text-align: center;">
           <?php if ($value->status == 'Ambil'): ?>
             Sudah Diambil
           <?php else: ?>  
-            <?=$value->status?>
+            <?php cetak($value->status) ?>
           <?php endif ?>
         </td>
       </tr>
@@ -66,6 +66,14 @@
 <br>
 <br>
 <br>
+<?php  if($this->session->flashdata('berhasil')): ?>
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-check"></i>Info</h4>
+    Berhasil Mendaftar Surat TA
+  </div>
+<?php endif; ?>
+
 <table class="table table-striped" id="datatable2">
   <thead>
     <tr>
@@ -94,19 +102,19 @@
         $class="label-success";
         break;     
         case 'Ambil':
-        $class="label-default";
+        $class="label-terima";
         break;
       }
       ?>
       <tr>
-        <td><?=$value->nama_mahasiswa?></td>
-        <td><?=$value->jenis_surat?></td>
-        <td><?=date('d-M-Y',strtotime($value->tanggal_diajukan))?></td>
+        <td><?php cetak($value->nama_mahasiswa) ?></td>
+        <td><?php cetak($value->jenis_surat) ?></td>
+        <td><?php cetak(date('d-M-Y',strtotime($value->tanggal_diajukan))) ?></td>
         <td class=<?=$class?> style="text-align: center;">
           <?php if ($value->status == 'Ambil'): ?>
             Sudah Diambil
           <?php else: ?>  
-            <?=$value->status?>
+            <?php cetak($value->status) ?>
           <?php endif ?>
         </td>
       </tr>

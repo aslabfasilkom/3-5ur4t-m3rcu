@@ -4,7 +4,7 @@
     <section class="content-header">
       <h1>
         Tabel Tugas Akhir
-        <medium class="label label-info">Terima</medium>
+        <medium class="label label-terima">Terima</medium>
       </h1>
       <ol class="breadcrumb">
         <li><a href="<?php echo base_url('admin') ?>"><i class="fa fa-home"></i> Beranda</a></li>

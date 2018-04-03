@@ -29,8 +29,10 @@
             Maaf anda gagal mereset password
           </div>
         <?php endif; ?>
+        <a href="<?php echo site_url('') ?>"><img class="img-responsive" src="<?php echo base_url('assets/image/logoesurat7v2kiri.png')?>" alt=""></a>
         <h3 class="text-center title-login">Silahkan Login Dengan menggunakan</h3>
         <h3 class="text-center title-login">NIM/E-MAIL</h3>
+        <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
         <div class="form-group has-feedback">
           <input type="text" class="form-control" placeholder="NIM/email" name="username">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>

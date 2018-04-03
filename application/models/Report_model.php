@@ -258,8 +258,8 @@ class Report_model extends CI_Model {
 		$this->db->from('surat');
 		$this->db->join('user','user.nim=surat.nim');
 		$this->db->where('surat.status','Selesai');
-		$this->db->where('tanggal_diajukan >=',$startdate);
-		$this->db->where('tanggal_diajukan <=',$enddate);
+		$this->db->where('tanggal_selesai >=',$startdate);
+		$this->db->where('tanggal_selesai <=',$enddate);
 		$this->db->where('jenis_surat','Kerja Praktek');
 		$query = $this->db->get();
 
@@ -272,8 +272,8 @@ class Report_model extends CI_Model {
 		$this->db->from('surat');
 		$this->db->join('user','user.nim=surat.nim');
 		$this->db->where('surat.status','Ambil');
-		$this->db->where('tanggal_diajukan >=',$startdate);
-		$this->db->where('tanggal_diajukan <=',$enddate);
+		$this->db->where('tanggal_diambil >=',$startdate);
+		$this->db->where('tanggal_diambil <=',$enddate);
 		$this->db->where('jenis_surat','Kerja Praktek');
 		$query = $this->db->get();
 
@@ -293,6 +293,36 @@ class Report_model extends CI_Model {
 
 		return $query->result_array();
 	}	
+
+	public function SuratMahasiswaTI($startdate,$enddate)
+	{
+		$this->db->select("*");
+		$this->db->from('surat');
+		$this->db->join('user','user.nim=surat.nim');
+		$this->db->where('surat.prodi','Teknik Informatika');
+		$this->db->where('tanggal_diajukan >=',$startdate);
+		$this->db->where('tanggal_diajukan <=',$enddate);
+		$this->db->where('jenis_surat','Kerja Praktek');
+		$query = $this->db->get();
+
+		return $query->result_array();
+	}
+
+	public function SuratMahasiswaSI($startdate,$enddate)
+	{
+		$this->db->select("*");
+		$this->db->from('surat');
+		$this->db->join('user','user.nim=surat.nim');
+		$this->db->where('surat.prodi','Sistem Informasi');
+		$this->db->where('tanggal_diajukan >=',$startdate);
+		$this->db->where('tanggal_diajukan <=',$enddate);
+		$this->db->where('jenis_surat','Kerja Praktek');
+		$query = $this->db->get();
+
+		return $query->result_array();
+	}
+
+	
 
 }
 

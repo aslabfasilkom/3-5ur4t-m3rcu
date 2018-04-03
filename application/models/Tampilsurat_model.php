@@ -147,7 +147,7 @@ class Tampilsurat_model extends CI_Model
 		public function PrintMahasiswaKP($id_surat)
 		{
 			
-			$query = $this->db->query("SELECT m.nim,m.nama_mahasiswa FROM mahasiswa m JOIN surat s 
+			$query = $this->db->query("SELECT m.nim,m.nama_mahasiswa,m.nohp FROM mahasiswa m JOIN surat s 
 								ON m.id_surat=s.id_surat WHERE 
 								m.id_surat='$id_surat' "
 							);

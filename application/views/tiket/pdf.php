@@ -85,7 +85,7 @@
       </td>
 
     </tr>
-   <!--  <tr>
+   <tr>
       <td>
       <p class="text-blue">Nama Perusahaan:</p>
         
@@ -101,7 +101,7 @@
         </h3>
       </td>
       
-    </tr> -->
+    </tr>
   </table>
 
 

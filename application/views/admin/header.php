@@ -3,6 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets/favicon/apple-touch-icon.png') ?>">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('assets/favicon/favicon-32x32.png') ?>">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/favicon/favicon-16x16.png') ?>">
+  <link rel="manifest" href="<?php echo base_url('assets/favicon/site.webmanifest') ?>">
+  <link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <title><?php if($this->uri->segment(2)==""){echo "Dashboard - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="waitingkp"){echo "Menunggu (KP) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="tolakemail"){echo "Tolak (KP) - Admin E-Surat Mercu Buana";}
@@ -10,12 +17,12 @@
   else if($this->uri->segment(2)=="finishkp"){echo "Selesai (KP) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="takekp"){echo "Terima (KP) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="tolakkp"){echo "Arsip Penolakan (KP) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="waitingTA"){echo "Menunggu (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="waitingta"){echo "Menunggu (TA) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="tolakemail"){echo "Tolak (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="prosesTA"){echo "Proses (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="finishTA"){echo "Selesai (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="takeTA"){echo "Terima (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="tolakTA"){echo "Arsip Penolakan (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="prosesta"){echo "Proses (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="finishta"){echo "Selesai (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="taketa"){echo "Terima (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="tolakta"){echo "Arsip Penolakan (TA) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="koordinatorsetting"){echo "Pengaturan Koordinator - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="teknikinfo"){echo "Mahasiswa (TI) - Admin E-Surat Mercu Buana";} 
   else if($this->uri->segment(2)=="sisteminfo"){echo "Mahasiswa (SI) - Admin E-Surat Mercu Buana";} ?></title>
@@ -55,7 +62,6 @@
 <body class="hold-transition skin-blue sidebar-mini">
   <!-- Site wrapper -->
   <div class="wrapper">
-
     <header class="main-header">
       <!-- Logo -->
       <a href="<?php echo site_url('admin')?>" class="logo">
@@ -73,7 +79,6 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
             <!-- User Account: style can be found in dropdown.less -->

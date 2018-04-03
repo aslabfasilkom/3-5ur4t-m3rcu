@@ -49,6 +49,7 @@ class Daftar extends CI_Controller {
 
 	public function index()
 	{
+		
 		//form validasi
 		$this->form_validation->set_rules('nama','Nama','trim|required');
 		$this->form_validation->set_rules('nimmhs','NIM', 'trim|required|exact_length[8]|numeric');
@@ -87,11 +88,28 @@ class Daftar extends CI_Controller {
 				$this->session->set_flashdata('nimsudahada', 'true');
 				redirect('daftar');
 			}else{
-				$this->daftar_model->registerMahasiswa();
-				$this->session->set_flashdata('info_berhasil', 'true');
-				redirect('login');
+				$this->load->library('webservice');
+				$cekmatakuliah = $this->webservice->CheckMatkulKeseluruhan($nimlengkap,$this->input->post('nama'));
+				if ($cekmatakuliah == 1) {
+					$this->daftar_model->registerMahasiswa();
+					$this->session->set_flashdata('info_berhasil', 'true');
+					redirect('login');
+				}else{
+					$this->session->set_flashdata('tidak_bisa','true');
+					redirect('daftar');
+				}
+				
 			}
 		}
+	}
+
+	public function test()
+	{
+		$this->load->library('webservice');
+		
+		echo $this->webservice->CheckMatkulKP('4181401204');
+		echo $this->webservice->CheckSKSKp('41814010204');
+		
 	}
 }
 

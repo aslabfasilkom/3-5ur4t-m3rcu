@@ -3,16 +3,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tester extends CI_Controller {
-
+// CONTROLLER INI HANYA UNTUK CONTROLLER TESTER SEBELUM DIMASUKAN KE CONTROLLER YANG AKAN DI DEPLOY
   public function __construct()
   {
     parent::__construct();
     $this->load->library('Recaptcha');
-  }
-
-  public function phpinfo()
-  {
-  	echo phpinfo();
   }
 
   public function captcha()
@@ -49,44 +44,82 @@ class Tester extends CI_Controller {
       }
   }
 
-  public function chart()
+  public function manipulasinim()
   {
-    $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
-    $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
-    // Jumlah Surat Kerja Praktek
-    $data['kpwaiting'] = $this->report_model->ReportJumlahSuratKpWaiting($startdate,$enddate);
-    $data['kpproses']  = $this->report_model->ReportJumlahSuratKpProses($startdate,$enddate);
-    $data['kpfinish']  = $this->report_model->ReportJumlahSuratKpFinish($startdate,$enddate);
-    $data['kptake']    = $this->report_model->ReportJumlahSuratKpTake($startdate,$enddate); 
-    $data['kptolak']   = $this->report_model->ReportJumlahSuratKpTolak($startdate,$enddate);
+    $nama ="MOH";
 
-    // Data Jumlah mahasiswa Sistem Informasi Kerja Praktek
-    $data['siwaiting'] = $this->report_model->MahasiswaSIKpWaiting($startdate,$enddate);
-    $data['siproses']  = $this->report_model->MahasiswaSIKpProses($startdate,$enddate);
-    $data['sifinish']  = $this->report_model->MahasiswaSIKpFinish($startdate,$enddate);
-    $data['sitake']    = $this->report_model->MahasiswaSIKpTake($startdate,$enddate);
-    $data['sitolak']   = $this->report_model->MahasiswaSIKpTolak($startdate,$enddate);
+    echo ucwords(strtolower($nama)) ;
 
-    // Data Jumlah Mahasiswa Teknik Informatika Kerja Praktek
-    $data['tiwaiting']    = $this->report_model->MahasiswaTIKpWaiting($startdate,$enddate);
-    $data['tiproses']     = $this->report_model->MahasiswaTIKpProses($startdate,$enddate);
-    $data['tifinish']     = $this->report_model->MahasiswaTIKpFinish($startdate,$enddate);
-    $data['titake']       = $this->report_model->MahasiswaTIKpTake($startdate,$enddate);
-    $data['titolak']      = $this->report_model->MahasiswaTIKpTolak($startdate,$enddate);
-
-    // Data nama mahasiswa
-    $data['suratwaiting'] = $this->report_model->SuratWaiting($startdate,$enddate);
-    $data['suratproses'] = $this->report_model->SuratProses($startdate,$enddate);
-    $data['suratfinish'] = $this->report_model->SuratFinish($startdate,$enddate);
-    $data['surattake'] = $this->report_model->SuratTake($startdate,$enddate);
-    $data['suratolak'] = $this->report_model->SuratTolak($startdate,$enddate);
-
-    $this->load->view('tester/headerChart');
-    $this->load->view('tester/chartjs_v',$data);
-    $this->load->view('tester/footerChart',$data);
   }
 
+  public function testhtml()
+  {
+    $string = "<h1>halooaa</h1>";
+    $string2 = htmlentities($string);
+    echo html_entity_decode($string2);
+  }
+
+  
+  public function cektranskrip()
+  {
+      $headers = array(
+      'Content-Type: application/json',
+      'sia:mercubuana2017!'
+    );
+    // query string
     
+    $url = 'https://api.mercubuana.ac.id/akademik/transkripmhs/41814010040';
+    // Open connection
+    $ch = curl_init();
+    // Set the url, number of GET vars, GET data
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, false);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true );
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    // Execute request
+    $result = curl_exec($ch);
+    // Close connection
+    curl_close($ch);
+    // get the result and parse to JSON
+    echo $result;
+
+    // $result_arr = json_decode($result, true);
+    // print_r($result_arr);
+  }
+
+  public function testwebservice()
+  {
+    $this->load->library('webservice');
+
+    echo $this->webservice->CheckMatkulKP('41814010066','raka hikmah ramadhan');
+    // echo $this->webservice->CheckSKSKp('41814010204');
+    // echo $this->webservice->CheckSKSKp('41814010066');
+  }
+
+  public function testcsrf()
+  {
+    $this->load->view('tester/csrf');
+  }
+
+  public function cekcsrf()
+  {
+    echo $this->input->post('csrf_test_name');
+    echo $this->input->post('test');
+  }
+
+  // public function CheckMatkulKP($nim)
+  // {
+  //   // request list of contacts from Web API
+  //   $url="https://api.mercubuana.ac.id/akademik/esurat/".$nim;
+
+    
+  //   $json = file_get_contents($url);
+    
+  //   echo $this->wenservice->
+    
+  // }
+
 
 
 }

@@ -40,7 +40,7 @@ class Nomorsurat_model extends CI_Model {
         return $kodejadi;
 	}
 
-    public function NomorSuratRisetTA()
+    public function NomorSuratTugasAkhir()
     {
         $bulan     = array ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII');
         $tahun     = date('Y');
@@ -83,6 +83,14 @@ class Nomorsurat_model extends CI_Model {
         $kodejadi  = "SR".$kodemax;
         return $kodejadi;
 	}
+
+    public function CheckNoSrtExist($nosurat)
+    {
+        $this->db->select('*');
+        $this->db->where('no_surat');
+        $query = $this->db->get('surat');
+        return $query->num_rows();
+    }
 
 
 }
