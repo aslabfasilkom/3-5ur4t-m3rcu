@@ -37,25 +37,43 @@
 	 <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
 			<div class="form-group inline">
 				<!-- Nama Perusahaan -->
+<<<<<<< HEAD
 				<label class="col-md-3" for="namaperusahaan">Nama Perusahaan yang dituju</label>
 				<div class="col-md-6">
 					<input type="text" name="namaperusahaan" class="form-control" required placeholder="Nama Perusahaan">
+=======
+				<label class="col-md-3 " for="namaperusahaan">Nama Perusahaan yang dituju</label>
+				<div class="col-md-6 ">
+					<input type="text " name="namaperusahaan" class="form-control " required placeholder="Nama Perusahaan ">
+>>>>>>> upstream/master
 				</div>
 			</div>
 
 			<div class="form-group inline">
 				<!-- Orang yang dituju -->
+<<<<<<< HEAD
 				<label class="col-md-3" for="namaygdituju" >Personal yang Dituju</label>
 				<div class="col-md-6">
 					<input type="text" name="namefor" class="form-control" required placeholder="Orang Dituju">
+=======
+				<label class="col-md-3 " for="namaygdituju">Personal yang Dituju</label>
+				<div class="col-md-6 ">
+					<input type="text " name="namefor" class="form-control " required placeholder="Orang Dituju ">
+>>>>>>> upstream/master
 				</div>
 			</div>
 
 			<div class="form-group inline">
 				<!-- Orang yang dituju -->
+<<<<<<< HEAD
 				<label class="col-md-3" for="jabatan" >Jabatan</label>
 				<div class="col-md-6">
 					<input type="text" name="jabatan" class="form-control" required placeholder="Jabatan">
+=======
+				<label class="col-md-3 " for="jabatan">Jabatan</label>
+				<div class="col-md-6 ">
+					<input type="text " name="jabatan" class="form-control " required placeholder="Jabatan ">
+>>>>>>> upstream/master
 				</div>
 			</div>
 
