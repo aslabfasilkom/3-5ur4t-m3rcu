@@ -72,7 +72,7 @@
           <h4 class="modal-title" id="myModalLabel">Hapus Data Surat</h4>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('admin/HapusSuratKP')?>" class="form-horizontal"  method="POST" role="form">
+            <?php echo form_open('admin/HapusSuratKP',array('class'=>'form-horizontal','method'=>'post')); ?>
             <div class="form-group">
               <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
               <div class="col-md-8">
@@ -86,9 +86,10 @@
               </div>
             </div>
             <div class="modal-footer">      
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <input type="submit" class="btn btn-primary" value="submit">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
+            <?php echo form_close(); ?>
           </form>
         </div>
       </div>
@@ -105,7 +106,7 @@
           <h4 class="modal-title" id="myModalLabel">Laporan Untuk Rekapitulasi</h4>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('admin/cetakLAPkp')?>" class="form-horizontal" method="POST" role="form">
+          <?php echo form_open('admin/cetakLAPkp', array('class' =>'form-horizontal' ,'method'=>'post' )) ?>
             <div class="form-group">
               <label for="jurusan" class="col-md-3 control-label">Jurusan</label>
               <div class="col-md-8">
@@ -129,10 +130,10 @@
               </div>
             </div>    
             <div class="modal-footer">      
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <input type="submit" class="btn btn-primary" value="submit">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-          </form>
+          <?php echo form_close(); ?>
         </div>
       </div>
     </div>
@@ -147,7 +148,7 @@
           <h4 class="modal-title" id="myModalLabel">Laporan Data Surat</h4>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('tester/chart')?>" class="form-horizontal"  method="POST" role="form">
+          <?php echo form_open('tester/chart', array('class' =>'form-horizontal' ,'method'=>'post' )) ?>
             <div class="form-group">
               <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
               <div class="col-md-8">
@@ -161,10 +162,10 @@
               </div>
             </div>
             <div class="modal-footer">      
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <input type="submit" class="btn btn-primary" value="Submit">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-          </form>
+          <?php echo form_close(); ?>
         </div>
       </div>
     </div>
@@ -178,7 +179,7 @@
           <h4 class="modal-title" id="myModalLabel">Laporan Data Surat Perjurusan</h4>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url('tester/perjurusan')?>" class="form-horizontal"  method="POST" role="form">
+         <?php echo form_open('tester/perjurusan', array('class' =>'form-horizontal' ,'method'=>'post' )) ?>
             <div class="form-group">
               <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
               <div class="col-md-8">
@@ -192,10 +193,10 @@
               </div>
             </div>
             <div class="modal-footer">      
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <input type="submit" class="btn btn-primary" value="submit">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
-          </form>
+         <?php echo form_close(); ?>
         </div>
       </div>
     </div>

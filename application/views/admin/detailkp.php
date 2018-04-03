@@ -52,7 +52,7 @@
               <p class="text-muted"><?php cetak($surat['nama_perusahaan'])?></p>
               <hr>
               <strong>Alamat Perusahaan</strong>
-              <p class="text-muted"><?php cetak($surat['alamat_perusahaan'])."<br>".cetak($surat['kota'])."-",cetak($surat['kodepos'])?> </p>
+              <p class="text-muted"><?php cetak($surat['alamat_perusahaan'])."<br>".cetak($surat['kota'])."-".cetak($surat['kodepos'])?> </p>
               <hr>
               <strong>Untuk</strong>
               <p class="text-muted"><?php cetak($surat['orang_dituju'])?></p>

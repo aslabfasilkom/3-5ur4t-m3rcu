@@ -69,9 +69,16 @@
 										<?php cetak($u->prodi); ?>
 									</td>
 									<td class="text-center">
-										<button class="btn btn-primary" data-href="<?=site_url(" surat/ubahProsesKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" > Proses</button>
-										<a href="<?php echo site_url(" admin/detailkp/$u->id_surat") ?>" class="btn btn-default">Detail</a>
-										<a href="<?php echo site_url(" admin/tolakemailkp/$u->id_surat") ?>" class="btn btn-danger">TOLAK</a>
+
+
+										<button class="btn btn-primary" data-href="<?=site_url("surat/ubahProsesKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" > Proses
+										</button>
+										<a href="<?php echo site_url("admin/detailkp/$u->id_surat") ?>" class="btn btn-default">Detail</a>
+										<!-- <button class="btn btn-danger" data-href="<?=site_url("surat/kirimpesantolakkp/$u->id_surat")?>" data-toggle="modal" data-target="#confirmtolak" >
+                                Tolak
+                              </button> -->
+										<a href="<?php echo site_url("admin/tolakemailkp/$u->id_surat") ?>" class="btn btn-danger">TOLAK</a>
+
 									</td>
 								</tr>
 								<?php } ?>

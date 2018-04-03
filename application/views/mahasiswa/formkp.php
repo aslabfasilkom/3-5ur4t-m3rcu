@@ -25,7 +25,7 @@
 		<?php echo form_open('mahasiswa/daftarsuratkp',array('class'=>'form-test','method'=>'post')); ?>
 
 		<section class="content">
-
+			 <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
 			<div class="form-group inline ">
 				<!-- Nama Perusahaan -->
 				<label class="col-md-3 " for="namaperusahaan">Nama Perusahaan yang dituju</label>
@@ -363,12 +363,9 @@
 		document.getElementById("fnim4").value = jurusan;
 		document.getElementById("fnim5").value = jurusan;
 	}
-
 	function no(evt) {
 		var charCode = (evt.which) ? evt.which : event.keyCode
 		if (charCode > 31 && (charCode < 48 || charCode > 57))
 			return false;
 	}
-
 </script>
-
