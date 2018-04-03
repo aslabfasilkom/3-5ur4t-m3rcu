@@ -69,7 +69,7 @@
 										<?php echo $u->prodi; ?>
 									</td>
 									<td class="text-center">
-<<<<<<< HEAD
+
 
 										<button class="btn btn-primary" data-href="<?=site_url("surat/ubahProsesKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" > Proses
 										</button>
@@ -78,11 +78,7 @@
                                 Tolak
                               </button> -->
 										<a href="<?php echo site_url("admin/tolakemailkp/$u->id_surat") ?>" class="btn btn-danger">TOLAK</a>
-=======
-										<button class="btn btn-primary" data-href="<?=site_url(" surat/ubahProsesKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" > Proses</button>
-										<a href="<?php echo site_url(" admin/detailkp/$u->id_surat") ?>" class="btn btn-default">Detail</a>
-										<a href="<?php echo site_url(" admin/tolakemailkp/$u->id_surat") ?>" class="btn btn-danger">TOLAK</a>
->>>>>>> upstream/master
+
 									</td>
 								</tr>
 								<?php } ?>
