@@ -40,7 +40,8 @@
 					<div class="box-header">
 						<h3 class="box-title"></h3>
 						<?php echo form_open('admin/tambahakun',array('class'=>'form-horizontal','method'=>'post')); ?>
-						<div class="form-group">
+			<input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
+					<div class="form-group">
 							<label class="control-label col-sm-2" for="Username">Username</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?=set_value('username')?>"

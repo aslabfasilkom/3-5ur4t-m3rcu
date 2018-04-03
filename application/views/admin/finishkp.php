@@ -74,7 +74,7 @@
 										<?php cetak($u->prodi); ?>
 									</td>
 									<td>
-										<button class="btn btn-primary col-sm-9" data-href="<?=site_url(" surat/ubahAmbilKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+										<button class="btn btn-primary col-sm-9" data-href="<?=site_url("surat/ubahAmbilKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" >
 											<span class="fa fa-check"></span> Take
 										</button>
 									</td>

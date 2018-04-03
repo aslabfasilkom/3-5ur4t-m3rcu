@@ -1,4 +1,5 @@
 <!-- Content Wrapper. Contains page content -->
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -13,13 +14,11 @@
     <br>
     <div class="alert alert-warning alert-dismissable" class="close" role="alert">Pastikan Masukan Nama dengan <strong>BENAR</strong> <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button></div>
   </section>
-
   <!-- Main content -->
   <section class="content">
     <div class="row">
       <div class="col-xs-12">
         <!-- /.box -->
-
         <div class="box">
           <div class="box-header">
             <h3 class="box-title"></h3>
