@@ -63,10 +63,12 @@ class Mahasiswa extends CI_Controller {
 	
 	public function daftarsuratkp()
 	{
-	 $row 	   = $this->input->post('anggota');
-	
-	 
-	 $jumlahmahasiswa = 0;
+	  $this->load->library('webservice');	
+
+	  $row 	   = $this->input->post('anggota');
+	  $jumlahmahasiswa  = 0;
+	  $nimnamavalid 	= 0;
+	  $nimbolehjoinkp	= 0;
 
 	 for ($y=1; $y <=$row ; $y++) { 
 		$fnim 		  = $this->input->post("fnim$y");
@@ -77,15 +79,38 @@ class Mahasiswa extends CI_Controller {
   		$jumlahmahasiswa = $hasil+$jumlahmahasiswa;
 	 }
 
-	   
+	 for ($x=1; $x<=$row ; $x++) { 
+	 	 $fnim 		  = $this->input->post("fnim$x");
+	  	 $nim  		  = $this->input->post("nim$x");
+	  	 $nimmahasiswa = $fnim.$nim;
+	  	 $namamahasiswa = $this->input->post("nama$x"); 	
 
-	 
+	  	 $hasilnimnamavalid = $this->webservice->CheckMatkulKp($nimmahasiswa,$namamahasiswa);
+	  	 $nimnamavalid = $hasilnimnamavalid+$nimnamavalid;
+	 }
 
+	 for ($z=1; $z<=$row ; $z++) { 
+	 	 $fnim 		  = $this->input->post("fnim$z");
+	  	 $nim  		  = $this->input->post("nim$z");
+	  	 $nimmahasiswa = $fnim.$nim;
+	  	 $namamahasiswa = $this->input->post("nama$z"); 	
+
+	  	 $hasilnimbolehjoinkp = $this->webservice->CheckTranskripKp($nimmahasiswa);
+	  	 $nimbolehjoinkp = $hasilnimbolehjoinkp+$nimbolehjoinkp;
+	 }    
+
+	
 	  if ($jumlahmahasiswa > 0 ) {
-		  	$this->session->set_flashdata('gagal', 'true');
+	  	 	$this->session->set_flashdata('gagal', 'true');
 		  	redirect('mahasiswa/formkp');
+	  }elseif($nimnamavalid != $row){
+	  		$this->session->set_flashdata('tidakvalid', 'true');
+	  		redirect('mahasiswa/formkp');
+	  }elseif($nimbolehjoinkp != 0){
+	  		$this->session->set_flashdata('tidakbisajoin', 'true');
+	  		redirect('mahasiswa/formkp');
 	  }else{
-		  		$prodi 			= $this->session->userdata('jurusan');
+	  			$prodi 			= $this->session->userdata('jurusan');
 	  			$jenis 			= $this->uri->segment(2);
 	  			$jenis_surat	="";
 	  			$namekota		= $this->input->post('kota_kabupaten');

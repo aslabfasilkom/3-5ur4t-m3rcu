@@ -68,7 +68,7 @@ class Tester extends CI_Controller {
     );
     // query string
     
-    $url = 'https://api.mercubuana.ac.id/akademik/transkripmhs/41814010026';
+    $url = 'https://api.mercubuana.ac.id/akademik/transkripmhs/41814010040';
     // Open connection
     $ch = curl_init();
     // Set the url, number of GET vars, GET data

@@ -12,6 +12,18 @@
 						Maaf Nim sudah terdaftar dan belum diambil atau anda baru mengambil dan harus jeda 1 hari untuk
 						mendaftar lagi
 					</div>
+				<?php elseif($this->session->flashdata('tidakvalid')): ?> 
+					<div class="alert alert-danger alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+						<h4><i class="icon fa fa-close"></i>Info</h4>
+						Mohon maaf tidak bisa mendaftar dikarenakan nim dan namahasiswa anggota anda ada yang tidak sesuai atau salah satu anggota anda ada yang belum mengklik kerja praktek pastikan nim dan nama mahasiswa harus diisi dengan sesuai dan sudah mengklik mata kuliah kerja praktek
+					</div>
+				<?php elseif($this->session->flashdata('tidakbisajoin')): ?> 
+					<div class="alert alert-danger alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+						<h4><i class="icon fa fa-close"></i>Info</h4>
+						Mohon maaf tidak bisa mendaftar dikarenakan salah satu anggota anda ada yang tidak bisa mendaftar dikarenakan sudah mengambil matakuliah
+					</div>
 				<?php elseif($this->session->flashdata('berhasil')): ?> 
 					<div class="alert alert-success alert-dismissible">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
