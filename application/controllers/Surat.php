@@ -13,11 +13,7 @@ class Surat extends CI_Controller {
 		}
 	}
 
-	public function test($param)
-	{
-		echo $param;
-	}
-
+	
 	public function ubahProsesKP($id_surat)
 	{
 		$data = $this->tampilsurat_model->detailKP($id_surat);
@@ -122,37 +118,38 @@ class Surat extends CI_Controller {
 	}
 
 
-	public function kirimpesantolakkp($idsurat)
+	public function kirimpesantolakkp()
 	{
-		$data = $this->tampilsurat_model->detailKP($idsurat);
-		$pesan = htmlentities($this->input->post('isipesantolak'));
-		$isi= html_entity_decode($pesan) ;
+		$idsurat = $this->input->post('id_surat');
+		// $data = $this->tampilsurat_model->detailKP($idsurat);
+		$pesan = $this->input->post('isipesantolak');
+		// $isi= html_entity_decode($pesan) ;
+		echo htmlentities($pesan)  ;
+		// $config = Array(  
+	 //        'protocol' => 'smtp',  
+	 //        'smtp_host' => 'https://www.mohagustiar.info/',  
+	 //        'smtp_port' =>  465,  
+	 //        'smtp_user' => 'contactme@mohagustiar.info',   
+	 //        'smtp_pass' => 'project2m123!@#',  
+	 //        'smtp_keepalive'=>'TRUE',
+	 //        'mailtype' => 'html',   
+	 //        'charset' => 'iso-8859-1'  
+  //       );
 
-		$config = Array(  
-	        'protocol' => 'smtp',  
-	        'smtp_host' => 'https://www.mohagustiar.info/',  
-	        'smtp_port' =>  465,  
-	        'smtp_user' => 'contactme@mohagustiar.info',   
-	        'smtp_pass' => 'project2m123!@#',  
-	        'smtp_keepalive'=>'TRUE',
-	        'mailtype' => 'html',   
-	        'charset' => 'iso-8859-1'  
-        );
-
-        $this->load->library('email', $config);  
-        $this->email->set_newline("\r\n");  
-	    $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
-		$this->email->to($data['email']); 
+  //       $this->load->library('email', $config);  
+  //       $this->email->set_newline("\r\n");  
+	 //    $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
+		// $this->email->to($data['email']); 
 			
-		$this->email->subject($this->input->post('subjek'));
-		$this->email->message($isi);
-		$this->email->set_mailtype("html");
-		$this->email->send();
+		// $this->email->subject($this->input->post('subjek'));
+		// $this->email->message($isi);
+		// $this->email->set_mailtype("html");
+		// $this->email->send();
 
-		$this->statussurat_model->SuratKpToTolak($data['id_surat']);
+		// $this->statussurat_model->SuratKpToTolak($data['id_surat']);
 
-		$this->session->set_flashdata('infotolak','true');
-	    redirect('admin/waitingkp');
+		// $this->session->set_flashdata('infotolak','true');
+	 //    redirect('admin/waitingkp');
 	}
 
 	public function ubahAmbilKP($id_surat)

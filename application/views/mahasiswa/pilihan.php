@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<hr style="color: white;border-top: 2px dashed;">
-				<!-- <?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?>
+				<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?>
 					<p class="dash-text">
 						Maaf anda belum mengambil matkul kerja praktek
 					</p>
@@ -25,11 +25,11 @@
 					<p class="dash-text">
 						Maaf anda sudah mengambil matkul Kerja Praktek
 					</p>	
-				<?php endif ?> -->
-				<p class="dash-text">
+				<?php endif ?>
+				<!-- <p class="dash-text">
 						Surat untuk membuat pengajuan Kerja Praktek
 					</p>
-					<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">PILIH</a>
+					<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">PILIH</a> -->
 			</div>
 
 			<div class="col-md-4 col-md-offset-2 dash2">
@@ -42,25 +42,25 @@
 					</div>
 				</div>
 				<hr style="color: white;border-top: 2px dashed;">
-				<!-- <?php if ($checkmatkulta == 0 AND $checktranskripta ==0 ): ?>
+				<?php if ($checkmatkulta == 0 AND $checktranskripta ==0 ): ?>
 					<p class="dash-text">
-						Maaf anda belum mengambil matkul kerja praktek
+						Maaf anda belum mengambil matkul tugas akhir
 					</p>
 				<?php elseif($checkmatkulta == 1 AND $checktranskripta == 0 ): ?>
 					<p class="dash-text">
-						Surat untuk membuat pengajuan Kerja Praktek
+						Surat untuk membuat pengajuan Tugas Akhir
 					</p>
 					<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">PILIH</a>
 				<?php elseif($checkmatkulta == 1 AND $checktranskripta == 1 ): ?>
 					<p class="dash-text">
-						Maaf anda sudah mengambil matkul Kerja Praktek
+						Maaf anda sudah mengambil matkul tugas akhir
 					</p>	
-				<?php endif ?> -->
-				<p class="dash-text">
+				<?php endif ?>
+				<!-- <p class="dash-text">
 					Surat untuk pengajuan riset Tugas Akhir
 				</p>
 				<a href="<?php echo site_url('mahasiswa/formta') ?>" class="btn btn-danger dash-btn">PILIH</a>
-
+ -->
 			</div>
 		</div>
 	</div>
