@@ -97,6 +97,17 @@ class Tester extends CI_Controller {
     // echo $this->webservice->CheckSKSKp('41814010066');
   }
 
+  public function testcsrf()
+  {
+    $this->load->view('tester/csrf');
+  }
+
+  public function cekcsrf()
+  {
+    echo $this->input->post('csrf_test_name');
+    echo $this->input->post('test');
+  }
+
   // public function CheckMatkulKP($nim)
   // {
   //   // request list of contacts from Web API

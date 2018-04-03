@@ -1,5 +1,5 @@
-         <!-- Content Wrapper. Contains page content -->
-         <div class="content-wrapper">
+<!-- Content Wrapper. Contains page content -->
+       <div class="content-wrapper">
           <!-- Content Header (Page header) -->
           <section class="content-header">
             <h1>
@@ -23,7 +23,9 @@
                 <div class="box">
                   <div class="box-header">
                     <h3 class="box-title"></h3>
-                    <form class="form-horizontal" method="post" action="<?php echo base_url()."index.php/admin/update_data_dosen"; ?>">
+                    <?php echo form_open('admin/update_data_dosen',array('class'=>'form-horizontal','method'=>'post')); ?>
+                      <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
+
                        <input type="hidden" name="nikwhere" value="<?php echo $nik ?>">
                         <div class="form-group" >
                           <label for="nama" class="col-sm-2 control-label">Nama Koordinator</label>
@@ -56,7 +58,7 @@
                           </div>
                         </div>
                         </div>
-                    </form>
+                    <?php echo form_close(); ?>
                   </div>
                   <!-- /.box-body -->
                 </div>

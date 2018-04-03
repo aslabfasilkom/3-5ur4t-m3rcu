@@ -43,6 +43,9 @@ class Mahasiswa extends CI_Controller {
 		$modul=$this->input->post('modul');
 		$id=$this->input->post('id');
 
+		$this->security->get_csrf_token_name();
+		$this->security->get_csrf_hash();
+
 		if($modul=="kabupaten"){
 			echo $this->daerah_model->kabupaten($id);
 		}
