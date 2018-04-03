@@ -203,7 +203,7 @@ color: #fff;
 background: rgba(46,134,193,1);
 }
 .footer{
-  background: url('../../image/footer2.jpg') no-repeat center center;
+  background: url('../../image/footer2.jpg')center center;
 	/* background-color:#1c2c39; */
 	color: #ffffff;
 	padding: 20px;

@@ -1,3 +1,4 @@
+
          <!-- Content Wrapper. Contains page content -->
          <div class="content-wrapper">
           <!-- Content Header (Page header) -->
@@ -55,11 +56,11 @@
                       ?>
           
                         <tr>
-                          <td><?php echo $i;?></td>
-                          <td><?php echo $d['nik'];?></td>
-                          <td><?php echo $d['nama_dosen'];?></td>
-                          <td><?php echo $d['jabatan'];?></td>
-                          <td><?php echo $d['prodi'];?></td>
+                          <td><?php cetak($i);?></td>
+                          <td><?php cetak($d['nik']);?></td>
+                          <td><?php cetak($d['nama_dosen']);?></td>
+                          <td><?php cetak($d['jabatan']);?></td>
+                          <td><?php cetak($d['prodi']);?></td>
                           <td>
                             <a href="<?php echo base_url()."admin/koordinatorupdate/".$d['nik'];?>" class="btn btn-success">Ganti <?=$d['jabatan']." ".$d['prodi']?></a>
                           </td>
@@ -73,11 +74,3 @@
                   <!-- /.box-body -->
                 </div>
                 <!-- /.box -->
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-          </section>
-          <!-- /.content -->
-        </div>
-      </body>
