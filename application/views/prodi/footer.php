@@ -3,9 +3,8 @@
 		<b>Version</b> Alpha-3
 	</div>
 	<strong>Copyright &copy; 2017-<?php echo date("Y"); ?>
-		<a href="http://bit.ly/aslabfasilkom">Aslab Fasilkom</a>.</strong> All rights reserved.
+		<a href="http://fasilkom.mercubuana.ac.id/wp-content/uploads/2017/11/struktur-organisasi-aslab.jpg" target="_blank">Aslab Fasilkom</a>.</strong> All rights reserved.
 </footer>
-</div>
 </body>
 
 <script src="<?php echo base_url('assets/plugins/jquery/dist/jquery.min.js')?>"></script>
@@ -35,21 +34,27 @@
 			'autoWidth': true
 		})
 	})
+
 	function no(evt) {
 		var charCode = (evt.which) ? evt.which : event.keyCode
 		if (charCode > 31 && (charCode < 48 || charCode > 57))
 			return false;
 	}
+
 </script>
+
 <script>
 	$(document).ready(function () {
 		$('.sidebar-menu').tree()
 	})
+
 </script>
+
 <!-- Untuk meng-email yang ditolak -->
 <script>
 	$(function () {
 		//Add text editor
+
 		$('#compose-textarea').wysihtml5({
 			toolbar: {
 				"font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
@@ -63,27 +68,37 @@
 			}
 		});
 	});
+
 </script>
+
 <script>
 	$('#confirm').on('show.bs.modal', function (e) {
 		$(this).find('.btn-ok').prop('href', $(e.relatedTarget).data('href'));
 	});
+
 	$('.modal').on('hidden.bs.modal', function () {
 		$(this).find('form')[0].reset();
 	});
+
 </script>
+
 <script>
 	$(document).ready(function () {
 		$('.datepicker').datepicker({
 			format: 'dd-mm-yyyy'
 		});
 	});
+
 </script>
+
 <script>
 	$('#confirmtolak').on('show.bs.modal', function (e) {
 		$(this).find('.btn-ok').prop('href', $(e.relatedTarget).data('href'));
 	});
+
 </script>
+
+
 <!-- validasi yang mengambil -->
 <script>
 	$('#namaPengambil').ready(function () {
@@ -110,4 +125,6 @@
 		});
 	});
 </script>
+
 </html>
+
