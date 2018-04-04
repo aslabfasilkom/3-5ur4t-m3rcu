@@ -32,7 +32,7 @@
 					<h4>
 						<i class="icon fa fa-info"></i>Info</h4>
 					Berhasil Mendaftar Surat
-				</div>
+				</div> 
 				<?php endif ?>
 			</div>
 			<div class="col-xs-12">
