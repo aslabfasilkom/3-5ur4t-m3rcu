@@ -23,6 +23,7 @@
           <div class="box-header">
             <h3 class="box-title"></h3>
             <form class="form-horizontal" method="post" action="<?php echo base_url()."index.php/admin/update_data_dosen"; ?>">
+              <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
               <input type="hidden" name="nikwhere" value="<?php echo $nik ?>">
               <div class="form-group" >
                 <label for="nama" class="col-sm-2 control-label">Nama Koordinator</label>

@@ -73,6 +73,7 @@
         </div>
         <div class="modal-body">
             <?php echo form_open('admin/HapusSuratKP',array('class'=>'form-horizontal','method'=>'post')); ?>
+            <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
             <div class="form-group">
               <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
               <div class="col-md-8">
@@ -108,6 +109,7 @@
         <div class="modal-body">
           <?php echo form_open('admin/cetakLAPkp', array('class' =>'form-horizontal' ,'method'=>'post' )) ?>
             <div class="form-group">
+              <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
               <label for="jurusan" class="col-md-3 control-label">Jurusan</label>
               <div class="col-md-8">
                 <select name="jurusan" class="form-control" style="border-radius: 4px;" required>
@@ -148,8 +150,9 @@
           <h4 class="modal-title" id="myModalLabel">Laporan Data Surat</h4>
         </div>
         <div class="modal-body">
-          <?php echo form_open('tester/chart', array('class' =>'form-horizontal' ,'method'=>'post' )) ?>
+          <?php echo form_open('admin/reportchart', array('class' =>'form-horizontal' ,'method'=>'post' )) ?>
             <div class="form-group">
+              <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
               <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
               <div class="col-md-8">
                 <input type="text" name="startdate" class="form-control datepicker" placeholder="Tanggal awal" required>
@@ -179,8 +182,9 @@
           <h4 class="modal-title" id="myModalLabel">Laporan Data Surat Perjurusan</h4>
         </div>
         <div class="modal-body">
-         <?php echo form_open('tester/perjurusan', array('class' =>'form-horizontal' ,'method'=>'post' )) ?>
+         <?php echo form_open('admin/reportperjurusan', array('class' =>'form-horizontal' ,'method'=>'post' )) ?>
             <div class="form-group">
+              <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
               <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
               <div class="col-md-8">
                 <input type="text" name="startdate" class="form-control datepicker" placeholder="Tanggal awal" required>

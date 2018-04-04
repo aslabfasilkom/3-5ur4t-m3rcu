@@ -15,7 +15,7 @@ class Tampilsurat_model extends CI_Model
 		# Query menampilkan email user KP
 		public function get_email_user_kp($id_surat)
 		{
-			$sql = "SELECT b.email,a.id_surat FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Menunggu' AND a.jenis_surat ='Kerja Praktek' AND a.id_surat='$id_surat' ";
+			$sql = "SELECT b.email,b.nama_mahasiswa,b.nim,a.id_surat FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Menunggu' AND a.jenis_surat ='Kerja Praktek' AND a.id_surat='$id_surat' ";
 			$query = $this->db->query($sql);
 
 			return $query->row(); 

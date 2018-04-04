@@ -122,9 +122,19 @@ class Login extends CI_Controller {
            if ($simpan > 0){
 
            	// localhost/surat-e-mercu/login
-           	$isi= html_entity_decode(
-					"Ini adalah link untuk reset password harap untuk segera untuk mereset password anda "."<a href='https://suratfasilkom.mohagustiar.info/login/reset/token/$tokenstring'>https://suratfasilkom.mohagustiar.info/login/reset/token/".$tokenstring."</a>"
-			) ;
+           	$isi= html_entity_decode("<p>Halo,</p>
+
+Kami menerima permohonan atur ulang kata sandi Akun E-Surat Anda. Untuk menyelesaikan proses penggantian kata sandi, mohon menggunakan pranala di bawah ini:<br>"."<a href='https://suratfasilkom.mohagustiar.info/login/reset/token/$tokenstring'>https://suratfasilkom.mohagustiar.info/login/reset/token/".$tokenstring."</a>"."<br><br>
+
+Jika Anda tidak melakukan permintaan ini, silakan abaikan surel ini. Pastikan akun Anda aman bersama kami.
+
+Jika mengklik tautan tampaknya tidak berfungsi, Anda dapat menyalin dan menempel tautan ke jendela alamat browser Anda atau mengetik ulang di sana. Setelah Anda kembali ke situs kami, kami akan memberi Anda instruksi lebih lanjut untuk mereset kata sandi Anda.
+
+Terima kasih.
+
+Salam,
+
+Admin E-Surat") ;
 
            	  $config = Array(  
 		        'protocol' => 'smtp',  
@@ -142,7 +152,7 @@ class Login extends CI_Controller {
 		     $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
 			 $this->email->to($email); 
 				
-			 $this->email->subject("Reset Password Untuk Akun Anda");
+			 $this->email->subject("[E-SURAT]Reset Password Untuk Akun Anda");
 			 $this->email->message($isi);
 			 $this->email->set_mailtype("html");
 			 $this->email->send();
