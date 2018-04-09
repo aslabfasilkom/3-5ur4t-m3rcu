@@ -1,5 +1,10 @@
 <section class="content-header">
 	<h1 class="text-center ">Surat Pengantar Kerja Praktek</h1>
+	<div class="col-md-3">
+		</div>
+		<div class="container alert alert-danger alert-dismissible fade in col-md-6 text-center">
+			Pastikan data yang anda isikan adalah benar dan sesuai dengan identitas anda.
+		</div>
 </section>
 <div class="form-horizontal m-t-30">
 	<section class="content container">

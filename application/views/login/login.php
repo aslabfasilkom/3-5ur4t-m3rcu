@@ -1,7 +1,4 @@
-<div class="container-fluid">
-  <div class="row">
-
-    <div class="col-md-4 box-login">
+<div class="col-md-4 box-login" style="margin-top: 0px; border-radius: 0px;">
       <?php echo form_open('login/ceklogin'); ?>
       <?php if($this->session->flashdata('info')): ?>
         <div class="row">
@@ -59,7 +56,7 @@
       </a>
     </div>
 
-    <div class="col-md-8 box-login" style="padding-bottom: 36px;">
+    <div class="col-md-8 box-login" style="padding-bottom: 36px; margin-top: 0px; border-radius: 0px;">
       <h3 class="text-center" style="color: #FFFFFF;">Step Mudah Membuat Surat</h3>
       <br>
       <div class="row">
@@ -159,11 +156,11 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="panel panel-default" style="height: 130px;">
+          <div class="panel panel-default" style="height: 130px; background-color: #37632a;">
             <div class="col-md-1 step-number text-center" style="padding-left: 10px;">
               !
             </div>
-            <div class="panel-body text-center">
+            <div class="panel-body text-center edited-link">
               <div data-toggle="modal" data-target="#modalKP" style="cursor: pointer">
                 <span class="glyphicon glyphicon-tag" style="font-size: 40px; margin-bottom: 10px;"></span>
                 <p>Contoh surat yang sudah jadi</p>
