@@ -203,7 +203,7 @@ color: #fff;
 background: rgba(46,134,193,1);
 }
 .footer{
-  background: url('../../image/footer2.jpg')center center;
+  background: url('../../image/footer2.jpg') center center;
 	/* background-color:#1c2c39; */
 	color: #ffffff;
 	padding: 20px;
@@ -2297,3 +2297,34 @@ p#kepadayth-1{
 	color: #ffffff !important;
 }
 
+
+.modal-header {
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.button-skp:active {
+  background-color: #3498db;
+}
+
+.info-magang {
+  background-color: #34495E;
+  padding: 30px;
+}
+
+.step-number {
+  background-color: rgb(242, 242, 242, 1);
+}
+
+.edited-link {
+  color: white;
+}
+
+.edited-link:hover {
+  color: white;
+  text-decoration: none;
+}
