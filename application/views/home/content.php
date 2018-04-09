@@ -54,7 +54,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<img src="<?php echo base_url('assets/image/info-magang.jpg')?>" class="center-block img-responsive" width="65%" style="margin-top: 10px;">
+				<i class="fa fa-user-secret center-block" style="margin-top: 0px; font-size: 200px; color: white;"></i>
 			</div>
 			
 			<div class="col-md-6" style="color: #FFFFFF">

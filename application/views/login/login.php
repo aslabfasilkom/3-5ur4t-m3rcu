@@ -159,11 +159,11 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="panel panel-default" style="height: 130px;">
+          <div class="panel panel-default" style="height: 130px; background-color: #37632a;">
             <div class="col-md-1 step-number text-center" style="padding-left: 10px;">
               !
             </div>
-            <div class="panel-body text-center">
+            <div class="panel-body text-center edited-link">
               <div data-toggle="modal" data-target="#modalKP" style="cursor: pointer">
                 <span class="glyphicon glyphicon-tag" style="font-size: 40px; margin-bottom: 10px;"></span>
                 <p>Contoh surat yang sudah jadi</p>
