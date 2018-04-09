@@ -91,19 +91,6 @@
     <li class="<?php if($this->uri->segment(2)=="report"){echo 'active';} ?>"><a href="<?php echo site_url('admin/report') ?>"><i class="fa fa-book" aria-hidden="true"></i>Report Surat Kerja Praktek</a></li>
   </ul>
 </li>
-<li class="treeview <?php if($this->uri->segment(2)=="teknikinfo" OR $this->uri->segment(2)=="sisteminfo" OR $this->uri->segment(2)=="report"){ echo 'active';}?>">
-    <a href="#">
-     <i class="fa fa-suitcase" aria-hidden="true"></i>
-     <span>List Info Magang</span>
-     <span class="pull-right-container">
-      <i class="fa fa-angle-left pull-right"></i>
-    </span>
-  </a>
-  <ul class="treeview-menu">
-    <li class="<?php if($this->uri->segment(2)=="magangti"){ echo 'active';} ?>"><a href="<?php echo site_url('admin/magangti') ?>"><i class="fa fa-user" aria-hidden="true"></i>Teknik Informatika</a></li>
-    <li class="<?php if($this->uri->segment(2)=="magangsi"){echo 'active';} ?>"><a href="<?php echo site_url('admin/magangsi') ?>"><i class="fa fa-user" aria-hidden="true"></i>Sistem Informasi</a></li>
-  </ul>
-</li>
 <?php if ($this->session->userdata('role')=='superadmin'): ?>
   <li class="<?php if($this->uri->segment(2)=="koordinatorsetting" OR $this->uri->segment(2)=="koordinatorupdate"){echo 'active';} ?>">
       <a href="<?php echo site_url('admin/tambahakun') ?>">
