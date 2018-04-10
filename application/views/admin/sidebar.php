@@ -83,6 +83,12 @@
           </a>
         </li>
       <?php endif ?>
+      <li>
+        <a href="<?php echo site_url('admin/formperusahaan')?>">
+          <i class="fa fa-user"></i>
+          <span>Tambah Perusahaan</span>
+        </a>
+      </li>
     </ul>
   </section>
   <!-- /.sidebar -->

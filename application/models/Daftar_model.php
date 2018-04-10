@@ -65,6 +65,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			return $query->num_rows();
 		}
 
+		public function formperusahaan($data)
+		{
+			$this->db->insert('perusahaan',$data);
+		}
+
 	}
 ?>
 

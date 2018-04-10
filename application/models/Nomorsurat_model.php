@@ -40,11 +40,11 @@ class Nomorsurat_model extends CI_Model {
 	}
 
 
-    public function NomorSuratTugasAkhir()
-    {
-        $bulan     = array ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII');
-        $tahun     = date('Y');
-        $kodeprodi = "16-2-2";
+    // public function NomorSuratTugasAkhir()
+    // {
+    //     $bulan     = array ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII');
+    //     $tahun     = date('Y');
+    //     $kodeprodi = "16-2-2";
         
     //     $this->db->select("SUBSTRING(no_surat,6,3) AS nomorsuratta ");
     //     $this->db->where('prodi',$jurusan);

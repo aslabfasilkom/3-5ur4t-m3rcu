@@ -315,6 +315,37 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	public function formperusahaan(){
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/formperusahaan');
+		$this->load->view('admin/footer');
+	}
+
+	public function perusahaan()
+	{
+	  	$nama_perusahaan = $this->input->post('nama_perusahaan');
+	  	$alamat_perusahaan = $this->input->post('alamat_perusahaan');
+	  	$kota = $this->input->post('kota');
+	  	$kodepos = $this->input->post('kodepos');
+	  	$orang_dituju = $this->input->post('orang_dituju');
+	  	$jabatan_dituju = $this->input->post('jabatan_dituju');
+
+	  	$data = array(
+            'nama_perusahaan'      	=> $nama_perusahaan,
+            'alamat_perusahaan'   	=> $alamat_perusahaan,
+            'kota'     				=> $kota,
+            'kodepos'   			=> $kodepos,
+            'orang_dituju'    		=> $orang_dituju,
+            'jabatan_dituju'    	=> $jabatan_dituju
+            );
+
+		$this->daftar_model->formperusahaan($data);
+		redirect('admin/formperusahaan');
+
+
+	}
+
 
 	public function report()
 	{
