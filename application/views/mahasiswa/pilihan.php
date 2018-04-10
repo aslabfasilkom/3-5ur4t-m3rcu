@@ -1,67 +1,190 @@
-<div class="container-fluid image-mahasiswa text-center">
+<section style="background:#efefe9; padding: 30px;">
 	<div class="container">
-		<h3 class="text-center box-notice">Pilih Surat yang ingin Anda ajukan</h3>
-		<div class="row" style="padding:80px 0">
-			<div class="col-md-4 col-md-offset-1 dash1">
-				<div class="row container-fluid">
-					<div class="col-md-3">
-						<img  align="center" src="https://png.icons8.com/ios/70/ffffff/link-company-parent.png">
+		<div class="row">
+			<img src="<?php echo base_url('assets/image/UMB.png') ?>" class="img-responsive center-block wow fadeIn" alt="">
+			<div class="text-center">
+				<h3>Selamat datang, <?php echo $this->session->userdata('nama_mahasiswa');?>!</h3>
+				<h3 style="margin-bottom: 20px;">Pilih keperluan yang anda inginkan</h3>
+			</div>
+			<div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" style="margin-bottom: 30px;">
+				<div class="btn-group" role="group">
+					<button type="button" id="stars" class="btn btn-success button-skp wow fadeInLeft" href="#surat-kp" data-toggle="tab">
+						<h4>Kerja Praktek</h4>
+					</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button type="button" id="stars" class="btn btn-danger button-srta wow fadeInRight" href="#riset-ta" data-toggle="tab">
+						<h4>Riset Tugas Akhir</h4>
+					</button>
+				</div>
+			</div>
+			<div class="container tab-content" style="padding: 20px;">
+				<div class="tab-pane fade wow fadeIn" id="surat-kp">
+					<div class="hidden-lg">
+						<div class="container panel text-justify" style="padding: 10px;">
+							<h4 class="timeline-title">Apa itu Surat Kerja Praktek?</h4>
+							<p>Surat Kerja Praktek adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat KP.</p>
+						</div>
+						<div class="container panel text-justify" style="padding: 10px;">
+							<h4 class="timeline-title">Apa saja persyaratannya?</h4>
+							<ol>
+								<li>Pastikan sedang mengambil matkul KP</li>
+								<li>SKS minimal 110</li>
+								<li>Ga boleh jadi beban di kantor</li>
+							</ol>
+						</div>
+						<div class="container panel text-justify" style="padding: 10px;">
+							<h4 class="timeline-title">Siapa saja yang bisa mendaftar?</h4>
+							<p> Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya jadi 5.</p>
+						</div>
+						<div class="container panel text-justify" style="padding: 10px;">
+							<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
+							<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Klik untuk mendaftar</a>
+							<!-- <?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> -->
+										<!-- <?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> -->
+										<!-- <?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> -->
+										<!-- <?php endif ?> -->
+						</div>
 					</div>
-					<div class="col-md-9">
-						<h3 style="color: white">E-Surat Kerja Praktek</h3>
+
+					<div class="container hidden-xs">
+						<ul class="timeline">
+							<li class="wow bounceInRight">
+								<div class="timeline-badge primary" href="#penjelasan" data-toggle="tab"><i class="glyphicon glyphicon-question-sign"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Apa itu Surat Kerja Praktek?</h4>
+									</div>
+									<div class="timeline-body">
+										<p>Surat Kerja Praktek adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat KP.</p>
+									</div>
+								</div>
+							</li>
+							<li class="timeline-inverted wow bounceInLeft">
+								<div class="timeline-badge warning"><i class="glyphicon glyphicon-list-alt"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Apa saja persyaratannya?</h4>
+									</div>
+									<div class="timeline-body">
+										<ol>
+											<li>Pastikan sedang mengambil matkul KP</li>
+											<li>SKS minimal 110</li>
+											<li>Ga boleh jadi beban di kantor</li>
+										</ol>
+									</div>
+								</div>
+							</li>
+							<li class="wow bounceInRight">
+								<div class="timeline-badge danger"><i class="glyphicon glyphicon-user"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Siapa saja yang bisa mendaftar?</h4>
+									</div>
+									<div class="timeline-body">
+										<p> Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya jadi 5.</p>
+									</div>
+								</div>
+							</li>
+							<li class="timeline-inverted wow bounceInLeft">
+								<div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
+									</div>
+									<div class="timeline-body">
+										Kunjungi link ini untuk mendaftar > <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat KP</a>
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
-				<hr style="color: white;border-top: 2px dashed;">
-				<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?>
-					<p class="dash-text">
-						Maaf anda belum mengambil matkul kerja praktek
-					</p>
-				<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?>
-					<p class="dash-text">
-						Surat untuk membuat pengajuan Kerja Praktek
-					</p>
-					<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">PILIH</a>
-				<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?>
-					<p class="dash-text">
-						Maaf anda sudah mengambil matkul Kerja Praktek
-					</p>	
-				<?php endif ?>
-				<!-- <p class="dash-text">
-						Surat untuk membuat pengajuan Kerja Praktek
-					</p>
-					<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">PILIH</a> -->
+				<div class="tab-pane fade wow fadeIn" id="riset-ta">
+					<div class="hidden-lg">
+						<div class="container panel text-justify" style="padding: 10px;">
+							<h4 class="timeline-title">Apa itu Surat Kerja Praktek?</h4>
+							<p>Surat Kerja Praktek adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat KP.</p>
+						</div>
+						<div class="container panel text-justify" style="padding: 10px;">
+							<h4 class="timeline-title">Apa saja persyaratannya?</h4>
+							<ol>
+								<li>Pastikan sedang mengambil matkul KP</li>
+								<li>SKS minimal 110</li>
+								<li>Ga boleh jadi beban di kantor</li>
+							</ol>
+						</div>
+						<div class="container panel text-justify" style="padding: 10px;">
+							<h4 class="timeline-title">Siapa saja yang bisa mendaftar?</h4>
+							<p> Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya jadi 5.</p>
+						</div>
+						<div class="container panel text-justify" style="padding: 10px;">
+							<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
+							<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Klik untuk mendaftar</a>
+							<!-- <?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> -->
+										<!-- <?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> -->
+										<!-- <?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> -->
+										<!-- <?php endif ?> -->
+						</div>
+					</div>
+
+					<div class="container hidden-xs">
+						<ul class="timeline">
+							<li class="wow bounceInRight">
+								<div class="timeline-badge primary" href="#penjelasan" data-toggle="tab"><i class="glyphicon glyphicon-question-sign"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Apa itu Surat Riset Tugas Akhir?</h4>
+									</div>
+									<div class="timeline-body">
+										<p>Surat Kerja Praktek adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat KP.</p>
+									</div>
+								</div>
+							</li>
+							<li class="timeline-inverted wow bounceInLeft">
+								<div class="timeline-badge warning"><i class="glyphicon glyphicon-list-alt"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Apa saja persyaratannya?</h4>
+									</div>
+									<div class="timeline-body">
+										<ol>
+											<li>Pastikan sedang mengambil matkul KP</li>
+											<li>SKS minimal 110</li>
+											<li>Ga boleh jadi beban di kantor</li>
+										</ol>
+									</div>
+								</div>
+							</li>
+							<li class="wow bounceInRight">
+								<div class="timeline-badge danger"><i class="glyphicon glyphicon-user"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Siapa saja yang bisa mendaftar?</h4>
+									</div>
+									<div class="timeline-body">
+										<p> Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya jadi 5.</p>
+									</div>
+								</div>
+							</li>
+							<li class="timeline-inverted wow bounceInLeft">
+								<div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
+									</div>
+									<div class="timeline-body">
+										Kunjungi link ini untuk mendaftar > <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat KP</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="clearfix"></div>
 			</div>
 
-			<div class="col-md-4 col-md-offset-2 dash2">
-				<div class="row container-fluid">
-					<div class="col-md-3">
-						<img align="center" src="https://png.icons8.com/ios/70/ffffff/school.png">
-					</div>
-					<div class="col-md-9" align="center">
-						<h3 style="color: white">E-Surat Riset TA</h3>
-					</div>
-				</div>
-				<hr style="color: white;border-top: 2px dashed;">
-				<?php if ($checkmatkulta == 0 AND $checktranskripta ==0 ): ?>
-					<p class="dash-text">
-						Maaf anda belum mengambil matkul tugas akhir
-					</p>
-				<?php elseif($checkmatkulta == 1 AND $checktranskripta == 0 ): ?>
-					<p class="dash-text">
-						Surat untuk membuat pengajuan Tugas Akhir
-					</p>
-					<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">PILIH</a>
-				<?php elseif($checkmatkulta == 1 AND $checktranskripta == 1 ): ?>
-					<p class="dash-text">
-						Maaf anda sudah mengambil matkul tugas akhir
-					</p>	
-				<?php endif ?>
-				<!-- <p class="dash-text">
-					Surat untuk pengajuan riset Tugas Akhir
-				</p>
-				<a href="<?php echo site_url('mahasiswa/formta') ?>" class="btn btn-danger dash-btn">PILIH</a>
- -->
-			</div>
 		</div>
 	</div>
 </div>
+</section>
