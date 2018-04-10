@@ -323,4 +323,20 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/report');
 		$this->load->view('admin/footer');
 	}
+
+	public function magangti()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/magangti');
+		$this->load->view('admin/footer');
+	}
+
+	public function magangsi()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/magangsi');
+		$this->load->view('admin/footer');
+	}
 }
