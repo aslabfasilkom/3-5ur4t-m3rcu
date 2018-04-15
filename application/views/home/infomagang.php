@@ -71,24 +71,20 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>PT. Maju Mundur Tapi Ujungnya Mundur</td>
-					<td>Jalan Maju No. 15 (021-5454545)</td>
-					<td>Network Analyst</td>
-					<td>Orang Cakep, S.Kom., M.T (08123456789)</td>
-				</tr>
-				<tr>
-					<td>PT. Orang Ketiga Dari Mereka</td>
-					<td>Jalan Mulu Jadian Kaga No. 2, Kembangan, Jakarta Barat (021-55445544)</td>
-					<td>IoT Developer</td>
-					<td>Orang Ganteng, S.SI., M.M (0876543210)</td>
-				</tr>
-				<tr>
-					<td>PT. Aslab Fasilkom</td>
-					<td>Ruang C-114 (021-5555555)</td>
-					<td>Asisten Laboratorium</td>
-					<td>Orang Aslab, S.Kom., M.Kom (000000000)</td>
-				</tr>
+				<?php
+                    foreach ($info->result_array() as $u): 
+                    	$nama_perusahaan		=$u['nama_perusahaan'];
+                        $alamat_perusahaan		=$u['alamat_perusahaan'];
+                        $bagian 				=$u['bagian'];
+                        $orang_yang_dihubungi	=$u['orang_yang_dihubungi'];
+                ?>
+                <tr>
+                    <td><?php echo $nama_perusahaan; ?></td>
+                    <td><?php echo $alamat_perusahaan; ?></td>
+                    <td><?php echo $bagian; ?></td>
+                    <td><?php echo $orang_yang_dihubungi; ?></td>
+                </tr>
+    			<?php endforeach;?>
 			</tbody>
 		</table>
 		<br />
@@ -104,88 +100,20 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>PT. Maju Mundur Tapi Ujungnya Mundur</td>
-					<td>Jalan Maju No. 15 (021-5454545)</td>
-					<td>System Analyst</td>
-					<td>Orang Cakep, S.Kom., M.T (08123456789)</td>
-				</tr>
-				<tr>
-					<td>PT. Orang Ketiga Dari Mereka</td>
-					<td>Jalan Mulu Jadian Kaga No. 2, Kembangan, Jakarta Barat (021-55445544)</td>
-					<td>System Administrator</td>
-					<td>Orang Ganteng, S.SI., M.M (0876543210)</td>
-				</tr>
-				<tr>
-					<td>PT. Aslab Fasilkom</td>
-					<td>Ruang C-114 (021-5555555)</td>
-					<td>Asisten Laboratorium</td>
-					<td>Orang Aslab, S.Kom., M.Kom (000000000)</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<table class="hidden-lg table-striped table-responsive" style="font-size: 13px;">
-			<thead>
-				<tr>
-					<th width="23%">Nama Institusi</th>
-					<th width="24%">Alamat/No. Telpon</th>
-					<th width="23%">Bagian</th>
-					<th width="24%">Orang Yang Dapat Dihubungi/No. HP</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>PT. Maju Mundur Tapi Ujungnya Mundur</td>
-					<td>Jalan Maju No. 15 (021-5454545)</td>
-					<td>Network Analyst</td>
-					<td>Orang Cakep, S.Kom., M.T (08123456789)</td>
-				</tr>
-				<tr>
-					<td>PT. Orang Ketiga Dari Mereka</td>
-					<td>Jalan Mulu Jadian Kaga No. 2, Kembangan, Jakarta Barat (021-55445544)</td>
-					<td>IoT Developer</td>
-					<td>Orang Ganteng, S.SI., M.M (0876543210)</td>
-				</tr>
-				<tr>
-					<td>PT. Aslab Fasilkom</td>
-					<td>Ruang C-114 (021-5555555)</td>
-					<td>Asisten Laboratorium</td>
-					<td>Orang Aslab, S.Kom., M.Kom (000000000)</td>
-				</tr>
-			</tbody>
-		</table>
-		<br />
-		<h4>Sistem Informasi</h4>
-		<br />
-		<table class=" table-striped table-responsive" style="font-size: 13px;">
-			<thead>
-				<tr>
-					<th width="23%">Nama Institusi</th>
-					<th width="24%">Alamat/No. Telpon</th>
-					<th width="23%">Bagian</th>
-					<th width="24%">Orang Yang Dapat Dihubungi/No. HP</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>PT. Maju Mundur Tapi Ujungnya Mundur</td>
-					<td>Jalan Maju No. 15 (021-5454545)</td>
-					<td>System Analyst</td>
-					<td>Orang Cakep, S.Kom., M.T (08123456789)</td>
-				</tr>
-				<tr>
-					<td>PT. Orang Ketiga Dari Mereka</td>
-					<td>Jalan Mulu Jadian Kaga No. 2, Kembangan, Jakarta Barat (021-55445544)</td>
-					<td>System Administrator</td>
-					<td>Orang Ganteng, S.SI., M.M (0876543210)</td>
-				</tr>
-				<tr>
-					<td>PT. Aslab Fasilkom</td>
-					<td>Ruang C-114 (021-5555555)</td>
-					<td>Asisten Laboratorium</td>
-					<td>Orang Aslab, S.Kom., M.Kom (000000000)</td>
-				</tr>
+				<?php
+                    foreach ($info->result_array() as $u): 
+                    	$nama_perusahaan		=$u['nama_perusahaan'];
+                        $alamat_perusahaan		=$u['alamat_perusahaan'];
+                        $bagian 				=$u['bagian'];
+                        $orang_yang_dihubungi	=$u['orang_yang_dihubungi'];
+                ?>
+                <tr>
+                    <td><?php echo $nama_perusahaan; ?></td>
+                    <td><?php echo $alamat_perusahaan; ?></td>
+                    <td><?php echo $bagian; ?></td>
+                    <td><?php echo $orang_yang_dihubungi; ?></td>
+                </tr>
+    			<?php endforeach;?>
 			</tbody>
 		</table>
 		<br />

@@ -326,18 +326,18 @@ class Admin extends CI_Controller {
 	{
 	  	$nama_perusahaan = $this->input->post('nama_perusahaan');
 	  	$alamat_perusahaan = $this->input->post('alamat_perusahaan');
+	  	$bagian = $this->input->post('bagian');
 	  	$kota = $this->input->post('kota');
 	  	$kodepos = $this->input->post('kodepos');
-	  	$orang_dituju = $this->input->post('orang_dituju');
-	  	$jabatan_dituju = $this->input->post('jabatan_dituju');
+	  	$orang_yang_dihubungi = $this->input->post('orang_yang_dihubungi');
 
 	  	$data = array(
             'nama_perusahaan'      	=> $nama_perusahaan,
             'alamat_perusahaan'   	=> $alamat_perusahaan,
+            'bagian'   				=> $bagian,
             'kota'     				=> $kota,
             'kodepos'   			=> $kodepos,
-            'orang_dituju'    		=> $orang_dituju,
-            'jabatan_dituju'    	=> $jabatan_dituju
+            'orang_yang_dihubungi'  => $orang_yang_dihubungi
             );
 
 		$this->daftar_model->formperusahaan($data);

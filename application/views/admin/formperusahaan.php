@@ -1,4 +1,4 @@
-<center><h4 style="color:white;">Form Biodata</h4></center>
+<center><h4 style="color:white;">Form Perusahaan</h4></center>
  
         <center>
         <form method="post" action="<?php echo base_url("admin/perusahaan"); ?>">
@@ -10,9 +10,14 @@
                     <td><input type="text" name="nama_perusahaan"></td>
                 </tr>
                 <tr>
-                    <td style="color:white;">Alamat Perusahaan</td>
+                    <td style="color:white;">Alamat Perusahaan/No. Telpon</td>
                     <td>:</td>
                     <td><input type="text" name="alamat_perusahaan"></td>
+                </tr>
+                <tr>
+                    <td style="color:white;">Bagian</td>
+                    <td>:</td>
+                    <td><input type="text" name="bagian"></td>
                 </tr>
                 <tr>
                     <td style="color:white;">Kota</td>
@@ -25,21 +30,15 @@
                     <td><input type="text" name="kodepos"></td>
                 </tr>
                 <tr>
-                    <td style="color:white;">orang_dituju</td>
+                    <td style="color:white;">orang yang dapat dihubungi/No. Hp</td>
                     <td>:</td>
-                    <td><input type="text" name="kodepos"></td>
-                </tr>
-                <tr>
-                    <td style="color:white;">jabatan_dituju</td>
-                    <td>:</td>
-                    <td><input type="text" name="kodepos"></td>
+                    <td><input type="text" name="orang_yang_dihubungi"></td>
                 </tr>
                 <tr>
                     <td></td>
                     <td colspan="2"><input type="submit" name="simpan" value="Simpan"></td>
                 </tr>
             </table>
-            <button type="submit">tes</button>
         </form>
         </center>
     </body>
