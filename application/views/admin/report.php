@@ -30,30 +30,35 @@
                 </div>
                 <?php endif ?>
               </div>
-              <div class="col-xs-12">
-                <div class="box">
-                  <div class="container">
-                    <div class="btngroup" style="margin-top: 200px; margin-bottom: 200px;" >
-                      <div class="btnatas" style="margin-bottom: 10px;">
-                    <div class="row">
-                      <div class="col-md-6 text-center" style="margin-bottom: 10px;"><button class="btn btn-primary btn-lg " data-toggle="modal" data-target="#rekapitulasiModal">Cetak Rekapitulasi</button></div>
-                      <div class="col-md-6 text-center">
-                      <button class="btn btn-default btn-md btn-lg " data-toggle="modal" data-target="#laporanModal">Cetak Laporan Surat</button>
-                      </div>
+              <div class="container-fluid" style="padding: 20px;">
+                <div class="row">
+                  <div class="col-md-3" data-toggle="modal" data-target="#rekapitulasiModal">
+                    <div class="box text-center box-cetak-rd" style="padding: 20px;">
+                      <i class="fa fa-bar-chart" style="font-size: 50px;"></i>
+                      <p style="margin-top: 10px;">Cetak Rekapitulasi Data</p>
                     </div>
-                    </div>
-                   
-                     <div class="row">
-                      <div class="col-md-6 text-center" style="margin-bottom: 10px;"><button class="btn btn-success btn-lg" data-toggle="modal" data-target="#laporanJurusanModal">Cetak Laporan Perjurusan</button></div>
-                      <div class="col-md-6 text-center"><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"> Hapus </button></div>
-                      </div>
-          
-                       </div>
-                       </div>
                   </div>
-                  <!-- /.box-body -->
+                  <div class="col-md-3" data-toggle="modal" data-target="#laporanModal">
+                    <div class="box text-center box-cetak-ls" style="padding: 20px;">
+                      <i class="fa fa-edit" style="font-size: 50px;"></i>
+                      <p style="margin-top: 10px;">Cetak Laporan Surat</p>
+                    </div>
+                  </div>
+                
+                  <div class="col-md-3" data-toggle="modal" data-target="#laporanJurusanModal">
+                    <div class="box text-center box-cetak-lp" style="padding: 20px;">
+                      <i class="fa fa fa-pie-chart" style="font-size: 50px;"></i>
+                      <p style="margin-top: 10px;">Cetak Laporan Perjurusan</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3" data-toggle="modal" data-target="#myModal">
+                    <div class="box text-center box-cetak-hl" style="padding: 20px;">
+                      <i class="fa fa-exclamation-circle" style="font-size: 50px;"></i>
+                      <p style="margin-top: 10px;">Hapus Laporan</p>
+                    </div>
+                  </div>
                 </div>
-                <!-- /.box -->
+              </div> 
           </div>
     </section>
 </div>

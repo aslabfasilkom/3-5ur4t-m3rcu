@@ -1,27 +1,32 @@
 <section class="content-header">
-	<h1 class="text-center ">Surat Pengantar Kerja Praktek</h1>
-</section>
-<div class="form-horizontal">
-	<section class="content container"">
-		<div class="row">
-			<div class="col-md-12">
-				<?php if ($this->session->flashdata('gagal')): ?>
-					<div class="alert alert-danger alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-						<h4><i class="icon fa fa-close"></i>Info</h4>
-						Maaf Nim sudah terdaftar dan belum diambil atau anda baru mengambil dan harus jeda 1 hari untuk
-						mendaftar lagi
-					</div>
-				<?php elseif($this->session->flashdata('berhasil')): ?> 
-					<div class="alert alert-success alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-						<h4><i class="icon fa fa-check"></i>Info</h4>
-						Anda Berhasil Mendaftar Surat Kerja Praktek
-					</div>  	
-				<?php endif ?>
-			</div>
+	<h3 class="text-center" style="margin-bottom: 30px;">Form Pengisian Surat Kerja Praktek</h1>
+		<div class="col-md-3">
 		</div>
-		<?php echo form_open('mahasiswa/daftarsuratkp',array('class'=>'form-test','method'=>'post')); ?>
+		<div class="container alert alert-danger alert-dismissible fade in col-md-6 text-center">
+			Pastikan data yang anda isikan adalah benar dan sesuai dengan identitas anda.
+		</div>
+	</section>
+	<div class="form-horizontal">
+		<section class="content container"">
+			<div class="row">
+				<div class="col-md-12">
+					<?php if ($this->session->flashdata('gagal')): ?>
+						<div class="alert alert-danger alert-dismissible">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<h4><i class="icon fa fa-close"></i>Info</h4>
+							Maaf Nim sudah terdaftar dan belum diambil atau anda baru mengambil dan harus jeda 1 hari untuk
+							mendaftar lagi
+						</div>
+					<?php elseif($this->session->flashdata('berhasil')): ?> 
+						<div class="alert alert-success alert-dismissible">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+							<h4><i class="icon fa fa-check"></i>Info</h4>
+							Anda Berhasil Mendaftar Surat Kerja Praktek
+						</div>  	
+					<?php endif ?>
+				</div>
+			</div>
+			<?php echo form_open('mahasiswa/daftarsuratkp',array('class'=>'form-test','method'=>'post')); ?>
 
 			<div class="form-group inline">
 				<!-- Nama Perusahaan -->
@@ -328,37 +333,37 @@
 
 				</div>
 
-			 </div>
-			 <div class="checkbox text-center">
-      <label><input type="checkbox" value="" onchange="isChecked(this, 'sub1')">Data yang saya masukkan adalah data yang sesuai dan sebenarnya.</label> 
+			</div>
+			<div class="checkbox text-center">
+				<label><input type="checkbox" value="" onchange="isChecked(this, 'sub1')">Data yang saya masukkan adalah data yang sesuai dan sebenarnya.</label> 
 			</div>
 
-		<div class="form-group">
+			<div class="form-group">
 				<!-- Button -->
 				<div class="col-md-offset-10">
 					<button id="sub1" class="btn btn-primary btn-lg" disabled="disabled">Daftar</button>
 				</div>
-		</div>
-		<?php echo form_close(); ?>
-	</section>
-</div>
+			</div>
+			<?php echo form_close(); ?>
+		</section>
+	</div>
 
-<script>
+	<script>
 
-	function prodi(){
-		var jurusan=document.getElementById("jurusan").value;
-		document.getElementById("fnim1").value=jurusan;
-		document.getElementById("fnim2").value=jurusan;
-		document.getElementById("fnim3").value=jurusan;
-		document.getElementById("fnim4").value=jurusan;
-		document.getElementById("fnim5").value=jurusan;
-	}
+		function prodi(){
+			var jurusan=document.getElementById("jurusan").value;
+			document.getElementById("fnim1").value=jurusan;
+			document.getElementById("fnim2").value=jurusan;
+			document.getElementById("fnim3").value=jurusan;
+			document.getElementById("fnim4").value=jurusan;
+			document.getElementById("fnim5").value=jurusan;
+		}
 
-	function no(evt) {
-		var charCode = (evt.which) ? evt.which : event.keyCode
-		if (charCode > 31 && (charCode < 48 || charCode > 57))
-			return false;
-	}
+		function no(evt) {
+			var charCode = (evt.which) ? evt.which : event.keyCode
+			if (charCode > 31 && (charCode < 48 || charCode > 57))
+				return false;
+		}
 
 
-</script>
+	</script>

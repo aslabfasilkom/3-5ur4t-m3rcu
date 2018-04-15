@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			$data = array(
 				"nim" 			 => $nim,
-				"nama_mahasiswa" =>ucwords($nama_mahasiswa),
+				"nama_mahasiswa" => ucwords(strtolower($nama)),
 				"email" 		 => $email,
 				"password" 		 => $password,
 				"prodi" 	     => $prodi
@@ -63,6 +63,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			$this->db->where('username',$username);
 			$query = $this->db->get();
 			return $query->num_rows();
+		}
+
+		public function formperusahaan($data)
+		{
+			$this->db->insert('perusahaan',$data);
 		}
 
 	}

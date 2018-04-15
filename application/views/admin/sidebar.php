@@ -8,7 +8,7 @@
         <img src="<?php echo base_url('assets/image/logoadmin.png')?>" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p><?php echo $this->session->userdata('username'); ?></p>
+        <p><?php echo $this->session->userdata('username');?></p>
         <i class="fa fa-circle text-success"></i> Online 
       </div>
     </div>
@@ -19,7 +19,7 @@
       <!-- isi side bar navigation -->
 
       <!-- Menu Dashboard -->
-      <li class="<?php if($this->uri->segment(2)==""){echo 'active';} ?>">
+      <li class="<?php if($this->uri->segment(2)==""){echo 'active';}?>">
         <a href="<?php echo site_url('admin')?>">
           <i class="fa fa-home"></i>
           <span>Beranda</span>
@@ -99,6 +99,12 @@
       </a>
   </li>  
 <?php endif ?>
+<li>
+    <a href="<?php echo site_url('admin/formperusahaan') ?>">
+      <i class="fa fa-user"></i>
+      <span>Tambah Perusahaan</span>
+    </a>
+</li> 
 </ul>
 </section>
 <!-- /.sidebar -->

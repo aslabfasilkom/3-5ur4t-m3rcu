@@ -62,7 +62,7 @@ class Admin extends CI_Controller {
     	$this->load->view('admin/footer');
     }
 
-	public function waitingTA()
+	public function waitingta()
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
@@ -80,7 +80,7 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function prosesTA()
+	public function prosesta()
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
@@ -97,12 +97,12 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function finishTA()
+	public function finishta()
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$data['surat'] = $this->tampilsurat_model->tampil_datata_finish();
-		$this->load->view('admin/finishTA',$data);
+		$this->load->view('admin/finishta',$data);
 		$this->load->view('admin/footer');
 	}
 
@@ -119,11 +119,11 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function takeTA()
+	public function taketa()
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/takeTA');
+		$this->load->view('admin/taketa');
 		$this->load->view('admin/footer');
 	}
 
@@ -144,11 +144,11 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/tolakkp',$data);
 		$this->load->view('admin/footer');
 	}
-	public function tolakTA()
+	public function tolakta()
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/tolakTA');
+		$this->load->view('admin/tolakta');
 		$this->load->view('admin/footer');
 	}
 
@@ -315,6 +315,37 @@ class Admin extends CI_Controller {
 		}
 	}
 
+	public function formperusahaan(){
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/formperusahaan');
+		$this->load->view('admin/footer');
+	}
+
+	public function perusahaan()
+	{
+	  	$nama_perusahaan = $this->input->post('nama_perusahaan');
+	  	$alamat_perusahaan = $this->input->post('alamat_perusahaan');
+	  	$bagian = $this->input->post('bagian');
+	  	$kota = $this->input->post('kota');
+	  	$kodepos = $this->input->post('kodepos');
+	  	$orang_yang_dihubungi = $this->input->post('orang_yang_dihubungi');
+
+	  	$data = array(
+            'nama_perusahaan'      	=> $nama_perusahaan,
+            'alamat_perusahaan'   	=> $alamat_perusahaan,
+            'bagian'   				=> $bagian,
+            'kota'     				=> $kota,
+            'kodepos'   			=> $kodepos,
+            'orang_yang_dihubungi'  => $orang_yang_dihubungi
+            );
+
+		$this->daftar_model->formperusahaan($data);
+		redirect('admin/formperusahaan');
+
+
+	}
+
 
 	public function report()
 	{
@@ -323,8 +354,20 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/report');
 		$this->load->view('admin/footer');
 	}
+
+	public function magangti()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/magangti');
+		$this->load->view('admin/footer');
+	}
+
+	public function magangsi()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/magangsi');
+		$this->load->view('admin/footer');
+	}
 }
-
-
-
-	
