@@ -5,9 +5,10 @@ class Infomagang extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home/infomagang');
+		$data['info'] = $this->infomagang_model->tampil_info();
+		$this->load->view('home/infomagang',$data);
 		$this->load->view('home/footer');
-	}
+	} 
 
 }
 

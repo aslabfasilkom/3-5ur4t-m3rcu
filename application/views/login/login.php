@@ -1,4 +1,4 @@
-<div class="col-md-4 box-login" style="margin-top: 0px; border-radius: 0px;">
+<div class="col-md-4" style="margin-top: 0px; border-radius: 0px;">
       <?php echo form_open('login/ceklogin'); ?>
       <?php if($this->session->flashdata('info')): ?>
         <div class="row">
@@ -56,7 +56,7 @@
       </a>
     </div>
 
-    <div class="col-md-8 box-login" style="padding-bottom: 36px; margin-top: 0px; border-radius: 0px;">
+    <div class="col-md-8" style="padding-bottom: 36px; margin-top: 0px; border-radius: 0px;">
       <h3 class="text-center" style="color: #FFFFFF;">Step Mudah Membuat Surat</h3>
       <br>
       <div class="row">

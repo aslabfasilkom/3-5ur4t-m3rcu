@@ -22,7 +22,6 @@ class Nomorsurat_model extends CI_Model {
         
 		$this->db->select("SUBSTRING(no_surat,8,3) AS nomorsuratkp ");
 		$this->db->where('prodi',$jurusan);
-		$this->db->where('jenis_surat','Kerja Praktek');
 		$this->db->where('tahun',$tahun);
 		$this->db->where('no_surat !=','');
         $this->db->order_by('id_surat', 'DESC');
@@ -40,31 +39,32 @@ class Nomorsurat_model extends CI_Model {
         return $kodejadi;
 	}
 
-    public function NomorSuratTugasAkhir()
-    {
-        $bulan     = array ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII');
-        $tahun     = date('Y');
-        $kodeprodi = "16-2-2";
-        
-        $this->db->select("SUBSTRING(no_surat,8,3) AS nomorsuratkp ");
-        $this->db->where('prodi','Sistem Informasi');
-        $this->db->where('jenis_surat','Kerja Praktek');
-        $this->db->where('tahun',$tahun);
-        $this->db->where('no_surat !=','');
-        $this->db->order_by('id_surat', 'DESC');
-        $this->db->limit(1);
-        $query = $this->db->get('surat');
 
-        if($query->num_rows()>0){
-            $data = $query->row();
-            $kode = intval($data->nomorsuratkp)+1;
-        }else{
-            $kode = 1;
-        }
-        $kodemax = str_pad($kode,3,"0",STR_PAD_LEFT);
-        $kodejadi  = $kodeprodi."/".$kodemax."/FSD/".$bulan[date('n')]."/".$tahun;
-        return $kodejadi;   
-    }
+    // public function NomorSuratTugasAkhir()
+    // {
+    //     $bulan     = array ('','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII');
+    //     $tahun     = date('Y');
+    //     $kodeprodi = "16-2-2";
+        
+    //     $this->db->select("SUBSTRING(no_surat,6,3) AS nomorsuratta ");
+    //     $this->db->where('prodi',$jurusan);
+    //     $this->db->where('jenis_surat','Tugas Akhir');
+    //     $this->db->where('tahun',$tahun);
+    //     $this->db->where('no_surat !=','');
+    //     $this->db->order_by('id_surat', 'DESC');
+    //     $this->db->limit(1);
+    //     $query = $this->db->get('surat');
+
+    //     if($query->num_rows()>0){
+    //         $data = $query->row();
+    //         $kode = intval($data->nomorsuratta)+1;
+    //     }else{
+    //         $kode = 1;
+    //     }
+    //     $kodemax = str_pad($kode,3,"0",STR_PAD_LEFT);
+    //     $kodejadi  = $kodeprodi."/".$kodemax."/FSD/".$bulan[date('n')]."/".$tahun;
+    //     return $kodejadi;   
+    // }
 
 	public function IDSurat()
 	{
