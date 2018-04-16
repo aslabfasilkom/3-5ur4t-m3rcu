@@ -73,13 +73,10 @@ class Login extends CI_Controller {
 	}
 
 	public function resetpassword(){
-		 $data = array(
-            'captcha' => $this->recaptcha->getWidget(), // menampilkan recaptcha
-            'script_captcha' => $this->recaptcha->getScriptTag(), // javascript recaptcha ditaruh di head
-        );
+		
 
 		$this->load->view('login/header');
-		$this->load->view('login/resetpassword',$data);
+		$this->load->view('login/resetpassword');
 	}
 
 	public function resetpassword1(){
@@ -92,14 +89,10 @@ class Login extends CI_Controller {
       $email = $this->input->post('email');
       $rs = $this->user_model->getByEmail($email);
      	
-      $recaptcha = $this->input->post('g-recaptcha-response');
-      $response = $this->recaptcha->verifyResponse($recaptcha);	
+    
 
       
-      if(!isset($response['success']) || $response['success'] <> true){
-      	$this->session->set_flashdata('validasi_captcha','true');
-      	redirect('login/resetpassword','refresh');
-      }elseif (!$rs->num_rows() > 0){ // cek apakah ada email di mahasiswa
+      if (!$rs->num_rows() > 0){ // cek apakah ada email di mahasiswa
         $this->session->set_flashdata('email_tidak_ada','true');
         redirect('login/resetpassword');
       }else{

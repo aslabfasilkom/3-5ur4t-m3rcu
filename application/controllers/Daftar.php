@@ -16,36 +16,7 @@ class Daftar extends CI_Controller {
 		}
 	}
 
-	function validate_captcha() {
-        $recaptcha = trim($this->input->post('g-recaptcha-response'));
-        $userIp= $this->input->ip_address();
-        // localhost
-		// secret key = 6Lc5kEYUAAAAAMSq4Kvz3k1IGKmDNIKaN_X9EhxH
-
-		// deploy hosting 
-		// secret key = 6Lc-xkYUAAAAAOjTXeEoqEkRGpHivYcco8kBXg8G
-        
-        $secret='6Lc5kEYUAAAAAMSq4Kvz3k1IGKmDNIKaN_X9EhxH';
-        $data = array(
-            'secret' => "$secret",
-            'response' => "$recaptcha",
-            'remoteip' =>"$userIp"
-        );
-
-        $verify = curl_init();
-        curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
-        curl_setopt($verify, CURLOPT_POST, true);
-        curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
-        curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($verify);
-        $status= json_decode($response, true);
-        if(empty($status['success'])){
-            return FALSE;
-        }else{
-            return TRUE;
-        }
-    }
+	
 
 	public function index()
 	{
@@ -59,16 +30,12 @@ class Daftar extends CI_Controller {
 		$this->form_validation->set_rules('reemail', 'Re-Email', 'trim|required|matches[email]');
 		$this->form_validation->set_rules('kodenim', 'Program Studi', 'required');
 		$this->form_validation->set_rules('prodi', 'Program Studi', 'required');
-		$this->form_validation->set_rules('g-recaptcha-response', 'recaptcha validation', 'required|callback_validate_captcha');
-		$this->form_validation->set_message('validate_captcha', 'Mohon di check pada captcha');
+		
 
 		if ($this->form_validation->run() == FALSE) {
-			$data = array(
-	            'captcha' => $this->recaptcha->getWidget(), 
-	            'script_captcha' => $this->recaptcha->getScriptTag(), 
-            );
+			
 			$this->load->view('daftar/header');
-			$this->load->view('daftar/daftar',$data);
+			$this->load->view('daftar/daftar');
 			$this->load->view('home/footer');
 		} else {
 			$nimmhs  =$this->input->post('nimmhs');
