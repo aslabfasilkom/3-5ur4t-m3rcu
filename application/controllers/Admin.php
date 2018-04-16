@@ -355,6 +355,11 @@ class Admin extends CI_Controller {
 		redirect('admin/infomagang');
 	}
 
+	public function hapusinfomagang($id_perusahaan){
+		$this->infomagang_model->hapus_info($id_perusahaan);
+		redirect('admin/infomagang');
+	}
+
 	public function infomagang()
 	{
 		$this->load->view('admin/header');
@@ -370,24 +375,6 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/report');
-		$this->load->view('admin/footer');
-	}
-
-	public function magangti()
-	{
-		$this->load->view('admin/header');
-		$this->load->view('admin/sidebar');
-		$data['info'] = $this->infomagang_model->tampil_info();
-		$this->load->view('admin/magangti',$data);
-		$this->load->view('admin/footer');
-	}
-
-	public function magangsi()
-	{
-		$this->load->view('admin/header');
-		$this->load->view('admin/sidebar');
-		$data['info'] = $this->infomagang_model->tampil_info();
-		$this->load->view('admin/magangsi',$data);
 		$this->load->view('admin/footer');
 	}
 }

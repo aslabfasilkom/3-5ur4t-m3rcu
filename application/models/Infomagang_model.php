@@ -8,4 +8,10 @@ class Infomagang_model extends CI_Model {
 		$hasil=$this->db->query("SELECT * FROM perusahaan");
 		return $hasil; 
 	}
+
+	public function hapus_info($id_perusahaan)
+	{
+		$this->db->where('id_perusahaan', $id_perusahaan);
+		$this->db->delete('perusahaan');	
+	}
 }

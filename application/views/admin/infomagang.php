@@ -31,6 +31,7 @@
 						<?php
 						$no = 1;
 						foreach ($info->result_array() as $u):
+							$id_perusahaan = $u['id_perusahaan'];
 							$nama_perusahaan = $u['nama_perusahaan'];
 							$alamat_perusahaan = $u['alamat_perusahaan'];
 							$bagian = $u['bagian'];
@@ -44,7 +45,8 @@
 								<td><?php echo $orang_yang_dihubungi; ?></td>
 								<td>
 									<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#listedit"><i class="fa fa-edit" style="font-size:20px"></i></button>
-									<button class="btn btn-danger"><i class="fa fa-trash" style="font-size:20px"></i></button>
+									<a class="btn btn-danger" href="<?php echo site_url('admin/hapusinfomagang/'.$id_perusahaan);?>" ><i class="fa fa-trash" style="font-size:20px"></i>
+									</a>
 								</td>
 							</tr>
 							<?php
@@ -171,7 +173,6 @@
 				</div>
 			</div>
 			<!-- End of Edit List Magang -->
-
 		</div>
 	</div>
 <!-- </div> -->
