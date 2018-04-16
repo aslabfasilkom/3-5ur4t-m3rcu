@@ -322,28 +322,46 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function perusahaan()
-	{
-	  	$nama_perusahaan = $this->input->post('nama_perusahaan');
-	  	$alamat_perusahaan = $this->input->post('alamat_perusahaan');
+	public function tambahinfomagang(){
+		$nama_perusahaan = $this->input->post('nama_perusahaan');
+	  	$str1 = $this->input->post('alamat_perusahaan');
+	  	$str2 = $this->input->post('nomortelp_perusahaan');
+	  	$str1 .= $str2;
+	
+	  	/* xxxx $alamat_perusahaan = $this->input->post('alamat_perusahaan');*/
+	
 	  	$bagian = $this->input->post('bagian');
 	  	$kota = $this->input->post('kota');
 	  	$kodepos = $this->input->post('kodepos');
-	  	$orang_yang_dihubungi = $this->input->post('orang_yang_dihubungi');
+	  	$namakontak = $this->input->post('namakontak');
+	  	$nomorkontak = $this->input->post('nomorkontak');
+	  	$namakontak .= $nomorkontak;
+	
+	  	/* xxxx $orang_yang_dihubungi = $this->input->post('orang_yang_dihubungi');*/
 
 	  	$data = array(
             'nama_perusahaan'      	=> $nama_perusahaan,
-            'alamat_perusahaan'   	=> $alamat_perusahaan,
+          
+            /* xxx 'alamat_perusahaan'   	=> $alamat_perusahaan,*/
+          
+            'alamat_perusahaan'   	=> $str1,
             'bagian'   				=> $bagian,
             'kota'     				=> $kota,
             'kodepos'   			=> $kodepos,
-            'orang_yang_dihubungi'  => $orang_yang_dihubungi
+            'orang_yang_dihubungi'  => $namakontak
             );
 
 		$this->daftar_model->formperusahaan($data);
-		redirect('admin/formperusahaan');
+		redirect('admin/infomagang');
+	}
 
-
+	public function infomagang()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$data['info'] = $this->infomagang_model->tampil_info();
+		$this->load->view('admin/infomagang',$data);
+		$this->load->view('admin/footer');
 	}
 
 
@@ -359,7 +377,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/magangti');
+		$data['info'] = $this->infomagang_model->tampil_info();
+		$this->load->view('admin/magangti',$data);
 		$this->load->view('admin/footer');
 	}
 
@@ -367,7 +386,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/magangsi');
+		$data['info'] = $this->infomagang_model->tampil_info();
+		$this->load->view('admin/magangsi',$data);
 		$this->load->view('admin/footer');
 	}
 }
