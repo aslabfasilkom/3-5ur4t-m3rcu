@@ -324,32 +324,32 @@ class Admin extends CI_Controller {
 
 	public function tambahinfomagang(){
 		$nama_perusahaan = $this->input->post('nama_perusahaan');
-	  	$str1 = $this->input->post('alamat_perusahaan');
-	  	$str2 = $this->input->post('nomortelp_perusahaan');
-	  	$str1 .= $str2;
-	
-	  	/* xxxx $alamat_perusahaan = $this->input->post('alamat_perusahaan');*/
-	
-	  	$bagian = $this->input->post('bagian');
-	  	$kota = $this->input->post('kota');
-	  	$kodepos = $this->input->post('kodepos');
-	  	$namakontak = $this->input->post('namakontak');
-	  	$nomorkontak = $this->input->post('nomorkontak');
-	  	$namakontak .= $nomorkontak;
-	
-	  	/* xxxx $orang_yang_dihubungi = $this->input->post('orang_yang_dihubungi');*/
+		$str1 = $this->input->post('alamat_perusahaan');
+		$str2 = $this->input->post('nomortelp_perusahaan');
+		$str1 .= $str2;
+		
+		/* xxxx $alamat_perusahaan = $this->input->post('alamat_perusahaan');*/
+		
+		$bagian = $this->input->post('bagian');
+		$kota = $this->input->post('kota');
+		$kodepos = $this->input->post('kodepos');
+		$namakontak = $this->input->post('namakontak');
+		$nomorkontak = $this->input->post('nomorkontak');
+		$namakontak .= $nomorkontak;
+		
+		/* xxxx $orang_yang_dihubungi = $this->input->post('orang_yang_dihubungi');*/
 
-	  	$data = array(
-            'nama_perusahaan'      	=> $nama_perusahaan,
-          
-            /* xxx 'alamat_perusahaan'   	=> $alamat_perusahaan,*/
-          
-            'alamat_perusahaan'   	=> $str1,
-            'bagian'   				=> $bagian,
-            'kota'     				=> $kota,
-            'kodepos'   			=> $kodepos,
-            'orang_yang_dihubungi'  => $namakontak
-            );
+		$data = array(
+			'nama_perusahaan'      	=> $nama_perusahaan,
+			
+			/* xxx 'alamat_perusahaan'   	=> $alamat_perusahaan,*/
+			
+			'alamat_perusahaan'   	=> $str1,
+			'bagian'   				=> $bagian,
+			'kota'     				=> $kota,
+			'kodepos'   			=> $kodepos,
+			'orang_yang_dihubungi'  => $namakontak
+		);
 
 		$this->daftar_model->formperusahaan($data);
 		redirect('admin/infomagang');

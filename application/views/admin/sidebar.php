@@ -98,7 +98,7 @@
           <li class="<?php if($this->uri->segment(2)=="infomagang"){echo 'active';}?>">
             <a href="<?php echo site_url('admin/infomagang') ?>">
               <i class="fa fa-building-o"></i>
-              <span>Tambah Info Magang</span>
+              <span>Tambah Info Kerja Praktek</span>
             </a>
           </li>
         </ul>
