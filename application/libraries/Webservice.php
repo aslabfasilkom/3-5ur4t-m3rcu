@@ -27,10 +27,24 @@ class Webservice {
 	function CheckMatkulKp($nim,$nama)
 	{
 		// request list of contacts from Web API
+		
 		$url="https://api.mercubuana.ac.id/akademik/esurat/".$nim;
 
 		
 		$json = file_get_contents($url);
+		$jsonToArray = json_decode($json);
+
+		$hasil = 0;
+
+		
+
+		foreach ($jsonToArray as $value) {
+			if ($value->namamk=="KERJA PRAKTEK" AND strtoupper($value->mhsnama)==strtoupper($nama)) {
+				$hasil = 1;
+			}
+		}
+
+		return $hasil;
 		 	
 	}
 

@@ -140,6 +140,11 @@ Admin E-Surat"
       ) ;
   }
 
+  public function testphp()
+  {
+    echo phpinfo();
+  }
+
 
 }
 

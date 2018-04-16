@@ -66,8 +66,7 @@
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-<<<<<<< HEAD
-      <div class="modal-content">
+       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="myModalLabel">Hapus Data Surat</h4>
@@ -85,29 +84,9 @@
               <label for="enddate" class="col-md-3 control-label">Sampai Tanggal</label>
               <div class="col-md-8">
                 <input type="text" name="finishdate" class="form-control datepicker" placeholder="Tanggal awal" required>
-=======
-          <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Hapus Data Surat</h4>
-          </div>
-          <form action="<?php echo base_url('admin/HapusSuratKP')?>" class="form-horizontal"  method="POST" role="form">
-                <div class="form-group">
-                  <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
-                  <div class="col-md-8">
-                    <input type="text" name="startdate" class="form-control datepicker" placeholder="Tanggal awal" required>
-                  </div>  
-                </div>
-                <div class="form-group">
-                  <label for="enddate" class="col-md-3 control-label">Sampai Tanggal</label>
-                  <div class="col-md-8">
-                    <input type="text" name="finishdate" class="form-control datepicker" placeholder="Tanggal awal" required>
-                  </div>
-                </div>
-              <div class="modal-footer">      
+               <div class="modal-footer">      
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
->>>>>>> upstream/master
               </div>
           </form>
         </div>
@@ -116,8 +95,8 @@
 
    
 
-<<<<<<< HEAD
-  <div class="modal fade" id="rekapitulasiModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+<div class="modal fade" id="rekapitulasiModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -141,31 +120,7 @@
               <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
               <div class="col-md-8">
                 <input type="text" name="startdate" class="form-control datepicker" placeholder="Tanggal awal" required>
-=======
-   <div class="modal fade" id="rekapitulasiModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Laporan Untuk Rekapitulasi</h4>
->>>>>>> upstream/master
-              </div>
-                <form action="<?php echo base_url('admin/cetakLAPkp')?>" class="form-horizontal" method="POST" role="form">
-                    <div class="form-group">
-                      <label for="jurusan" class="col-md-3 control-label">Jurusan</label>
-                      <div class="col-md-8">
-                        <select name="jurusan" class="form-control" required>
-                          <option value=''>Pilih Jurusan</option>
-                          <option value="Sistem Informasi">Sistem Informasi</option>
-                          <option value="Teknik Informatika">Teknik Informatika</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
-                      <div class="col-md-8">
-                        <input type="text" name="startdate" class="form-control datepicker" placeholder="Tanggal awal" required>
-                      </div>
+                </div>
                     </div>
                     <div class="form-group ">
                       <label for="startdate" class="col-md-3 control-label">Sampai Tanggal</label>
@@ -185,7 +140,7 @@
       
 <div class="modal fade" id="laporanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-<<<<<<< HEAD
+
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -204,38 +159,23 @@
               <label for="enddate" class="col-md-3 control-label">Sampai Tanggal</label>
               <div class="col-md-8">
                 <input type="text" name="enddate" class="form-control datepicker" placeholder="Tanggal awal" required>
-=======
-          <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Laporan Data Surat</h4>
-          </div>
-          <form action="<?php echo base_url('tester/chart')?>" class="form-horizontal"  method="POST" role="form">
-                <div class="form-group">
-                  <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
-                  <div class="col-md-8">
-                    <input type="text" name="startdate" class="form-control datepicker" placeholder="Tanggal awal" required>
-                  </div>  
                 </div>
-                <div class="form-group">
-                  <label for="enddate" class="col-md-3 control-label">Sampai Tanggal</label>
-                  <div class="col-md-8">
-                    <input type="text" name="enddate" class="form-control datepicker" placeholder="Tanggal awal" required>
-                  </div>
                 </div>
               <div class="modal-footer">      
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
->>>>>>> upstream/master
+
               </div>
           </form>
         </div>
   </div>
 </div> 
 
+                  
+
 <div class="modal fade" id="laporanJurusanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-<<<<<<< HEAD
+
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -254,18 +194,7 @@
               <label for="enddate" class="col-md-3 control-label">Sampai Tanggal</label>
               <div class="col-md-8">
                 <input type="text" name="enddate" class="form-control datepicker" placeholder="Tanggal awal" required>
-=======
-          <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Laporan Data Surat Perjurusan</h4>
-          </div>
-          <form action="<?php echo base_url('tester/perjurusan')?>" class="form-horizontal"  method="POST" role="form">
-                <div class="form-group">
-                  <label for="startdate" class="col-md-3 control-label">Dari Tanggal</label>
-                  <div class="col-md-8">
-                    <input type="text" name="startdate" class="form-control datepicker" placeholder="Tanggal awal" required>
-                  </div>  
+                </div>  
                 </div>
                 <div class="form-group">
                   <label for="enddate" class="col-md-3 control-label">Sampai Tanggal</label>
@@ -276,7 +205,7 @@
               <div class="modal-footer">      
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
->>>>>>> upstream/master
+
               </div>
           </form>
         </div>

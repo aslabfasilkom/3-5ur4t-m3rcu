@@ -49,7 +49,7 @@
     </li>
 
     <!-- Menu Surat Sidang -->
-    <li class="treeview <?php if($this->uri->segment(2)=="waitingTA" OR $this->uri->segment(2)=="tolakemailta"){ echo 'active waiting-active';} 
+<!--     <li class="treeview <?php if($this->uri->segment(2)=="waitingTA" OR $this->uri->segment(2)=="tolakemailta"){ echo 'active waiting-active';} 
     else if($this->uri->segment(2)=="finishTA"){ echo 'active finish-active';}
     else if ($this->uri->segment(2)=="prosesTA"){echo 'active proses-active';}
     else if ($this->uri->segment(2)=="tolakTA"){echo 'active tolak-active';} 
@@ -69,7 +69,7 @@
       <li class="<?php if($this->uri->segment(2)=="tolakTA"){echo 'active tolak-active';}?>"><a href="<?php echo site_url('admin/tolakTA') ?>"><i class="fa fa-file-o"></i> Arsip Penolakan</a></li>
     </ul>
   </li>
-  
+   -->
   <!-- Menu untuk setting dosen -->
   <li class="<?php if($this->uri->segment(2)=="koordinatorsetting" OR $this->uri->segment(2)=="koordinatorupdate"){echo 'active';} ?>">
     <a href="<?php echo site_url('admin/koordinatorsetting') ?>">

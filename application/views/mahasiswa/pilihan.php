@@ -12,13 +12,15 @@
 						<h4>Kerja Praktek</h4>
 					</button>
 				</div>
-				<div class="btn-group" role="group">
+				<!-- <div class="btn-group" role="group">
 					<button type="button" id="stars" class="btn btn-danger button-srta wow fadeInRight" href="#riset-ta" data-toggle="tab">
 						<h4>Riset Tugas Akhir</h4>
 					</button>
-				</div>
+				</div> -->
 			</div>
 			<div class="container tab-content" style="padding: 20px;">
+
+
 				<div class="tab-pane fade wow fadeIn" id="surat-kp">
 					<div class="hidden-lg">
 						<div class="container panel text-justify" style="padding: 10px;">
@@ -39,11 +41,14 @@
 						</div>
 						<div class="container panel text-justify" style="padding: 10px;">
 							<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
-							<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Klik untuk mendaftar</a>
-							<!-- <?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> -->
-										<!-- <?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> -->
-										<!-- <?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> -->
-										<!-- <?php endif ?> -->
+							
+							<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> 
+									Maaf anda belum bisa mengajukan surat kerja praktek
+							<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
+									<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Klik untuk mendaftar</a>
+							<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
+									Maaf anda sudah mengambil mata kuliah kerja praek
+							<?php endif ?> 
 						</div>
 					</div>
 
@@ -93,13 +98,22 @@
 										<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
 									</div>
 									<div class="timeline-body">
-										Kunjungi link ini untuk mendaftar > <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat KP</a>
+										<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> 
+												Maaf anda belum bisa mengajukan surat kerja praktek
+										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
+												Kunjungi link ini untuk mendaftar > <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat Kp</a>
+										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
+												Maaf anda sudah mengambil mata kuliah kerja praktek         <!-- YANG INI NIII-->
+										<?php endif ?> 
+										
 									</div>
 								</div>
 							</li>
 						</ul>
 					</div>
 				</div>
+
+
 				<div class="tab-pane fade wow fadeIn" id="riset-ta">
 					<div class="hidden-lg">
 						<div class="container panel text-justify" style="padding: 10px;">
@@ -121,10 +135,13 @@
 						<div class="container panel text-justify" style="padding: 10px;">
 							<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
 							<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Klik untuk mendaftar</a>
-							<!-- <?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> -->
-										<!-- <?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> -->
-										<!-- <?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> -->
-										<!-- <?php endif ?> -->
+							<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> 
+									Maaf anda belum bisa mengajukan surat kerja praktek
+							<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
+									<a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Klik untuk mendaftar</a>
+							<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
+									Maaf anda sudah mengambil mata kuliah kerja praktek
+							<?php endif ?> 
 						</div>
 					</div>
 
@@ -180,7 +197,7 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 				<div class="clearfix"></div>
 			</div>
 
