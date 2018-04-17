@@ -54,7 +54,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<i class="fa fa-user-secret center-block" style="margin-top: 0px; font-size: 200px; color: white;"></i>
+				<i class="fas fa-briefcase center-block" style="margin-top: 0px; font-size: 200px; color: white;"></i>
 			</div>
 			
 			<div class="col-md-6" style="color: #FFFFFF">
