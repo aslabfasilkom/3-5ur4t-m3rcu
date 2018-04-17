@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" >
-
-<head>
-  <meta charset="UTF-8">
-  <title>CSS Ticket</title>
+<html><head>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 <style>
-
-
-  *{
+*{
     font-family: calibri
   }
   .bg-blue{
@@ -45,9 +38,7 @@
   }
 </style>
   
-</head>
-  
-<body>
+</head><body>
 <div class="notice text-center">
   Print dan bawa tiket ini untuk ditukarkan dengan surat Kerja Praktek/Riset Tugas Akhir di Tata Usaha
 </div>
@@ -109,8 +100,4 @@
       
     </tr> -->
   </table>
-
-
-</body>
-
-</html>
+</body></html>

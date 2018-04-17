@@ -8,7 +8,7 @@
         <img src="<?php echo base_url('assets/image/logoadmin.png')?>" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p><?php echo $this->session->userdata('username'); ?></p>
+        <p><?php echo $this->session->userdata('username');?></p>
         <i class="fa fa-circle text-success"></i> Online 
       </div>
     </div>
@@ -19,7 +19,7 @@
       <!-- isi side bar navigation -->
 
       <!-- Menu Dashboard -->
-      <li class="<?php if($this->uri->segment(2)==""){echo 'active';} ?>">
+      <li class="<?php if($this->uri->segment(2)==""){echo 'active';}?>">
         <a href="<?php echo site_url('admin')?>">
           <i class="fa fa-home"></i>
           <span>Beranda</span>
@@ -49,7 +49,7 @@
     </li>
 
     <!-- Menu Surat Sidang -->
-    <li class="treeview <?php if($this->uri->segment(2)=="waitingTA" OR $this->uri->segment(2)=="tolakemailta"){ echo 'active waiting-active';} 
+<!--     <li class="treeview <?php if($this->uri->segment(2)=="waitingTA" OR $this->uri->segment(2)=="tolakemailta"){ echo 'active waiting-active';} 
     else if($this->uri->segment(2)=="finishTA"){ echo 'active finish-active';}
     else if ($this->uri->segment(2)=="prosesTA"){echo 'active proses-active';}
     else if ($this->uri->segment(2)=="tolakTA"){echo 'active tolak-active';} 
@@ -69,7 +69,7 @@
       <li class="<?php if($this->uri->segment(2)=="tolakTA"){echo 'active tolak-active';}?>"><a href="<?php echo site_url('admin/tolakTA') ?>"><i class="fa fa-file-o"></i> Arsip Penolakan</a></li>
     </ul>
   </li>
-  
+   -->
   <!-- Menu untuk setting dosen -->
   <li class="<?php if($this->uri->segment(2)=="koordinatorsetting" OR $this->uri->segment(2)=="koordinatorupdate"){echo 'active';} ?>">
     <a href="<?php echo site_url('admin/koordinatorsetting') ?>">
@@ -99,6 +99,12 @@
       </a>
   </li>  
 <?php endif ?>
+<li>
+    <a href="<?php echo site_url('admin/formperusahaan') ?>">
+      <i class="fa fa-user"></i>
+      <span>Tambah Perusahaan</span>
+    </a>
+</li> 
 </ul>
 </section>
 <!-- /.sidebar -->

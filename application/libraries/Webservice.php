@@ -27,6 +27,7 @@ class Webservice {
 	function CheckMatkulKp($nim,$nama)
 	{
 		// request list of contacts from Web API
+		
 		$url="https://api.mercubuana.ac.id/akademik/esurat/".$nim;
 
 		
@@ -44,6 +45,7 @@ class Webservice {
 		}
 
 		return $hasil;
+		 	
 	}
 
 	function CheckTranskripKp($nim)
@@ -68,7 +70,7 @@ class Webservice {
 			
 
 			foreach ($jsonToArray as $value) {
-				if ($value->namamk=="KERJA PRAKTEK") {
+				if ($value->namamk=="KERJA PRAKTEK" AND $value->nhuruf != null) {
 					$hasil = 1;
 				}
 			}

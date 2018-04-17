@@ -1,4 +1,3 @@
-<?php echo $script_captcha; ?>
 <div class="container form-login">
 
   <div class="row">
@@ -29,7 +28,8 @@
         </div>
       </div>
       <form class="form-horizontal" action="<?=site_url('daftar') ?>" method="post">
-        <div class="form-group">
+      <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
+      <div class="form-group">
           <label for="prodi" class="col-sm-2 control-label">Program Studi</label>
           <div class="col-sm-6">
             <span class="text-danger"><?=form_error('prodi')?></span>
@@ -96,13 +96,7 @@
             <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Re-Password">
           </div>
         </div>
-        <div class="form-group">
-          <label for="password" class="col-sm-2 control-label"></label>
-          <div class="col-sm-6">
-            <span class="text-danger"><?=form_error('g-recaptcha-response')?></span>
-            <?php echo $captcha ?>
-          </div>
-        </div>
+        
         <div class="form-group">
           <div class="col-sm-offset-1 col-sm-8">
             <input type="submit" class="btn btn-daftarkan btn-block" value="DAFTARKAN">

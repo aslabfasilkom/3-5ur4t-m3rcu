@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Login - E-Surat Mercu Buana</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Login - E-Surat Mercu Buana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo base_url('assets/favicon/apple-touch-icon.png') ?>">
   <link rel="icon" type="image/png" sizes="32x32" href="<?php echo base_url('assets/favicon/favicon-32x32.png') ?>">
   <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url('assets/favicon/favicon-16x16.png') ?>">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
   <script defer src="<?php echo base_url('assets/plugins/font-awesome/svg-with-js/js/fontawesome-all.js') ?>"></script> 
 </head>
-<body class="body">
+<body class="body" style="background-color: #34495E;">
 
   <!-- <nav class="navbar-login navbar-default navbar-fixed-top">
   <div class="container">
