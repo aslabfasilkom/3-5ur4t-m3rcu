@@ -1,21 +1,12 @@
 <div class="container-fluid header-home">
 	<div class="row">
 		<div class="col-md-4 col-md-offset-4">
-			<img src="<?php echo base_url('assets/image/UMB.png') ?>" class="img-responsive center-block" alt="">
+			<img src="<?php echo base_url('assets/image/UMB.png') ?>" class="img-responsive center-block wow fadeIn" alt="">
 		</div>
 	</div>
 	<div class="row">
-		<h1 class="text-center">E-SURAT FAKULTAS ILMU KOMPUTER</h1>
-	</div>
-	<div class="button-wrap">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-3">
-				<a href="<?php echo site_url('daftar') ?>" class="btn btn-daftar btn-lg btn-header col-md-5 col-xs-12">DAFTAR</a>
-			</div>
-			<div class="col-md-4">
-				<a href="<?php echo site_url('login') ?>" class="btn btn-login btn-header btn-lg col-md-5 col-xs-12">LOGIN</a>
-			</div>
-		</div>
+		<h1 class="text-center wow fadeInLeft">SELAMAT DATANG DI WEBSITE</h1>
+		<h1 class="text-center wow fadeInRight">E-SURAT FAKULTAS ILMU KOMPUTER</h1>
 	</div>
 </div>
 <div class="container-fluid" id="home">
@@ -55,6 +46,23 @@
 		<div class="row">
 			<div clas="col-md-12">
 				<a class="btn btn-more col-md-8 col-md-offset-2 btn-lg wow fadeIn" data-wow-delay="1s" href="<?php echo site_url('panduan')?>">ALUR PROSES PENGAJUAN <span class="hidden-xs">SURAT</span> <i class="fas fa-arrow-circle-right fa-lg"></i></a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid info-magang">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<i class="fa fa-user-secret center-block" style="margin-top: 0px; font-size: 200px; color: white;"></i>
+			</div>
+			
+			<div class="col-md-6" style="color: #FFFFFF">
+				<h3>Bingung cari tempat magang?</h3>
+				<br />
+				<p class="text-justify"">Kami menyediakan beberapa institusi untuk anda. Banyak dari mereka yang sudah menjalin kerjasama dengan Fakultas Ilmu Komputer UMB. So, jangan sampai ketinggalan!</p>
+				<br />
+				<a class="btn btn-success" href="<?php echo site_url('infomagang')?>">Cari sekarang!</a>
 			</div>
 		</div>
 	</div>

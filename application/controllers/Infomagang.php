@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Infomagang extends CI_Controller {
 
 	public function __construct()
 	{
@@ -17,14 +17,12 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('home/header');
-		$this->load->view('home/content');
+		$data['info'] = $this->infomagang_model->tampil_info();
+		$this->load->view('home/infomagang',$data);
 		$this->load->view('home/footer');
-	}
-	public function tentang()
-	{
-		$this->load->view('home/header');
-		$this->load->view('home/panduan');
-		$this->load->view('home/footer');
-	}
+	} 
+
 }
+
+/* End of file Tentang.php */
+/* Location: ./application/controllers/Tentang.php */
