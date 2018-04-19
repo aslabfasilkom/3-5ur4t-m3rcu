@@ -45,7 +45,7 @@
 		</div>
 		<div class="row">
 			<div clas="col-md-12">
-				<a class="btn btn-more col-md-8 col-md-offset-2 btn-lg wow fadeIn" data-wow-delay="1s" href="<?php echo site_url('tentang')?>">ALUR PROSES PENGAJUAN <span class="hidden-xs">SURAT</span> <i class="fas fa-arrow-circle-right fa-lg"></i></a>
+				<a class="btn btn-more col-md-8 col-md-offset-2 btn-lg wow fadeIn" data-wow-delay="1s" href="<?php echo site_url('panduan')?>">ALUR PROSES PENGAJUAN <span class="hidden-xs">SURAT</span> <i class="fas fa-arrow-circle-right fa-lg"></i></a>
 			</div>
 		</div>
 	</div>
@@ -54,7 +54,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<i class="fa fa-user-secret center-block" style="margin-top: 0px; font-size: 200px; color: white;"></i>
+				<i class="fas fa-briefcase center-block" style="margin-top: 0px; font-size: 200px; color: white;"></i>
 			</div>
 			
 			<div class="col-md-6" style="color: #FFFFFF">
