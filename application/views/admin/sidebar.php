@@ -24,6 +24,7 @@
         </a>
       </li>
       <!-- Menu Surat Kerja Praktek -->
+<!-- /.sidebar -->
       <li class="treeview <?php if($this->uri->segment(2)=="waitingkp" OR $this->uri->segment(2)=="tolakemailkp"){ echo 'active waiting-active';} else if($this->uri->segment(2)=="finishkp"){echo 'active finish-active';} else if ($this->uri->segment(2)=="proseskp"){echo 'active proses-active';} else if ($this->uri->segment(2)=="tolakkp"){echo 'active tolak-active';} else if($this->uri->segment(2)=="takekp"){echo 'active take-active';}?>">
         <a href="#">
           <i class="fa fa-building-o"></i>

@@ -315,6 +315,7 @@ class Admin extends CI_Controller {
 		}
 	}
 
+
 	public function formperusahaan(){
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
@@ -355,12 +356,93 @@ class Admin extends CI_Controller {
 		redirect('admin/infomagang');
 	}
 
+	public function report()
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$this->load->view('admin/report');
+		$this->load->view('admin/footer');
+	}
+
+
+  public function reportchart()
+  {
+    $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
+    $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
+
+   if ($startdate <= $enddate) {
+      //tanggal startdate and enddate
+      $data['startdate']   = $startdate;
+      $data['enddate']  = $enddate; 
+
+      // Jumlah Surat Kerja Praktek
+      $data['kpwaiting'] = $this->report_model->ReportJumlahSuratKpWaiting($startdate,$enddate);
+      $data['kpproses']  = $this->report_model->ReportJumlahSuratKpProses($startdate,$enddate);
+      $data['kpfinish']  = $this->report_model->ReportJumlahSuratKpFinish($startdate,$enddate);
+      $data['kptake']    = $this->report_model->ReportJumlahSuratKpTake($startdate,$enddate); 
+      $data['kptolak']   = $this->report_model->ReportJumlahSuratKpTolak($startdate,$enddate);
+
+      // Data nama mahasiswa
+      $data['suratwaiting'] = $this->report_model->SuratWaiting($startdate,$enddate);
+      $data['suratproses']  = $this->report_model->SuratProses($startdate,$enddate);
+      $data['suratfinish']  = $this->report_model->SuratFinish($startdate,$enddate);
+      $data['surattake']    = $this->report_model->SuratTake($startdate,$enddate);
+      $data['surattolak']    = $this->report_model->SuratTolak($startdate,$enddate);
+
+      $this->load->view('admin/headerChart',$data);
+      $this->load->view('admin/chartjs_v',$data);
+    }else{
+      $this->session->set_flasdata('gagal_tanggal','true');
+      redirect('admin/takekp');
+    }
+
+  }
+
+  public function reportperjurusan()
+  {
+
+    $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
+    $enddate   = date('Y-m-d',strtotime($this->input->post('enddate')));
+
+    if ($startdate <= $enddate) {
+      //tanggal startdate and enddate
+      $data['startdate']   = $startdate;
+      $data['enddate']  = $enddate; 
+
+      //Data mahasiswa yang daftar KP keseluruhan
+      $data['mahasiswaTI']  = $this->report_model->SuratMahasiswaTI($startdate,$enddate);
+      $data['mahasiswaSI']  = $this->report_model->SuratMahasiswaSI($startdate,$enddate);
+
+      // Data Jumlah mahasiswa Sistem Informasi Kerja Praktek
+      $data['siwaiting'] = $this->report_model->MahasiswaSIKpWaiting($startdate,$enddate);
+      $data['siproses']  = $this->report_model->MahasiswaSIKpProses($startdate,$enddate);
+      $data['sifinish']  = $this->report_model->MahasiswaSIKpFinish($startdate,$enddate);
+      $data['sitake']    = $this->report_model->MahasiswaSIKpTake($startdate,$enddate);
+      $data['sitolak']   = $this->report_model->MahasiswaSIKpTolak($startdate,$enddate);
+
+      // Data Jumlah Mahasiswa Teknik Informatika Kerja Praktek
+      $data['tiwaiting']    = $this->report_model->MahasiswaTIKpWaiting($startdate,$enddate);
+      $data['tiproses']     = $this->report_model->MahasiswaTIKpProses($startdate,$enddate);
+      $data['tifinish']     = $this->report_model->MahasiswaTIKpFinish($startdate,$enddate);
+      $data['titake']       = $this->report_model->MahasiswaTIKpTake($startdate,$enddate);
+      $data['titolak']      = $this->report_model->MahasiswaTIKpTolak($startdate,$enddate);
+
+
+      $this->load->view('admin/headerChart',$data);
+      $this->load->view('admin/laporanperjurusan_v',$data);
+    }else{
+      redirect('admin/takekp');
+    }
+
+  }
+
 	public function hapusinfomagang($id_perusahaan){
 		$this->infomagang_model->hapus_info($id_perusahaan);
 		redirect('admin/infomagang');
 	}
 
 	public function infomagang()
+
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
@@ -377,4 +459,5 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/report');
 		$this->load->view('admin/footer');
 	}
+
 }
