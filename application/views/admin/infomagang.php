@@ -135,8 +135,7 @@
 							<div class="modal-body">
 								<input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
 								<div>
-									<label for="namaPerusahaan" class=" control-label">ID Perusahaan</label>
-									<input type="text" class="form-control" id="id_perusahaan" name="id_perusahaan" value="<?php cetak($id_perusahaan); ?>">
+									<input type="hidden" class="form-control" id="id_perusahaan" name="id_perusahaan" value="<?php cetak($id_perusahaan); ?>">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="namaPerusahaan" class=" control-label">Nama Perusahaan</label>
