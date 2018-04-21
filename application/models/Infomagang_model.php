@@ -14,4 +14,11 @@ class Infomagang_model extends CI_Model {
 		$this->db->where('id_perusahaan', $id_perusahaan);
 		$this->db->delete('perusahaan');	
 	}
+
+	public function edit_info($id_perusahaan,$data,$table)
+	{
+
+		$this->db->where('id_perusahaan', $id_perusahaan);
+		return $this->db->update($table,$data);
+	}
 }
