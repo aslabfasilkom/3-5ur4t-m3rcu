@@ -451,13 +451,4 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-
-	public function report()
-	{
-		$this->load->view('admin/header');
-		$this->load->view('admin/sidebar');
-		$this->load->view('admin/report');
-		$this->load->view('admin/footer');
-	}
-
 }
