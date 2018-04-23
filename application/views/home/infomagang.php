@@ -59,25 +59,28 @@
   	<table class="table-striped table-responsive" style="font-size: 15px;">
   		<thead>
   			<tr>
-  				<th width="23%">Nama Institusi</th>
-  				<th width="32%">Alamat/No. Telpon</th>
-  				<th width="15%">Bagian</th>
-  				<th width="24%">Orang Yang Dapat Dihubungi/No. HP</th>
+  				<th width="25%">Nama Institusi</th>
+  				<th width="35%">Alamat</th>
+          <th width="20%">Nomor Telepon</th>
+  				<th width="20%">Bagian</th>
+  				<th width="20%">Pihak Tertuju</th>
   			</tr>
   		</thead>
   		<tbody>
   			<?php
   			foreach ($info->result_array() as $u):
-  				$nama_perusahaan = $u['nama_perusahaan'];
-  				$alamat_perusahaan = $u['alamat_perusahaan'];
-  				$bagian = $u['bagian'];
-  				$orang_yang_dihubungi = $u['orang_yang_dihubungi'];
+  				$nama_perusahaan      = $u['nama_perusahaan'];
+  				$alamat_perusahaan    = $u['alamat_perusahaan'];
+          $no_telepon           = $u['no_telepon'];
+  				$bagian               = $u['bagian'];
+  				$pihak_tertuju        = $u['pihak_tertuju'];
   				?>
   				<tr>
   					<td><?php echo $nama_perusahaan; ?></td>
   					<td><?php echo $alamat_perusahaan; ?></td>
+            <td><?php echo $no_telepon; ?></td>
   					<td><?php echo $bagian; ?></td>
-  					<td><?php echo $orang_yang_dihubungi; ?></td>
+  					<td><?php echo $pihak_tertuju; ?></td>
   				</tr>
   				<?php
   				endforeach; ?>

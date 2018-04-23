@@ -324,36 +324,66 @@ class Admin extends CI_Controller {
 	}
 
 	public function tambahinfomagang(){
-		$nama_perusahaan = $this->input->post('nama_perusahaan');
-		$str1 = $this->input->post('alamat_perusahaan');
-		$str2 = $this->input->post('nomortelp_perusahaan');
-		$str1 .= $str2;
-		
-		/* xxxx $alamat_perusahaan = $this->input->post('alamat_perusahaan');*/
-		
-		$bagian = $this->input->post('bagian');
-		$kota = $this->input->post('kota');
-		$kodepos = $this->input->post('kodepos');
-		$namakontak = $this->input->post('namakontak');
-		$nomorkontak = $this->input->post('nomorkontak');
-		$namakontak .= $nomorkontak;
-		
-		/* xxxx $orang_yang_dihubungi = $this->input->post('orang_yang_dihubungi');*/
+		$nama_perusahaan 	= $this->input->post('nama_perusahaan');
+		$alamat_perusahaan 	= $this->input->post('alamat_perusahaan');
+		$no_telepon 		= $this->input->post('no_telepon');
+		$bagian 			= $this->input->post('bagian');
+		$kota 				= $this->input->post('kota');
+		$kodepos 			= $this->input->post('kodepos');
+		$pihak_tertuju 		= $this->input->post('pihak_tertuju');
 
 		$data = array(
 			'nama_perusahaan'      	=> $nama_perusahaan,
-			
-			/* xxx 'alamat_perusahaan'   	=> $alamat_perusahaan,*/
-			
-			'alamat_perusahaan'   	=> $str1,
+			'alamat_perusahaan'   	=> $alamat_perusahaan,
+			'no_telepon'			=> $no_telepon,
 			'bagian'   				=> $bagian,
 			'kota'     				=> $kota,
 			'kodepos'   			=> $kodepos,
-			'orang_yang_dihubungi'  => $namakontak
+			'pihak_tertuju'  		=> $pihak_tertuju
 		);
 
 		$this->daftar_model->formperusahaan($data);
 		redirect('admin/infomagang');
+	}
+
+	public function editinfomagang(){
+		$id_perusahaan		= $this->input->post('id_perusahaan');
+		$nama_perusahaan 	= $this->input->post('nama_perusahaan');
+		$alamat_perusahaan 	= $this->input->post('alamat_perusahaan');
+		$no_telepon 		= $this->input->post('no_telepon');
+		$bagian 			= $this->input->post('bagian');
+		$kota 				= $this->input->post('kota');
+		$kodepos 			= $this->input->post('kodepos');
+		$pihak_tertuju 		= $this->input->post('pihak_tertuju');
+
+		$data = array(
+			'id_perusahaan'			=> $id_perusahaan,
+			'nama_perusahaan'      	=> $nama_perusahaan,
+			'alamat_perusahaan'   	=> $alamat_perusahaan,
+			'no_telepon'			=> $no_telepon,
+			'bagian'   				=> $bagian,
+			'kota'     				=> $kota,
+			'kodepos'   			=> $kodepos,
+			'pihak_tertuju'  		=> $pihak_tertuju
+		);
+
+		$this->infomagang_model->edit_info($id_perusahaan,$data,'perusahaan');
+		redirect('admin/infomagang');
+	}
+
+	public function hapusinfomagang($id_perusahaan){
+		$this->infomagang_model->hapus_info($id_perusahaan);
+		redirect('admin/infomagang');
+	}
+
+	public function infomagang()
+
+	{
+		$this->load->view('admin/header');
+		$this->load->view('admin/sidebar');
+		$data['info'] = $this->infomagang_model->tampil_info();
+		$this->load->view('admin/infomagang',$data);
+		$this->load->view('admin/footer');
 	}
 
 	public function report()
@@ -435,20 +465,4 @@ class Admin extends CI_Controller {
     }
 
   }
-
-	public function hapusinfomagang($id_perusahaan){
-		$this->infomagang_model->hapus_info($id_perusahaan);
-		redirect('admin/infomagang');
-	}
-
-	public function infomagang()
-
-	{
-		$this->load->view('admin/header');
-		$this->load->view('admin/sidebar');
-		$data['info'] = $this->infomagang_model->tampil_info();
-		$this->load->view('admin/infomagang',$data);
-		$this->load->view('admin/footer');
-	}
-
 }
