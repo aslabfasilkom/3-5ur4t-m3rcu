@@ -18,10 +18,21 @@ class Mahasiswa extends CI_Controller {
 	{
 		$this->load->library('webservice');
 		$data['checkmatkulkp'] 	= $this->webservice->CheckMatkulKp($this->session->userdata('nim'),$this->session->userdata('nama_mahasiswa'));
+
+
 		$data['checkmatkulta']	= $this->webservice->CheckMatkulTA($this->session->userdata('nim'),$this->session->userdata('nama_mahasiswa'));
 
 		$data['checktranskripkp'] = $this->webservice->CheckTranskripKp($this->session->userdata('nim')); 
+
+
 		$data['checktranskripta'] = $this->webservice->CheckTranskripTA($this->session->userdata('nim'));
+
+		// echo $data['checkmatkulkp'];
+		// echo $data['checktranskripkp'];
+
+		// echo 'Haekal Armandono'."<br>";
+		// echo $this->session->userdata('nim');
+		// echo $this->session->userdata('nama_mahasiswa');
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/pilihan',$data);

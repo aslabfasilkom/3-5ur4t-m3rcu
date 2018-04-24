@@ -297,7 +297,9 @@ class Admin extends CI_Controller {
 					$this->load->view('admin/tambahakun');
 					$this->load->view('admin/footer');
 				} else {
-					$username = $this->input->post('username');
+					$username 		= $this->input->post('username');
+					$nama_lengkap 	= $this->input->post('nama_lengkap');
+					$fakultas 		= $this->input->post('fakultas');
 					$resultcheckusernameadmin = $this->daftar_model->cekusernameadmin($username);
 
 					if($resultcheckusernameadmin > 0){

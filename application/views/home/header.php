@@ -46,7 +46,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li><a class="home" href="<?php echo site_url('')?>">Beranda</a></li>
-          <li><a class="home" href="<?php echo site_url('infomagang')?>">Info Magang</a></li>
+          <!-- <li><a class="home" href="<?php echo site_url('infomagang')?>">Info Magang</a></li> -->
           <li><a class="home" href="<?php echo site_url('login')?>">Login</a></li>
         </ul>
         
