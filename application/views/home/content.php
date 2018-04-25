@@ -7,6 +7,9 @@
 	<div class="row">
 		<h1 class="text-center wow fadeInLeft">SELAMAT DATANG DI WEBSITE</h1>
 		<h1 class="text-center wow fadeInRight">E-SURAT FAKULTAS ILMU KOMPUTER</h1>
+		<div class="col-xs-12">
+		<a href="<?php echo base_url('login')?>" class="visible-xs btn btn-login col-xs-12">LOGIN</a>
+		</div>
 	</div>
 </div>
 <div class="container-fluid" id="home">
