@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
 </head>
 <body>
-  <nav class="navbar navbar-default" style="background-color:#34495E;">
+  <nav class="navbar navbar-default" style="background-color:#34495E; border-radius: 0 !important;">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="container-fluid">
       <div class="navbar-header">
