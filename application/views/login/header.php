@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
   <script defer src="<?php echo base_url('assets/plugins/font-awesome/svg-with-js/js/fontawesome-all.js') ?>"></script> 
 </head>
-<body class="body">
+<body class="body" style="background-color: #34495E;">
 
   <!-- <nav class="navbar-login navbar-default navbar-fixed-top">
   <div class="container">

@@ -21,7 +21,7 @@ class Report_model extends CI_Model {
 	public function printLAPORANkp($startdate,$finishdate,$jurusan)
 	{
 		$query = $this->db->query(
-			"SELECT surat.no_surat,surat.nim,surat.nama_perusahaan,surat.tanggal_diambil,user.nama_mahasiswa 
+			"SELECT surat.no_surat,surat.alamat_perusahaan,surat.nim,surat.nama_perusahaan,surat.tanggal_diambil,user.nama_mahasiswa 
 			 FROM surat INNER JOIN user ON surat.nim=user.nim
 			 WHERE surat.tanggal_diambil 
 			 BETWEEN '$startdate' AND '$finishdate' 

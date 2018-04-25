@@ -71,6 +71,7 @@
 <script src="<?php echo base_url('assets/plugins/datatables.net/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?php echo base_url('assets/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js')?>"></script>
 <script src="<?php echo base_url('assets/dist/js/wow.min.js') ?>"></script>
+<script src="<?php echo base_url('assets/plugins/font-awesome/svg-with-js/js/fontawesome-all.js') ?>"></script>
 <script>
   function isChecked(checkbox, sub1) {
     document.getElementById(sub1).disabled = !checkbox.checked;

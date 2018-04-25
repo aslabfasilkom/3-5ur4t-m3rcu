@@ -25,11 +25,16 @@ class Surat extends CI_Controller {
 		$ceknomorsurat = $this->nomorsurat_model->CheckNoSrtExist($nomorsuratkp);
 
 		$isi= html_entity_decode(
-				"Halo, ".$data['nama_mahasiswa']." pengajuan surat kerja praktek Anda sudah masuk ke tahap proses untuk dapat mengambil surat kerja praktek Anda diharapkan untuk menunggu hingga pemberitahuan selanjutnya, Terimakasih
+				"<p>Halo ".$data['nama_mahasiswa']." </p>,
 
-				<br><br>
-				Salam,
-				TU FASILKOM"
+Berdasarkan pengajuan surat Anda, kami TU FASILKOM sedang memproses pembuatan dan pengesahan Surat Kerja Praktek yang Anda ajukan kepada Koodinator Kerja Praktek Jurusan [ambil field Jurusan dari yang mereka daftarkan]. Anda akan mendapatkan pemberitahuan melalui surel dan notifikasi di situs E-Surat kembali saat Surat Kerja Praktek Anda selesai dan di sahkan oleh Koordinator Kerja Praktek
+Anda dapat mengecek status permohonan pembuatan Surat Kerja Praktek Anda melalui login di situs E-Surat: www.esurat.mercubuana.ac.id
+<br><br>
+Terima kasih.
+<br><br>
+Salam,
+<br><br>
+TU FASILKOM"
 			) ;
 
 			$config = Array(  
@@ -48,7 +53,7 @@ class Surat extends CI_Controller {
 		    $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
 			$this->email->to($data['email']); 
 				
-			$this->email->subject("Surat Anda Sedang Di Proses");
+			$this->email->subject("[E-SURAT] Pengajuan Surat - ".$data['nim']." - ".$data['nama_mahasiswa']." - Diproses");
 			$this->email->message($isi);
 			$this->email->set_mailtype("html");
 			$this->email->send();
@@ -66,10 +71,19 @@ class Surat extends CI_Controller {
 
 		$namafile 		= $kirimemail->id_surat;
 		$emailmahasiswa	= $kirimemail->email;
-		$isi       = html_entity_decode("Halo ".$kirimemail->nama_mahasiswa." surat yang kamu ajukan telah selesai dibuat, untuk dapat mengambil surat yang kamu ajukan di TU FASILKOM kamu <b>diharuskan</b> untuk membawa tanda bukti yang bisa kamu unduh di lampiran yang bersamaan dengan pesan ini.
-		<br><br>
-		Salam,
-		TU FASILKOM");
+		$isi       = html_entity_decode("
+				<p>halo ".$kirimemail->nama_mahasiswa.",</p>
+
+Berdasarkan pengajuan surat Anda, kami TU FASILKOM ingin menginformasikan bahwa Surat Kerja Praktek yang Anda ajukan telah selesai. Anda dapat mengambil Surat Kerja Praktek yang Anda ajukan dengan datang ke TU FASILKOM di jam operasional kami yaitu:
+Senin – Sabtu dari jam 08:00 WIB hingga 16:00 WIB
+Adapun yang dapat mengambil Surat Kerja Praktek yaitu Nama Mahasiswa yang mengajukan permohonan Surat Kerja Praktek dengan membawa Tanda Terima yang Anda bisa unduh di dalam lampiran surel ini.
+Anda dapat mengecek status permohonan pembuatan Surat Kerja Praktek Anda melalui login di situs E-Surat: <a href='http://www.esurat.mercubuana.ac.id'>www.esurat.mercubuana.ac.id</a>
+Terima kasih.
+<br><br>
+Salam,
+<br><br>
+TU FASILKOM
+			");
 		//Load the library
 	    $this->load->library('html2pdf');
 	    
@@ -86,7 +100,7 @@ class Surat extends CI_Controller {
 	    );
 	    //Load html view
 	    $this->html2pdf->html($this->load->view('tiket/pdf2', $data, true));
-	    $subjek = "[E-SURAT] "." ".$kirimemail->nama_mahasiswa." ".$kirimemail->jenis_surat;
+	    $subjek = "[E-SURAT] Pengajuan Surat - ".$kirimemail->nim." - ".$kirimemail->nama_mahasiswa." - Telah Selesai";
 	    //Check that the PDF was created before we send it
 	    if($path = $this->html2pdf->create('save')) {
 	    	
@@ -121,35 +135,49 @@ class Surat extends CI_Controller {
 	public function kirimpesantolakkp()
 	{
 		$idsurat = $this->input->post('id_surat');
-		// $data = $this->tampilsurat_model->detailKP($idsurat);
-		$pesan = $this->input->post('isipesantolak');
-		// $isi= html_entity_decode($pesan) ;
-		echo htmlentities($pesan)  ;
-		// $config = Array(  
-	 //        'protocol' => 'smtp',  
-	 //        'smtp_host' => 'https://www.mohagustiar.info/',  
-	 //        'smtp_port' =>  465,  
-	 //        'smtp_user' => 'contactme@mohagustiar.info',   
-	 //        'smtp_pass' => 'project2m123!@#',  
-	 //        'smtp_keepalive'=>'TRUE',
-	 //        'mailtype' => 'html',   
-	 //        'charset' => 'iso-8859-1'  
-  //       );
+		$data = $this->tampilsurat_model->detailKP($idsurat);
 
-  //       $this->load->library('email', $config);  
-  //       $this->email->set_newline("\r\n");  
-	 //    $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
-		// $this->email->to($data['email']); 
+		$pesan = htmlentities($this->input->post('isipesantolak'));
+		
+
+		$isi= html_entity_decode(
+			"<p>Halo ".$data['nama_mahasiswa'].",</p>
+
+          Berdasarkan pengajuan surat Anda, kami TU FASILKOM tidak dapat memproses Surat Kerja Praktek yang Anda ajukan karena terdapat kesalahan dalam proses pengisian data yaitu ". $pesan ." pada saat Anda mengisi formulir pengajuan surat, pastikan Anda mengisi data yang sesuai dengan kaidah penulisan alamat yang benar serta menuliskan nama jabatan yang sesuai dengan jabatan orang yang kamu tuju.
+          Anda dapat mengajukan permohonan pembuatan Surat Kerja Praktek kembali melalui situs E-Surat: www.esurat.mercubuana.ac.id
+          <br><br>
+          Terima kasih.
+          <br><br>
+          Salam,
+          <br><br>
+          TU FASILKOM"
+      ) ;
+		
+		$config = Array(  
+	        'protocol' => 'smtp',  
+	        'smtp_host' => 'https://www.mohagustiar.info/',  
+	        'smtp_port' =>  465,  
+	        'smtp_user' => 'contactme@mohagustiar.info',   
+	        'smtp_pass' => 'project2m123!@#',  
+	        'smtp_keepalive'=>'TRUE',
+	        'mailtype' => 'html',   
+	        'charset' => 'iso-8859-1'  
+        );
+
+        $this->load->library('email', $config);  
+        $this->email->set_newline("\r\n");  
+	    $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
+		$this->email->to($data['email']); 
 			
-		// $this->email->subject($this->input->post('subjek'));
-		// $this->email->message($isi);
-		// $this->email->set_mailtype("html");
-		// $this->email->send();
+		$this->email->subject($this->input->post('subject'));
+		$this->email->message($isi);
+		$this->email->set_mailtype("html");
+		$this->email->send();
 
-		// $this->statussurat_model->SuratKpToTolak($data['id_surat']);
+		$this->statussurat_model->SuratKpToTolak($data['id_surat']);
 
-		// $this->session->set_flashdata('infotolak','true');
-	 //    redirect('admin/waitingkp');
+		$this->session->set_flashdata('infotolak','true');
+	    redirect('admin/waitingkp');
 	}
 
 	public function ubahAmbilKP($id_surat)

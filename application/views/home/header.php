@@ -24,7 +24,8 @@
    <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/animate.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/Ionicons/css/ionicons.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
-  <script defer src="<?php echo base_url('assets/plugins/font-awesome/svg-with-js/js/fontawesome-all.js') ?>"></script>
+  <script src="<?php echo base_url('assets/plugins/font-awesome/svg-with-js/js/fontawesome-all.js') ?>"></script>
+  
 </head>
 <body class="body">
 
