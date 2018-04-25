@@ -47,7 +47,7 @@
 								<td><?php echo $bagian; ?></td>
 								<td><?php echo $pihak_tertuju; ?></td>
 								<td>
-									<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_edit<?php echo $id_perusahaan;?>"><i class="fa fa-edit" style="font-size:20px"></i></button>
+									<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit<?php echo $id_perusahaan;?>"><i class="fa fa-edit" style="font-size:20px"></i></button>
 									<a class="btn btn-danger" href="<?php echo site_url('admin/hapusinfomagang/'.$id_perusahaan);?>" ><i class="fa fa-trash" style="font-size:20px"></i>
 									</a>
 								</td>
@@ -102,7 +102,7 @@
 							</div>
 							<div class="modal-footer text-center">
 								<button type="reset" class="btn btn-default" >Reset</button>
-								<input type="submit" class="btn btn-info m-l-100" name="simpan" value="Tambah">
+								<input type="submit" class="btn btn-success m-l-100" name="simpan" value="Tambah">
 							</div>
 						</form>
 					</div>
