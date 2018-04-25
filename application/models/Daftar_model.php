@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 			$data = array(
 				"nim" 			 => $nim,
-				"nama_mahasiswa" => ucwords(strtolower($nama)),
+				"nama_mahasiswa" => ucwords(strtolower($nama_mahasiswa)),
 				"email" 		 => $email,
 				"password" 		 => $password,
 				"prodi" 	     => $prodi
@@ -46,11 +46,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			// INSERT DATA / REGISTER
 			$username 		= $this->input->post('username');
 			$password		= md5($this->input->post('password'));
+			$nama_lengkap 	= $this->input->post('nama_lengkap');
+			$fakultas 		= $this->input->post('fakultas');
 
 			$data = array(
 				"username" 		=> $username,
 				"role"			=> "admin",
-				"password" 		=> $password
+				"password" 		=> $password,
+				"nama_lengkap" 	=> ucwords($nama_lengkap),
+				"fakultas" 		=> $fakultas
 				
 			);
 				return $this->db->insert('admin',$data);
