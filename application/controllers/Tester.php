@@ -146,6 +146,13 @@ Admin E-Surat"
   }
 
 
+  public function testserviceregist()
+  {
+    $this->load->library('webservice');
+
+    echo $this->webservice->CheckMatkulKeseluruhan('41814010080','haekal armandono');
+  }
+
 }
 
 /* End of file Tester.php */

@@ -44,10 +44,12 @@ class Login extends CI_Controller {
 		    if ($hasiladmin == 1) {
 		    	 	$result=$this->db->get_where('admin',$whereadmin)->row_array();
 		    	 	$data_session = array(
-		    	 					'id_admin'=>$result['id_admin'],
-		    	 					'username'=>$result['username'],
-		    	 					'status'=>'login',
-		    	 					'role'=>$result['role']
+		    	 					'id_admin'		=>$result['id_admin'],
+		    	 					'username'		=>$result['username'],
+		    	 					'nama_lengkap'	=>$result['nama_lengkap'],
+		    	 					'fakultas'		=>$result['fakultas'],
+		    	 					'status'		=>'login',
+		    	 					'role'			=>$result['role']
 		    	 	);
 		    	 	$this->session->set_userdata($data_session);
 		    	 	redirect('admin');
