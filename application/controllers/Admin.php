@@ -297,7 +297,9 @@ class Admin extends CI_Controller {
 					$this->load->view('admin/tambahakun');
 					$this->load->view('admin/footer');
 				} else {
-					$username = $this->input->post('username');
+					$username 		= $this->input->post('username');
+					$nama_lengkap 	= $this->input->post('nama_lengkap');
+					$fakultas 		= $this->input->post('fakultas');
 					$resultcheckusernameadmin = $this->daftar_model->cekusernameadmin($username);
 
 					if($resultcheckusernameadmin > 0){
@@ -324,6 +326,8 @@ class Admin extends CI_Controller {
 	}
 
 	public function tambahinfomagang(){
+		$nomor_perusahaan   = $this->nomorsurat_model->IDPerusahaan();
+
 		$nama_perusahaan 	= $this->input->post('nama_perusahaan');
 		$alamat_perusahaan 	= $this->input->post('alamat_perusahaan');
 		$no_telepon 		= $this->input->post('no_telepon');
@@ -333,6 +337,7 @@ class Admin extends CI_Controller {
 		$pihak_tertuju 		= $this->input->post('pihak_tertuju');
 
 		$data = array(
+			'id_perusahaan'			=> $nomor_perusahaan,
 			'nama_perusahaan'      	=> $nama_perusahaan,
 			'alamat_perusahaan'   	=> $alamat_perusahaan,
 			'no_telepon'			=> $no_telepon,
