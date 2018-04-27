@@ -68,7 +68,7 @@
 										<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> 
 												Maaf anda belum bisa mengajukan surat kerja praktek
 										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
-												Kunjungi link ini untuk mendaftar > <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat Kp</a>
+												Kunjungi link ini untuk mendaftar <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat Kp</a>
 										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
 												Maaf anda sudah mengambil mata kuliah kerja praktek         <!-- YANG INI NIII-->
 										<?php endif ?> 
