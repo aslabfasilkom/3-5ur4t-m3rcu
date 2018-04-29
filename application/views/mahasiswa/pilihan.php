@@ -18,7 +18,7 @@
 					</button>
 				</div> -->
 			</div>
-			<div class="container tab-content" style="padding: 20px;">
+			<div class="container tab-content" id="surat-kp" style="padding: 20px;">
 				<div class="container hidden-xs">
 					<ul class="timeline">
 						<li class="wow bounceInRight">
@@ -28,7 +28,7 @@
 									<h4 class="timeline-title">Apa itu Surat Kerja Praktek?</h4>
 								</div>
 								<div class="timeline-body">
-									<p>Surat Kerja Praktek adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat KP.</p>
+									<p>Surat Kerja Praktek adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat Kerja Praktek.</p>
 								</div>
 							</div>
 						</li>
@@ -53,7 +53,7 @@
 									<h4 class="timeline-title">Siapa saja yang bisa mendaftar?</h4>
 								</div>
 								<div class="timeline-body">
-									<p> Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya jadi 5.</p>
+									<p> Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya menjadi 5.</p>
 								</div>
 							</div>
 						</li>
@@ -82,18 +82,18 @@
 				<div class="hidden-lg">
 					<div class="panel" style="padding: 15px;">
 						<h4>Apa itu Surat Kerja Praktek?</h4>
-						<p>Surat Kerja Praktek adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat KP.</p>
+						<p>Surat Kerja Praktek adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat Kerja Praktek.</p>
 					</div>
 					<div class="panel" style="padding: 15px;">
 						<h4>Apa saja persyaratannya?</h4>
 						<ol>
 							<li>Pastikan sedang mengambil matkul KP</li>
-							<li>SKS minimal 110</li>
+							<li>SKS minimal 100</li>
 						</ol>
 					</div>
 					<div class="panel" style="padding: 15px;">
 						<h4>Siapa saja yang bisa mendaftar?</h4>
-						<p>Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya jadi 5.</p>
+						<p>Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya menjadi 5.</p>
 					</div>
 					<div class="panel" style="padding: 15px;">
 						<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
@@ -109,6 +109,100 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- <div class="container tab-content" id="riset-ta" style="padding: 20px;">
+				<div class="container hidden-xs">
+					<ul class="timeline">
+						<li class="wow bounceInRight">
+							<div class="timeline-badge primary" href="#penjelasan" data-toggle="tab"><i class="glyphicon glyphicon-question-sign"></i></div>
+							<div class="timeline-panel" style="background-color: #FFFFFF;">
+								<div class="timeline-heading">
+									<h4 class="timeline-title">Apa itu Surat Riset Tugas Akhir?</h4>
+								</div>
+								<div class="timeline-body">
+									<p>Surat Riset Tugas Akhir adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat izin untuk melakukan riset
+									pada institusi tertentu.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted wow bounceInLeft">
+							<div class="timeline-badge warning"><i class="glyphicon glyphicon-list-alt"></i></div>
+							<div class="timeline-panel" style="background-color: #FFFFFF;">
+								<div class="timeline-heading">
+									<h4 class="timeline-title">Apa saja persyaratannya?</h4>
+								</div>
+								<div class="timeline-body">
+									<ol>
+										<li>Pastikan sedang mengambil matkul Tugas Akhir</li>
+										<li>SKS minimal 138</li>
+									</ol>
+								</div>
+								</div>
+							</li>
+							<li class="wow bounceInRight">
+							<div class="timeline-badge danger"><i class="glyphicon glyphicon-user"></i></div>
+							<div class="timeline-panel" style="background-color: #FFFFFF;">
+								<div class="timeline-heading">
+									<h4 class="timeline-title">Siapa saja yang bisa mendaftar?</h4>
+								</div>
+								<div class="timeline-body">
+									<p> Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya menjadi 5.</p>
+								</div>
+							</div>
+						</li>
+							<li class="timeline-inverted wow bounceInLeft">
+								<div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
+									</div>
+									<div class="timeline-body">
+										<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> 
+												Maaf anda belum bisa mengajukan surat kerja praktek
+										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
+												Kunjungi link ini untuk mendaftar <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="<?php echo site_url('mahasiswa/formta') ?>" class="btn btn-danger dash-btn">Form Surat TA</a>
+										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
+												Maaf anda sudah mengambil mata kuliah Tugas Akhir         YANG INI NIII
+										<?php endif ?> 
+										<?php echo $checkmatkulkp." ".$checktranskripkp ; echo "asd" ?>
+										<?php  ?>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="hidden-lg">
+					<div class="panel" style="padding: 15px;">
+						<h4>Apa itu Surat Riset Tugas Akhir?</h4>
+						<p>Surat Riset Tugas Akhir adalah sebuah surat yang dikeluarkan oleh TU Fasilkom dengan tujuan agar mahasiswa yang bersangkutan dapat izin untuk melakukan riset
+						pada institusi tertentu.</p>
+					</div>
+					<div class="panel" style="padding: 15px;">
+						<h4>Apa saja persyaratannya?</h4>
+						<ol>
+							<li>Pastikan sedang mengambil matkul Tugas Akhir</li>
+							<li>SKS minimal 138</li>
+						</ol>
+					</div>
+					<div class="panel" style="padding: 15px;">
+						<h4>Siapa saja yang bisa mendaftar?</h4>
+						<p>Setiap mahasiswa Universitas Mercu Buana dapat mendaftar. Dari mahasiswa yang mendaftar, dapat mendaftarkan 4 temannya sehingga jumlahnya menjadi 5.</p>
+					</div>
+					<div class="panel" style="padding: 15px;">
+						<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
+						<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> 
+							Maaf anda belum bisa mengajukan surat Riset TA
+						<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
+							Kunjungi link ini untuk mendaftar > <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat Riset TA</a>
+						<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
+							Maaf anda sudah mengambil mata kuliah Tugas Akhir
+						<?php endif ?> 
+						<?php echo $checkmatkulkp." ".$checktranskripkp ; echo "asd" ?>
+						<?php  ?>
+					</div>
+				</div>
+			</div> -->
 
 			<div class="clearfix"></div>
 		</div>
