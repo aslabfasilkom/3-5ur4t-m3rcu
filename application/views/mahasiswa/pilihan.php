@@ -43,6 +43,24 @@
 										<li>Pastikan sedang mengambil matkul KP</li>
 										<li>SKS minimal 110</li>
 									</ol>
+							</li>
+							<li class="timeline-inverted wow bounceInLeft">
+								<div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+								<div class="timeline-panel" style="background-color: #FFFFFF;">
+									<div class="timeline-heading">
+										<h4 class="timeline-title">Saya sudah memenuhi semua persyaratannya, lalu?</h4>
+									</div>
+									<div class="timeline-body">
+										<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?> 
+												Maaf anda belum bisa mengajukan surat kerja praktek
+										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
+												Kunjungi link ini untuk mendaftar <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat Kp</a>
+										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
+												Maaf anda sudah mengambil mata kuliah kerja praktek         <!-- YANG INI NIII-->
+										<?php endif ?> 
+										<!-- <?php echo $checkmatkulkp." ".$checktranskripkp ; echo "asd" ?> -->
+										<!-- <?php  ?> -->
+									</div>
 								</div>
 							</div>
 						</li>
