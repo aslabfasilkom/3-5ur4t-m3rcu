@@ -28,7 +28,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				"email" 		 => $email,
 				"password" 		 => $password,
 				"prodi" 	     => $prodi
-				
 			);
 				return $this->db->insert('user',$data);
 		}

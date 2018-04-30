@@ -10,7 +10,7 @@
             <div class="alert alert-success alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
               <h4><i class="icon fa fa-check"></i>Info</h4>
-              Berhasi Mendaftar Akun
+              Berhasil Mendaftar Akun
             </div>
           <?php elseif($this->session->flashdata('nimsudahada')): ?>
             <div class="alert alert-danger alert-dismissible">

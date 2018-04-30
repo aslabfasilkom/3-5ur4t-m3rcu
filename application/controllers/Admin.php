@@ -315,18 +315,21 @@ class Admin extends CI_Controller {
 		}
 	}
 
-	public function formperusahaan(){
+	/*public function formperusahaan(){
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$this->load->view('admin/formperusahaan');
 		$this->load->view('admin/footer');
-	}
+	}*/
 
 	public function tambahinfomagang(){
 		$nama_perusahaan = $this->input->post('nama_perusahaan');
 		$str1 = $this->input->post('alamat_perusahaan');
 		$str2 = $this->input->post('nomortelp_perusahaan');
-		$str1 .= $str2;
+		$kurungbuka = $this->input->post('kurungbuka');
+		$kurungtutup = $this->input->post('kurungtutup');
+		$notelp = $kurungbuka.$str2.$kurungtutup;
+		$str1 .= $notelp;
 		
 		/* xxxx $alamat_perusahaan = $this->input->post('alamat_perusahaan');*/
 		

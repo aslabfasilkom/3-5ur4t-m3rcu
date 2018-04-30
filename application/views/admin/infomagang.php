@@ -99,9 +99,9 @@
 								<div class="form-group col-md-6">
 									<label class="control-label">Nomor Kontak</label>
 									<div class="input-group">
-										<span class="input-group-addon">(</span>
+										<span class="input-group-addon" value="(">(</span>
 										<input type="text" class="form-control" id="nomorkontak" onkeypress='validate(event)' name="nomorkontak" placeholder="Nomor yang dapat dihubungi">
-										<span class="input-group-addon">)</span>
+										<span class="input-group-addon" value=")">)</span>
 									</div>
 								</div>
 							</div>
