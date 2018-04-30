@@ -7,9 +7,7 @@ class Infomagang extends CI_Controller {
 	{
 		parent::__construct();
 		if ($this->session->has_userdata('status')) {
-			if ($this->session->userdata('role') == "mahasiswa") {
-				redirect('mahasiswa');
-			}else if(($this->session->userdata('role') =='admin') ||($this->session->userdata('role') =='superadmin') ){
+			if(($this->session->userdata('role') =='admin') ||($this->session->userdata('role') =='superadmin') ){
 				redirect('admin');
 			}
 		}

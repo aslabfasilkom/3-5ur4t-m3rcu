@@ -120,7 +120,38 @@ class Tester extends CI_Controller {
     
   // }
 
+  public function testkirim()
+  {
+    $pesan = htmlentities("<b>menyebalkan</b>");
+    echo  html_entity_decode(
+        "<p>Halo,</p>
 
+Kami menerima permohonan atur ulang kata sandi Akun E-Surat Anda. Untuk menyelesaikan proses penggantian kata sandi, mohon menggunakan pranala di bawah ini:<br>"."<a href='https://suratfasilkom.mohagustiar.info/login/reset/token/$pesan'>https://suratfasilkom.mohagustiar.info/login/reset/token/".$pesan."</a>"."<br><br>
+
+Jika Anda tidak melakukan permintaan ini, silakan abaikan surel ini. Pastikan akun Anda aman bersama kami.
+
+Jika mengklik tautan tampaknya tidak berfungsi, Anda dapat menyalin dan menempel tautan ke jendela alamat browser Anda atau mengetik ulang di sana. Setelah Anda kembali ke situs kami, kami akan memberi Anda instruksi lebih lanjut untuk mereset kata sandi Anda.
+
+Terima kasih.
+
+Salam,
+
+Admin E-Surat"
+      ) ;
+  }
+
+  public function testphp()
+  {
+    echo phpinfo();
+  }
+
+
+  public function testserviceregist()
+  {
+    $this->load->library('webservice');
+
+    echo $this->webservice->CheckMatkulKeseluruhan('41814010080','haekal armandono');
+  }
 
 }
 
