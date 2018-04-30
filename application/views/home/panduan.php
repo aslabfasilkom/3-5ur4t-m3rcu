@@ -86,7 +86,7 @@
     <!--panduan 7 -->
     <div class="row m-b-60">
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 wow bounceInLeft m-b-20">
-        <img src="<?php echo base_url('assets/image/daftarulang.JPG') ?>" alt="status surat" style="max-width: 100%;">
+        <img src="<?php echo base_url('assets/image/panduan_status.png') ?>" alt="status surat" style="max-width: 100%;">
       </div>
       <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 wow bounceInRight">
         <span class="font-30">Panduan 7</span>
