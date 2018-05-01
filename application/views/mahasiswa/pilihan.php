@@ -8,7 +8,7 @@
 			</div>
 			<div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" style="margin-bottom: 30px;">
 				<div class="btn-group" role="group">
-					<button type="button" id="stars" class="btn btn-success button-skp wow fadeInLeft" href="#surat-kp" data-toggle="tab">
+					<button type="button" id="stars" class="btn btn-success button-skp wow fadeInLeft" href="<?php echo site_url('mahasiswa/formkp')?>" data-toggle="tab">
 						<h4>Kerja Praktek</h4>
 					</button>
 				</div>
@@ -69,7 +69,7 @@
 										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
 												Kunjungi link ini untuk mendaftar <i class="fa fa-arrow-right" aria-hidden="true"></i> <a href="<?php echo site_url('mahasiswa/formkp') ?>" class="btn btn-danger dash-btn">Form Surat Kp</a>
 										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
-												Maaf anda sudah mengambil mata kuliah kerja praktek         <!-- YANG INI NIII-->
+												Maaf anda sudah mengambil mata kuliah kerja praktek<!-- YANG INI NIII-->
 										<?php endif ?> 
 										<!-- <?php echo $checkmatkulkp." ".$checktranskripkp ; echo "asd" ?> -->
 										<!-- <?php  ?> -->

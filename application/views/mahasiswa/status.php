@@ -46,7 +46,7 @@
         <td><?php cetak($value->nama_mahasiswa)  ?></td>
         <td><?php cetak($value->jenis_surat)  ?></td>
         <td><?php cetak(date('d-M-Y',strtotime($value->tanggal_diajukan)))  ?></td>
-        <td class=<?=$class?> style="text-align: center;">
+        <td class=<?=$class?> style="text-align: center; color: white;">
           <?php if ($value->status == 'Ambil'): ?>
             Sudah Diambil
           <?php else: ?>  

@@ -318,6 +318,7 @@ class Admin extends CI_Controller {
 	}
 
 
+
 	public function formperusahaan(){
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
