@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
 </head>
 <body>
-  <nav class="navbar navbar-default" style="background-color:#34495E;">
+  <nav class="navbar navbar-default" style="background-color:#34495E; border-radius: 0 !important;">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="container-fluid">
       <div class="navbar-header">
@@ -38,7 +38,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li class="status" style="color:#F8F9F9"><?php echo $this->session->userdata('nama_mahasiswa');?></li>
-          <li><a class="status" href="<?php echo site_url('/infomagang') ?>">Info Magang</a></li>
+          <li><a class="status" href="<?php echo base_url('infomagang')?>">Info Magang</a></li>
           <li><a class="status" href="<?php echo site_url('mahasiswa/lihat') ?>">Lihat Status</a></li>
           <li><a class="status keluar " href="<?php echo site_url('login?logout=signout');?>">Keluar</a></li>
         </ul>

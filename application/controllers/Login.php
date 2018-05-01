@@ -44,10 +44,12 @@ class Login extends CI_Controller {
 		    if ($hasiladmin == 1) {
 		    	 	$result=$this->db->get_where('admin',$whereadmin)->row_array();
 		    	 	$data_session = array(
-		    	 					'id_admin'=>$result['id_admin'],
-		    	 					'username'=>$result['username'],
-		    	 					'status'=>'login',
-		    	 					'role'=>$result['role']
+		    	 					'id_admin'		=>$result['id_admin'],
+		    	 					'username'		=>$result['username'],
+		    	 					'nama_lengkap'	=>$result['nama_lengkap'],
+		    	 					'fakultas'		=>$result['fakultas'],
+		    	 					'status'		=>'login',
+		    	 					'role'			=>$result['role']
 		    	 	);
 		    	 	$this->session->set_userdata($data_session);
 		    	 	redirect('admin');
@@ -73,13 +75,10 @@ class Login extends CI_Controller {
 	}
 
 	public function resetpassword(){
-		 $data = array(
-            'captcha' => $this->recaptcha->getWidget(), // menampilkan recaptcha
-            'script_captcha' => $this->recaptcha->getScriptTag(), // javascript recaptcha ditaruh di head
-        );
+		
 
 		$this->load->view('login/header');
-		$this->load->view('login/resetpassword',$data);
+		$this->load->view('login/resetpassword');
 	}
 
 	public function resetpassword1(){
@@ -92,14 +91,10 @@ class Login extends CI_Controller {
       $email = $this->input->post('email');
       $rs = $this->user_model->getByEmail($email);
      	
-      $recaptcha = $this->input->post('g-recaptcha-response');
-      $response = $this->recaptcha->verifyResponse($recaptcha);	
+    
 
       
-      if(!isset($response['success']) || $response['success'] <> true){
-      	$this->session->set_flashdata('validasi_captcha','true');
-      	redirect('login/resetpassword','refresh');
-      }elseif (!$rs->num_rows() > 0){ // cek apakah ada email di mahasiswa
+      if (!$rs->num_rows() > 0){ // cek apakah ada email di mahasiswa
         $this->session->set_flashdata('email_tidak_ada','true');
         redirect('login/resetpassword');
       }else{
@@ -122,9 +117,19 @@ class Login extends CI_Controller {
            if ($simpan > 0){
 
            	// localhost/surat-e-mercu/login
-           	$isi= html_entity_decode(
-					"Ini adalah link untuk reset password harap untuk segera untuk mereset password anda "."<a href='https://suratfasilkom.mohagustiar.info/login/reset/token/$tokenstring'>https://suratfasilkom.mohagustiar.info/login/reset/token/".$tokenstring."</a>"
-			) ;
+           	$isi= html_entity_decode("<p>Halo,</p>
+
+Kami menerima permohonan atur ulang kata sandi Akun E-Surat Anda. Untuk menyelesaikan proses penggantian kata sandi, mohon menggunakan pranala di bawah ini:<br>"."<a href='https://suratfasilkom.mohagustiar.info/login/reset/token/$tokenstring'>https://suratfasilkom.mohagustiar.info/login/reset/token/".$tokenstring."</a>"."<br><br>
+
+Jika Anda tidak melakukan permintaan ini, silakan abaikan surel ini. Pastikan akun Anda aman bersama kami.
+
+Jika mengklik tautan tampaknya tidak berfungsi, Anda dapat menyalin dan menempel tautan ke jendela alamat browser Anda atau mengetik ulang di sana. Setelah Anda kembali ke situs kami, kami akan memberi Anda instruksi lebih lanjut untuk mereset kata sandi Anda.
+
+Terima kasih.
+
+Salam,
+
+Admin E-Surat") ;
 
            	  $config = Array(  
 		        'protocol' => 'smtp',  
@@ -142,7 +147,7 @@ class Login extends CI_Controller {
 		     $this->email->from('contactme@mohagustiar.info','Raka Hikmah');
 			 $this->email->to($email); 
 				
-			 $this->email->subject("Reset Password Untuk Akun Anda");
+			 $this->email->subject("[E-SURAT]Reset Password Untuk Akun Anda");
 			 $this->email->message($isi);
 			 $this->email->set_mailtype("html");
 			 $this->email->send();
