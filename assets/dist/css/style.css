@@ -142,8 +142,10 @@ p.statement{
 .btn-daftar{
   transition: 0.5s;
   color: white;
+  font-size:20px;
   background: rgba(0,0,0,0.01);
-  border: solid 2px white; 
+  border: solid 2px white;
+  font-weight: bolder; 
 }
 .btn-daftar:hover{
   background: white;
