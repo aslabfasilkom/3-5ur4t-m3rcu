@@ -10,6 +10,8 @@
   <link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#34495E">
+  <meta name="msapplication-navbutton-color" content="#34495E">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#34495E">
   <title><?php if($this->uri->segment(2)==""){echo "Dashboard - Prodi E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="waitingkp"){echo "Menunggu (KP) - Prodi E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="tolakemail"){echo "Tolak (KP) - Prodi E-Surat Mercu Buana";}

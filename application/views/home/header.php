@@ -10,6 +10,8 @@
 <link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#34495E">
+<meta name="msapplication-navbutton-color" content="#34495E">
+<meta name="apple-mobile-web-app-status-bar-style" content="#34495E">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- UNTUK HOSTING -->
 <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
