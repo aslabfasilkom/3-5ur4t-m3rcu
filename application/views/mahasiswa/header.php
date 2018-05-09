@@ -12,7 +12,9 @@
   <link rel="manifest" href="<?php echo base_url('assets/favicon/site.webmanifest') ?>">
   <link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#34495E">
+  <meta name="msapplication-navbutton-color" content="#34495E">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#34495E">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/dist/css/bootstrap.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/font-awesome/css/font-awesome.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/Ionicons/css/ionicons.min.css') ?>">
@@ -21,7 +23,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
 </head>
 <body>
-  <nav class="navbar navbar-default" style="background-color:#34495E;">
+  <nav class="navbar navbar-default" style="background-color:#34495E; border-radius: 0 !important;">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="container-fluid">
       <div class="navbar-header">
@@ -38,7 +40,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li class="status" style="color:#F8F9F9"><?php echo $this->session->userdata('nama_mahasiswa');?></li>
-          <li><a class="status" href="<?php echo site_url('/infomagang') ?>">Info Magang</a></li>
+          <li><a class="status" href="<?php echo base_url('infomagang')?>">Info Magang</a></li>
           <li><a class="status" href="<?php echo site_url('mahasiswa/lihat') ?>">Lihat Status</a></li>
           <li><a class="status keluar " href="<?php echo site_url('login?logout=signout');?>">Keluar</a></li>
         </ul>

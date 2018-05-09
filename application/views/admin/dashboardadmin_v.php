@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="box-body">
-            <!-- <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-maroon">
                 <div class="inner">
                   <h3><?=$tawaiting?></h3>
@@ -32,8 +32,8 @@
                 </div>
                 <a href="<?php echo base_url('admin/waitingta') ?>" class="small-box-footer">Info lebih lanjut <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div> -->
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-light-blue-active">
                 <div class="inner">
                   <h3><?=$kpwaiting?></h3>
@@ -59,7 +59,7 @@
             </div>
           </div>
           <div class="box-body">
-            <!-- <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-maroon">
                 <div class="inner">
                   <h3><?=$taproses?></h3>
@@ -70,8 +70,8 @@
                 </div>
                 <a href="<?php echo base_url('admin/prosesta') ?>" class="small-box-footer">Info lebih lanjut <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div> -->
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-light-blue-active">
                 <div class="inner">
                   <h3><?=$kpproses?></h3>
@@ -97,7 +97,7 @@
             <div class="box-tools pull-right"></div>
           </div>
           <div class="box-body">
-           <!--  <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-maroon">
                 <div class="inner">
                   <h3><?=$tafinish?></h3>
@@ -108,8 +108,8 @@
                 </div>
                 <a href="<?php echo base_url('admin/finishta') ?>" class="small-box-footer">Info lebih lanjut <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div> -->
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-light-blue-active">
                 <div class="inner">
                   <h3><?=$kpfinish?></h3>
@@ -135,7 +135,7 @@
             </div>
           </div>
           <div class="box-body">
-            <!-- <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-maroon">
                 <div class="inner">
                   <h3><?=$tatake?></h3>
@@ -146,8 +146,8 @@
                 </div>
                 <a href="<?php echo base_url('admin/taketa') ?>" class="small-box-footer">Info lebih lanjut <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div> -->
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-light-blue-active">
                 <div class="inner">
                   <h3><?=$kptake?></h3>
@@ -173,7 +173,7 @@
             </div>
           </div>
           <div class="box-body">
-            <!-- <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-maroon">
                 <div class="inner">
                   <h3><?=$tatolak ?></h3>
@@ -184,8 +184,8 @@
                 </div>
                 <a href="<?php echo base_url('admin/tolakta') ?>" class="small-box-footer">Info lebih lanjut <i class="fa fa-arrow-circle-right"></i></a>
               </div>
-            </div> -->
-            <div class="col-md-12 col-sm-12 col-xs-12">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
               <div class="small-box bg-light-blue-active">
                 <div class="inner">
                   <h3><?=$kptolak ?></h3>

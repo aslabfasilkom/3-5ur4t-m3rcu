@@ -40,10 +40,10 @@
 					<div class="box-header">
 						<h3 class="box-title"></h3>
 						<?php echo form_open('admin/tambahakun',array('class'=>'form-horizontal','method'=>'post')); ?>
-			<input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
+						<input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
 					<div class="form-group">
-							<label class="control-label col-sm-2" for="Username">Username</label>
-							<div class="col-sm-10">
+							<label class="control-label col-sm-2" for="Username">Username:</label>
+							<div class="col-sm-5">
 								<input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?=set_value('username')?>"
 								required>
 								<span class="text-danger">
@@ -52,8 +52,28 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="control-label col-sm-2">Nama Lengkap:</label>
+							<div class="col-sm-5">
+								<input type="text" name="nama_lengkap" class="form-control" id="nama_lengkap" placeholder="Nama Lengkap" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="password">Fakultas:</label>
+							<div class="col-sm-3">
+           						<select name="fakultas" class="form-control" id="fakultas">
+              						<option >Pilih Program Studi</option>
+              						<option value="Fakultas Desain dan Seni Kreatif">Fakultas Desain dan Seni Kreatif</option>
+              						<option value="Fakultas Teknik">Fakultas Teknik</option>
+              						<option value="Fakultas Ekonomi dan Bisnis">Fakultas Ekonomi dan Bisnis</option>
+              						<option value="Fakultas Ilmu Komunikasi">Fakultas Ilmu Komunikasi</option>
+              						<option value="Fakultas Ilmu Komputer">Fakultas Ilmu Komputer</option>
+              						<option value="Fakultas Psikolog">Fakultas Psikolog</option>
+            					</select>
+            				</div>
+          				</div>
+						<div class="form-group">
 							<label class="control-label col-sm-2" for="password">Password:</label>
-							<div class="col-sm-10">
+							<div class="col-sm-5">
 								<input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
 								<span class="text-danger">
 									<?=form_error('password')?>
@@ -62,7 +82,7 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="confirmpassword">Confirm Password:</label>
-							<div class="col-sm-10">
+							<div class="col-sm-5">
 								<span class="text-danger">
 									<?=form_error('repassword')?>
 								</span>

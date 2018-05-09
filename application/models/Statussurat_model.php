@@ -155,10 +155,13 @@ class Statussurat_model extends CI_Model {
 		return $this->db->update('surat',$data);
 	}
 
-	public function SuratTAToProses($id_surat)
+
+
+	public function SuratTaToProses($id_surat,$nomorsuratta)
 	{
-		$data = array(
-			'status'=>'Selesai'	
+		$data = array (
+			'status'   => 'Proses',
+			'no_surat' => $nomorsuratta
 		);
 
 		$this->db->where('id_surat',$id_surat);

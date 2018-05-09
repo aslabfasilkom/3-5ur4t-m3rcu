@@ -1,6 +1,4 @@
 <div class="container form-login">
-
-  <div class="row">
     <h1 class="text-center">Daftar Akun E-surat</h1>
     <hr>
     <div class="row">
@@ -9,7 +7,7 @@
             <div class="alert alert-success alert-dismissible">
               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
               <h4><i class="icon fa fa-check"></i>Info</h4>
-              Berhasi Mendaftar Akun
+              Berhasil Mendaftar Akun
             </div>
           <?php elseif($this->session->flashdata('nimsudahada')): ?>
             <div class="alert alert-danger alert-dismissible">
@@ -26,9 +24,10 @@
           <?php endif ?>
         </div>
       </div>
+       <div class="row">
     <div class="col-md-8 col-md-offset-3">
       <form class="form-horizontal" action="<?=site_url('daftar') ?>" method="post">
-      <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
+      <!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
       <div class="form-group">
           <label for="prodi" class="col-sm-2 control-label">Program Studi</label>
           <div class="col-sm-6">

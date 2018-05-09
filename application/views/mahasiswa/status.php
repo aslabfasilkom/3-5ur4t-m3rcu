@@ -2,7 +2,7 @@
 <br>
 <br>
 <br>
-<?php  if($this->session->flashdata('berhasil')): ?>
+<?php  if($this->session->flashdata('berhasilkp')): ?>
   <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h4><i class="icon fa fa-check"></i>Info</h4>
@@ -46,7 +46,7 @@
         <td><?php cetak($value->nama_mahasiswa)  ?></td>
         <td><?php cetak($value->jenis_surat)  ?></td>
         <td><?php cetak(date('d-M-Y',strtotime($value->tanggal_diajukan)))  ?></td>
-        <td class=<?=$class?> style="text-align: center;">
+        <td class=<?=$class?> style="text-align: center; color: white;">
           <?php if ($value->status == 'Ambil'): ?>
             Sudah Diambil
           <?php else: ?>  
@@ -66,7 +66,7 @@
 <br>
 <br>
 <br>
-<?php  if($this->session->flashdata('berhasil')): ?>
+<?php  if($this->session->flashdata('berhasilta')): ?>
   <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h4><i class="icon fa fa-check"></i>Info</h4>

@@ -18,7 +18,6 @@
               <?php echo form_open('surat/kirimpesantolakkp'); ?>
              <!-- Send Email -->
               <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
-             
               <div class="col-md-12">
                 <div class="box box-danger">
                   <div class="box-header with-border">
@@ -30,10 +29,10 @@
                       <input class="form-control" placeholder="To:" name="emaildikirim" value="<?=$detailkp->email?>" readonly>
                     </div>
                     <div class="form-group">
-                      <input class="form-control" placeholder="Subject:" name="subjek" value="<?="[E-SURAT] Pengajuan Surat - ".$detailkp->nim." - ".$detailkp->nama_mahasiswa." - Diproses"?>" required readonly>
+                      <input class="form-control" placeholder="Subject:" name="subjek" value="<?="[ESURAT - NOREPLY] Pengajuan Surat - ".$detailkp->nim." - ".$detailkp->nama_mahasiswa." - Diproses"?>" required readonly>
                     </div>
                     <div class="form-group">
-                      <textarea required id="compose-textarea" name="isipesantolak" placeholder="Admin hanya menuliskan alasan saja dengan singkat tidak perlu menuliskan surat secara format karena sistem sudah otomatis menulis format surat" class="form-control" style="height: 300px"></textarea>
+                      <input type="text" required name="isipesantolak" placeholder="Admin hanya menuliskan alasan saja dengan singkat tidak perlu menuliskan surat secara format karena sistem sudah otomatis menulis format surat" class="form-control">
                     </div>
                     
                   </div>
