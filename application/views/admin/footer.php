@@ -4,7 +4,7 @@
 	</div>
 	<strong>Copyright &copy; 2017-<?php echo date("Y"); ?>
 		<a href="http://bit.ly/aslabfasilkom">Aslab Fasilkom</a>.</strong> All rights reserved.
-</footer>
+  </footer>
 </div>
 </body>
 
@@ -113,7 +113,7 @@
 <script>
   $(function(){
 
-  
+
     $.ajaxSetup({
       type:"POST",
       url: "<?php echo base_url('mahasiswa/select_daerah') ?>",
@@ -255,25 +255,37 @@
     })
 
 
-  $("#kelurahan-desa").change(function(){
-    var value=$(this).val();
-    if(value != ""){
-      $.ajax({
+    $("#kelurahan-desa").change(function(){
+      var value=$(this).val();
+      if(value != ""){
+        $.ajax({
+          data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
+          success: function(respond){
+            $("#kodepos").html(respond);
+          }
+        })
+      }else{
+       $.ajax({
         data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
         success: function(respond){
           $("#kodepos").html(respond);
         }
       })
-    }else{
-     $.ajax({
-      data:{modul:'kodepos',id:value,'<?php echo $this->security->get_csrf_token_name(); ?>' :$.cookie('csrf_cookie')},
-      success: function(respond){
-        $("#kodepos").html(respond);
-      }
-    })
-   } 
- })
+     } 
+   })
 
-})
+  })
+</script>
+<script>
+  function validate(evt) {
+  var theEvent = evt || window.event;
+  var key = theEvent.keyCode || theEvent.which;
+  key = String.fromCharCode( key );
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
 </script>
 </html>

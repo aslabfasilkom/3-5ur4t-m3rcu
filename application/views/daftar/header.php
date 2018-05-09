@@ -10,7 +10,9 @@
   <link rel="manifest" href="<?php echo base_url('assets/favicon/site.webmanifest') ?>">
   <link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#34495E">
+  <meta name="msapplication-navbutton-color" content="#34495E">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#34495E">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap/dist/css/bootstrap.min.css') ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/font-awesome/css/font-awesome.min.css') ?>">
 
@@ -31,15 +33,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-     <a class="navbar-brand" href="<?php echo site_url('')?>"><img src="<?php echo base_url('assets/image/logoesurat4.png')?>" alt="Home" width="60"></a>
+     <a class="navbar-brand" href="<?php echo site_url('')?>"><img class="img-responsive" src="<?php echo base_url('assets/image/logoesurat7v2.png')?>" alt="Home" width="90"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><a class="home" href="<?php echo site_url('')?>">Beranda</a></li>
-       <li><a class="home" href="#">Tentang</a></li>
-       <li><a class="home" href="">Bantuan</a></li>
+       <li><a class="home" href="<?php echo site_url('login')?>">Login</a></li>
       </ul>
     
     </div><!-- /.navbar-collapse -->
