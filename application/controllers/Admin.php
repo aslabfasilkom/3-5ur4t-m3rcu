@@ -318,9 +318,6 @@ class Admin extends CI_Controller {
 	}
 
 
-<<<<<<< HEAD
-	
-=======
 
 	public function formperusahaan(){
 		$this->load->view('admin/header');
@@ -379,7 +376,6 @@ class Admin extends CI_Controller {
 		$this->infomagang_model->edit_info($id_perusahaan,$data,'perusahaan');
 		redirect('admin/infomagang');
 	}
->>>>>>> upstream/master
 
 	public function hapusinfomagang($id_perusahaan){
 		$this->infomagang_model->hapus_info($id_perusahaan);
@@ -475,11 +471,4 @@ class Admin extends CI_Controller {
     }
 
   }
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> upstream/master
 }

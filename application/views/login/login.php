@@ -1,4 +1,5 @@
 <div class="col-md-12 m-t-20 m-b-20"><?php echo form_open('login/ceklogin'); ?>
+<!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
   <?php if($this->session->flashdata('info')): ?>
     <div class="row">
       <div class="alert alert-danger alert-dismissible">
@@ -27,33 +28,6 @@
   <?php endif; ?>
 </div>
 <div class="col-md-4" style="margin-top: 0px; border-radius: 0px;">
-  <!-- <?php echo form_open('login/ceklogin'); ?>
-  <?php if($this->session->flashdata('info')): ?>
-    <div class="row">
-      <div class="alert alert-danger alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        Maaf username/nim dan password salah
-      </div>
-    </div>
-  <?php elseif ($this->session->flashdata('info_berhasil')):?>
-    <div class="alert alert-success alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-      <h4><i class="icon fa fa-check"></i>Info</h4>
-      Berhasil Mendaftar Akun
-    </div>
-  <?php elseif($this->session->flashdata('berhasil_reset')): ?>
-    <div class="alert alert-success alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-      <h4><i class="icon fa fa-check"></i>Info</h4>
-      Berhasil mereset password 
-    </div>
-  <?php elseif($this->session->flashdata('gagal_reset')): ?>
-    <div class="alert alert-danger alert-dismissible">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-      <h4><i class="icon fa fa-check"></i>Info</h4>
-      Maaf anda gagal mereset password
-    </div>
-  <?php endif; ?> -->
   <a href="<?php echo site_url('') ?>"><img class="img-responsive" src="<?php echo base_url('assets/image/logoesurat7v2.png')?>" alt="E-Surat" style="margin-right: auto; margin-left: auto; margin-top: 20px;"></a>
   <h3 class="text-center title-login" id="box-login">Silahkan Login Dengan menggunakan</h3>
   <h3 class="text-center title-login">NIM/E-MAIL</h3>

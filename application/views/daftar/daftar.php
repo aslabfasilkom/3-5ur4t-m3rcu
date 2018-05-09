@@ -27,7 +27,7 @@
        <div class="row">
     <div class="col-md-8 col-md-offset-3">
       <form class="form-horizontal" action="<?=site_url('daftar') ?>" method="post">
-      <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
+      <!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
       <div class="form-group">
           <label for="prodi" class="col-sm-2 control-label">Program Studi</label>
           <div class="col-sm-6">

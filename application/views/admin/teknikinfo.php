@@ -27,6 +27,7 @@
                           <th>No</th>
                           <th>NIM</th>
                           <th>Nama</th>
+                          <th>Program Studi</th>
                           <th>Email</th>
 
                         </tr>
@@ -39,6 +40,7 @@
                             <td><?php cetak($no++); ?></td>
                             <td><?php cetak($u->nim); ?></td>
                             <td><?php cetak($u->nama_mahasiswa); ?></td>
+                            <td><?php cetak($u->prodi); ?></td>
                             <td><?php cetak($u->email); ?></td>
                         </tr>
                         <?php } ?>  
