@@ -132,6 +132,18 @@ class Tampilsurat_model extends CI_Model
 			return $query->row_array();
 		}
 
+			public function detailta($id_surat)
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim =surat.nim');
+			$this->db->join('dosen','dosen.nik =dosen.nik');
+			$this->db->where('id_surat',$id_surat);
+			$query = $this->db->get();
+			
+			return $query->row_array();
+		}
+
 		public function GetIdentitasMahasiswa($id_surat)
 		{
 			$this->db->select('*');

@@ -2,7 +2,7 @@
 <br>
 <br>
 <br>
-<?php  if($this->session->flashdata('berhasil')): ?>
+<?php  if($this->session->flashdata('berhasilkp')): ?>
   <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h4><i class="icon fa fa-check"></i>Info</h4>
@@ -66,7 +66,7 @@
 <br>
 <br>
 <br>
-<?php  if($this->session->flashdata('berhasil')): ?>
+<?php  if($this->session->flashdata('berhasilta')): ?>
   <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
     <h4><i class="icon fa fa-check"></i>Info</h4>
