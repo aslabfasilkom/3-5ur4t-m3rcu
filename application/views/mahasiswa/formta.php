@@ -18,22 +18,22 @@
 							mendaftar lagi
 						</div>
 					<?php elseif($this->session->flashdata('tidakvalid')): ?> 
-						<div class="alert alert-success alert-dismissible">
+						<div class="alert alert-danger alert-dismissible">
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-							<h4><i class="icon fa fa-check"></i>Info</h4>
+							<h4><i class="icon fa fa-close"></i>Info</h4>
 							Maaf anggota anda ada yang belum mengambil mata kuliah tugas akhir atau nama dan nim anggota anda tidak valid
 						</div>
 					<?php elseif($this->session->flashdata('tidakbisajoin')): ?> 
-					<div class="alert alert-success alert-dismissible">
+					<div class="alert alert-danger alert-dismissible">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-						<h4><i class="icon fa fa-check"></i>Info</h4>
+						<h4><i class="icon fa fa-close"></i>Info</h4>
 						Maaf anggota anda sudah ada yang menyelesaikan mata kuliah tugas akhir
 					</div>    	
 					<?php endif ?>
 				</div>
 			</div>
 			<?php echo form_open('mahasiswa/daftarsuratta',array('class'=>'form-test','method'=>'post')); ?>
-			<!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
+			
 			<div class="form-group inline">
 				<!-- Nama Perusahaan -->
 				<label class="col-md-3" for="namaperusahaan">Nama Perusahaan yang dituju</label>
@@ -149,7 +149,7 @@
 				<div class="col-md-4 col-xs-8">
 					<select name="jurusan" class="form-control" id="jurusan" onchange="prodi()" disabled>
 						<option value="" selected>Pilih Jurusan</option>
-						<option value="Teknik Informatika" <?php if($this->session->userdata('jurusan')=='Teknik Informatika'){echo "selected";} ?> >Informatika</option>
+						<option value="Teknik Informatika" <?php if($this->session->userdata('jurusan')=='Teknik Informatika'){echo "selected";} ?> >Teknik Informatika</option>
 						<option value="Sistem Informasi" <?php if($this->session->userdata('jurusan')=='Sistem Informasi'){echo "selected";}?> >Sistem Informasi</option>
 					</select>
 				</div>

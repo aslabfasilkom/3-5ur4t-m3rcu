@@ -43,8 +43,8 @@
                             <td><?php cetak($u->prodi); ?></td>
                           <td class="col-md-3">
                               <button type="button" class="btn btn-primary">Proses</button>
-                              <button type="button" class="btn btn-default">Detail</button>
-                              <a href="<?php echo site_url('admin/tolakemailta') ?>" class="btn btn-danger">Tolak</a>
+                              <a href="<?php echo site_url("admin/detailta/$u->id_surat") ?>" class="btn btn-default">Detail</a>
+                              <a href="<?php echo site_url("admin/tolakemailta/$u->id_surat") ?>" class="btn btn-danger">Tolak</a>
                           </td>
                         </tr>
                        <?php } ?> 
