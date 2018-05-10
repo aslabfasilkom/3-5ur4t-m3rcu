@@ -70,7 +70,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/taketa');
+		$data['surat'] = $this->tampilsurat_model->tampil_datata_ambil();
+		$this->load->view('admin/taketa',$data);
 		$this->load->view('admin/footer');
 	}
 
@@ -124,7 +125,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/prosesta');
+		$data['surat'] = $this->tampilsurat_model->tampil_datata_proses();
+		$this->load->view('admin/prosesta',$data);
 		$this->load->view('admin/footer');
 	}
 
@@ -154,7 +156,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/tolakta');
+		$data['surat'] = $this->tampilsurat_model->tampil_datata_tolak();
+		$this->load->view('admin/tolakta',$data);
 		$this->load->view('admin/footer');
 	}
 
@@ -239,6 +242,13 @@ class Admin extends CI_Controller {
 		$data['mahasiswa']	= $this->tampilsurat_model->PrintMahasiswaKP($idsurat);
 
 		$this->load->view('admin/printKP',$data);
+	}
+
+	public function printTA($idsurat){
+		$data['surat'] 		= $this->tampilsurat_model->printTA($idsurat);
+		$data['mahasiswa']	= $this->tampilsurat_model->PrintMahasiswaTA($idsurat);
+
+		$this->load->view('admin/printTA',$data);
 	}
 
 	public function cetakLAP(){
