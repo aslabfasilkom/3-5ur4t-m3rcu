@@ -33,15 +33,16 @@
                           </tr>
                         </thead>
                         <tbody>
+                          <?php $no = 1; ?>
+                          <?php foreach ($surat as $value): ?>
                             <tr>
-                              <td>1</td>
-                              <td>nomor surat</td>
-                              <td>4181...</td>
-                              <td>ival</td>
-                              <td>email@gmail.com</td>
-                              <td>sistem informasi</td>
-                              <td>alasan penolakan</td>
-                           </tr>
+                              <td><?php cetak($no++)?></td>
+                              <td><?php cetak($value->nim)?></td>
+                              <td><?php cetak($value->nama_mahasiswa)?></td>
+                              <td><?php cetak($value->email)?></td>
+                              <td><?php cetak($value->prodi)?></td>
+                            </tr>
+                          <?php endforeach ?>
                        </tbody>
                      </table>
                    </div>

@@ -62,7 +62,15 @@ class Tampilsurat_model extends CI_Model
 
 		# Query menampilkan Data TA Status = 'Tolak'
 		public function tampil_datata_tolak(){
-			$sql = "SELECT a.tanggal_diajukan, a.nim,b.nama_mahasiswa,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Di Tolak' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
+			$sql = "SELECT a.tanggal_diajukan, b.email,a.nim,b.nama_mahasiswa,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Di Tolak' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
+			$query = $this->db->query($sql);
+
+			return $query->result(); 
+		}
+
+		# Query menampilkan Data TA Status = 'Ambil'
+		public function tampil_datata_ambil(){
+			$sql = "SELECT a.id_surat,a.no_surat,a.id_surat,a.tanggal_diambil, a.nim,b.nama_mahasiswa,b.email,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Ambil' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
 			$query = $this->db->query($sql);
 
 			return $query->result(); 
@@ -81,14 +89,14 @@ class Tampilsurat_model extends CI_Model
 
 		# Query menampilkan Data TA Status = 'Proses'
 		public function tampil_datata_proses(){
-			$sql = "SELECT a.tanggal_diajukan, a.nim,b.nama_mahasiswa,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Proses' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
+			$sql = "SELECT b.email, a.no_surat, a.id_surat, a.tanggal_diajukan, a.nim,b.nama_mahasiswa,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Proses' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
 			$query = $this->db->query($sql);
 
 			return $query->result(); 
 		}
 		# Query menampilkan Data TA Status = 'Selesai'
 		public function tampil_datata_finish(){
-			$sql = "SELECT a.tanggal_selesai, a.nim,b.nama_mahasiswa,b.email,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Selesai' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
+			$sql = "SELECT a.id_surat,a.no_surat,a.tanggal_selesai, a.nim,b.nama_mahasiswa,b.email,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Selesai' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
 			$query = $this->db->query($sql);
 
 			return $query->result(); 
