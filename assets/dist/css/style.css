@@ -118,6 +118,9 @@ padding: 5px;
   margin-top: 0;
   font-size: 1.3em;
 }
+.navbar-toggle:focus{
+  background-color: transparent !important;
+}
 
 #home{
   color: white;
@@ -139,8 +142,10 @@ p.statement{
 .btn-daftar{
   transition: 0.5s;
   color: white;
+  font-size:20px;
   background: rgba(0,0,0,0.01);
-  border: solid 2px white; 
+  border: solid 2px white;
+  font-weight: bolder; 
 }
 .btn-daftar:hover{
   background: white;
@@ -149,13 +154,15 @@ p.statement{
    }
 .btn-login{
   transition: 0.5s;
-  color:#F4D03F;
+  color:white;
+  font-size: 20px;
+  font-weight: bolder;
   background:rgba(0,0,0,0.01);
-  border: solid 2px #F4D03F;
+  border: solid 2px #5DADE2;
 }
 .btn-login:hover{
   color: white;
-  background-color: #F4D03F;
+  background-color: #5DADE2;
 }
 #step{
   text-align: center;
@@ -306,7 +313,7 @@ background: rgba(46,134,193,1);
 }
 .skin-blue .sidebar-menu>li.take-active>a{
   color:#7D3C98;
-  border-left-color: #00c0ef;
+  border-left-color: #7D3C98;
 }
 .skin-blue .sidebar-menu>li.tolak-active>a{
   color:#f56954;

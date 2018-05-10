@@ -44,6 +44,7 @@
                     <tr>
                       <th width="20px">No.</th>
                       <th>Tanggal</th>
+                      <th>Nomor Surat</th>
                       <th>NIM</th>
                       <th>Nama</th>
                       <th>E-Mail</th>
@@ -52,7 +53,38 @@
                     </tr>
                   </thead>
                   <tbody>
-                    
+                    <?php $no=1; foreach ($surat as $u): ?>
+                    <tr>
+                      <td>
+                        <?php cetak($no++)?>
+                      </td>
+                      <td>
+                        <?php cetak(date('d-M-Y',strtotime($u->tanggal_diambil)))?>
+                      </td>
+                      <td>
+                        <?php cetak($u->no_surat)?>
+                      </td>
+                      <td>
+                        <?php cetak($u->nim)?>
+                      </td>
+                      <td>
+                        <?php cetak($u->nama_mahasiswa)?>
+                      </td>
+                      <td>
+                        <?php cetak($u->email)?>
+                      </td>
+                      <td>
+                        <?php cetak($u->prodi)?>
+                      </td>
+                      <td>
+                        <p class="label label-success" style="font-size: 15px">Selesai</p>
+                      </td>
+                      <td align="center">
+                        <!-- <button class="label btn label-default m-t--10" data-toggle="modal" data-target="#modal-detail" style="font-size: 16px;">Detail</button> -->
+                        <a href="<?php echo site_url("admin/detailkp/$u->id_surat") ?>" class="btn btn-default">Detail</a>
+                      </td>
+                    </tr>
+                    <?php endforeach ?>
                   </tbody>
                   </table>
               </div>

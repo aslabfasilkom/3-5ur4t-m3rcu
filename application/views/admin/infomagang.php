@@ -47,7 +47,7 @@
 								<td><?php echo $bagian; ?></td>
 								<td><?php echo $pihak_tertuju; ?></td>
 								<td>
-									<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#modal_edit<?php echo $id_perusahaan;?>"><i class="fa fa-edit" style="font-size:20px"></i></button>
+									<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit<?php echo $id_perusahaan;?>"><i class="fa fa-edit" style="font-size:20px"></i></button>
 									<a class="btn btn-danger" href="<?php echo site_url('admin/hapusinfomagang/'.$id_perusahaan);?>" ><i class="fa fa-trash" style="font-size:20px"></i>
 									</a>
 								</td>
@@ -68,8 +68,8 @@
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 							<h4 class="modal-title">Buat List Baru Info Kerja Praktek</h4>
 						</div>
-						<form class="form" method="post" action="<?php echo base_url("admin/tambahinfomagang"); ?>">
 							<div class="modal-body">
+						<form class="form" method="post" action="<?php echo base_url("admin/tambahinfomagang"); ?>">
 								<input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
 								<div class="form-group col-md-6">
 									<label for="namaPerusahaan" class=" control-label">Nama Perusahaan</label>
@@ -95,16 +95,16 @@
 									<label class="control-label">Kode Pos</label>
 									<input type="text" class="form-control" id="kodepos" name="kodepos" onkeypress='validate(event)' placeholder="Kode Pos Perusahaan">
 								</div>
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-12">
 									<label class="control-label">Pihak Tertuju</label>
 									<input type="text" class="form-control" id="pihak_tertuju" name="pihak_tertuju" placeholder="Pihak Tertuju">
 								</div>
 							</div>
-							<div class="modal-footer text-center">
+							<div class="modal-footer m-r-15">
 								<button type="reset" class="btn btn-default" >Reset</button>
-								<input type="submit" class="btn btn-info m-l-100" name="simpan" value="Tambah">
-							</div>
+								<input type="submit" class="btn btn-success m-l-100" name="simpan" value="Tambah">
 						</form>
+							</div>
 					</div>
 				</div>
 			</div>

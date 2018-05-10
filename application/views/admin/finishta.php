@@ -47,7 +47,7 @@
                           <td><?php cetak($u->email); ?></td>
                           <td><?php cetak($u->prodi); ?></td>
                           <td>
-                            <a class="btn btn-primary col-sm-10 col-sm-offset-1 btn-finish" href="#"><span class="fa fa-check"></span>Take</a>
+                            <a class="btn btn-primary col-sm-10 col-sm-offset-1 btn-finish" href="<?=site_url("surat/ubahAmbilTA/$u->id_surat")?>"><span class="fa fa-check"></span>Take</a>
                           </td>
                         </tr>
                         <?php } ?>

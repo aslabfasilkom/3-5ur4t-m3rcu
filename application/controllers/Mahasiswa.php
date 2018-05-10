@@ -5,7 +5,7 @@ class Mahasiswa extends CI_Controller {
 
 	public function __construct()
 	{
-		date_default_timezone_set("Asia/Jakarta");
+		
 		parent::__construct();
 		if (!$this->session->has_userdata('status')) {
 			redirect('login');
@@ -27,12 +27,6 @@ class Mahasiswa extends CI_Controller {
 
 		$data['checktranskripta'] = $this->webservice->CheckTranskripTA($this->session->userdata('nim'));
 
-		// echo $data['checkmatkulkp'];
-		// echo $data['checktranskripkp'];
-
-		// echo 'Haekal Armandono'."<br>";
-		// echo $this->session->userdata('nim');
-		// echo $this->session->userdata('nama_mahasiswa');
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/pilihan',$data);
@@ -71,6 +65,7 @@ class Mahasiswa extends CI_Controller {
 		}
 	}
 
+
 	
 	public function daftarsuratkp()
 	{
@@ -86,7 +81,7 @@ class Mahasiswa extends CI_Controller {
   		$nim  		  = $this->input->post("nim$y");
   		$nimmahasiswa = $fnim.$nim;
 
-  		$hasil = $this->daftarsurat_model->validasimahasiswa($nimmahasiswa);	
+  		$hasil = $this->daftarsurat_model->validasimahasiswa($nimmahasiswa,'Kerja Praktek');	
   		$jumlahmahasiswa = $hasil+$jumlahmahasiswa;
 	 }
 
@@ -172,65 +167,70 @@ class Mahasiswa extends CI_Controller {
 					$this->daftarsurat_model->InsertMahasiswa($data);
 				}
 
-				$this->session->set_flashdata('berhasil', 'true');
+				$this->session->set_flashdata('berhasilkp', 'true');
 				redirect('mahasiswa/lihat');
 		}
 
 
 	}
 	
-	
-	public function lihat()
-	{
-		$nim = $this->session->userdata('nim');
-
-		$data['statuskp'] = $this->statussurat_model->StatusKpSuratMahasiswa($nim);
-		$data['statusta'] = $this->statussurat_model->StatusTASuratMahasiswa($nim);
-
-		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/status',$data);
-	    $this->load->view('home/footer');
-	}
-
-	public function formta()
-	{
-		$data['provinsi']=$this->daerah_model->provinsi();
-		$this->load->view('mahasiswa/header');
-		$this->load->view('mahasiswa/formta',$data);
-		$this->load->view('home/footer');
-	}
 
 	public function daftarsuratta()
 	{
-	 $row 	   = $this->input->post('anggota');
-	
-	 
-	 $jumlahmahasiswa = 0;
+		  $this->load->library('webservice');	
+
+	  $row 	   = $this->input->post('anggota');
+	  $jumlahmahasiswa  = 0;
+	  $nimnamavalid 	= 0;
+	  $nimbolehjointa	= 0;
 
 	 for ($y=1; $y <=$row ; $y++) { 
 		$fnim 		  = $this->input->post("fnim$y");
   		$nim  		  = $this->input->post("nim$y");
   		$nimmahasiswa = $fnim.$nim;
 
-  		$hasil = $this->daftarsurat_model->validasimahasiswa($nimmahasiswa);	
+  		$hasil = $this->daftarsurat_model->validasimahasiswa($nimmahasiswa,'Tugas Akhir');	
   		$jumlahmahasiswa = $hasil+$jumlahmahasiswa;
 	 }
 
+	 for ($x=1; $x<=$row ; $x++) { 
+	 	 $fnim 		  = $this->input->post("fnim$x");
+	  	 $nim  		  = $this->input->post("nim$x");
+	  	 $nimmahasiswa = $fnim.$nim;
+	  	 $namamahasiswa = $this->input->post("nama$x"); 	
 
+	  	 $hasilnimnamavalid = $this->webservice->CheckMatkulTA($nimmahasiswa,$namamahasiswa);
+	  	 $nimnamavalid = $hasilnimnamavalid+$nimnamavalid;
+	 }
+
+	 for ($z=1; $z<=$row ; $z++) { 
+	 	 $fnim 		  = $this->input->post("fnim$z");
+	  	 $nim  		  = $this->input->post("nim$z");
+	  	 $nimmahasiswa = $fnim.$nim;
+	  	 $namamahasiswa = $this->input->post("nama$z"); 	
+
+	  	 $hasilnimbolehjointa = $this->webservice->CheckTranskripTA($nimmahasiswa);
+	  	 $nimbolehjointa = $hasilnimbolehjointa+$nimbolehjointa;
+	 }    
+
+	
 	  if ($jumlahmahasiswa > 0 ) {
-		  	$this->session->set_flashdata('gagal', 'true');
+	  	 	$this->session->set_flashdata('gagal', 'true');
 		  	redirect('mahasiswa/formta');
+	  }elseif($nimnamavalid != $row){
+	  		$this->session->set_flashdata('tidakvalid', 'true');
+	  		redirect('mahasiswa/formta');
+	  }elseif($nimbolehjointa != 0){
+	  		$this->session->set_flashdata('tidakbisajoin', 'true');
+	  		redirect('mahasiswa/formta');
 	  }else{
-		  		$prodi 			= $this->session->userdata('jurusan');
-	  			$jenis 			= $this->uri->segment(2);
-	  			$jenis_surat	="";
+	  			$prodi 			= $this->session->userdata('jurusan');
+	  			
 	  			$namekota		= $this->input->post('kota_kabupaten');
 	  			$alamat_lengkap = $this->input->post('alamat').", ".$this->input->post('kelurahan').", ".$this->input->post('kecamatan');
-				if ($jenis =='daftarsuratTA') {
-	  				$jenissurat = "Tugas Akhir";
-	  			}else{
-	  				$jenissurat ="Kerja Praktek";
-	  			}
+			
+	  				$jenissurat ="Tugas Akhir";
+	  			
 	  			
 	  			$data = array (
 					'id_surat'			 => $this->nomorsurat_model->IDSurat(),
@@ -252,7 +252,7 @@ class Mahasiswa extends CI_Controller {
 					'nik'				 => $this->dosen_model->GetTandaTangan($this->session->userdata('jurusan'),$jenissurat)->nik
 			   );
 
-		  	  $this->daftarsurat_model->daftarsuratTA($data,'surat');
+		  	  $this->daftarsurat_model->daftarsuratta($data,'surat');
 			  $idsurat = $this->daftarsurat_model->GetIdSuratToMahasiswa($this->session->userdata('nim'))->id_surat;
 		  	  
 		  	  for ($i=1; $i <=$row ; $i++) { 
@@ -272,12 +272,32 @@ class Mahasiswa extends CI_Controller {
 					$this->daftarsurat_model->InsertMahasiswa($data);
 				}
 
-				$this->session->set_flashdata('berhasil', 'true');
+				$this->session->set_flashdata('berhasilta', 'true');
 				redirect('mahasiswa/lihat');
 		}
-
-
 	}
+	
+	public function lihat()
+	{
+		$nim = $this->session->userdata('nim');
+
+		$data['statuskp'] = $this->statussurat_model->StatusKpSuratMahasiswa($nim);
+		$data['statusta'] = $this->statussurat_model->StatusTASuratMahasiswa($nim);
+
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/status',$data);
+	    $this->load->view('home/footer');
+	}
+
+	public function formta()
+	{
+		$data['provinsi']=$this->daerah_model->provinsi();
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/formta',$data);
+		$this->load->view('home/footer');
+	}
+
+	
 
 }
 

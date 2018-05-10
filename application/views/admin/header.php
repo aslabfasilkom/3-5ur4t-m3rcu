@@ -9,7 +9,9 @@
   <link rel="manifest" href="<?php echo base_url('assets/favicon/site.webmanifest') ?>">
   <link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-navbutton-color" content="#34495E">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#34495E">
+  <meta name="theme-color" content="#34495E">
   <title><?php if($this->uri->segment(2)==""){echo "Dashboard - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="waitingkp"){echo "Menunggu (KP) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="tolakemail"){echo "Tolak (KP) - Admin E-Surat Mercu Buana";}
@@ -17,15 +19,21 @@
   else if($this->uri->segment(2)=="finishkp"){echo "Selesai (KP) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="takekp"){echo "Terima (KP) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="tolakkp"){echo "Arsip Penolakan (KP) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="waitingta"){echo "Menunggu (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="waitingTA"){echo "Menunggu (TA) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="tolakemail"){echo "Tolak (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="prosesta"){echo "Proses (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="finishta"){echo "Selesai (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="taketa"){echo "Terima (TA) - Admin E-Surat Mercu Buana";}
-  else if($this->uri->segment(2)=="tolakta"){echo "Arsip Penolakan (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="prosesTA"){echo "Proses (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="finishTA"){echo "Selesai (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="takeTA"){echo "Terima (TA) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="tolakTA"){echo "Arsip Penolakan (TA) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="koordinatorsetting"){echo "Pengaturan Koordinator - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="koordinatorupdate"){echo "Mengubah Data Koordinator - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="teknikinfo"){echo "Mahasiswa (TI) - Admin E-Surat Mercu Buana";} 
-  else if($this->uri->segment(2)=="sisteminfo"){echo "Mahasiswa (SI) - Admin E-Surat Mercu Buana";} ?></title>
+  else if($this->uri->segment(2)=="sisteminfo"){echo "Mahasiswa (SI) - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="report"){echo "Report - Admin E-Surat Mercu Buana";}  
+  else if($this->uri->segment(2)=="tambahakun"){echo "Tambah Akun Admin - Admin E-Surat Mercu Buana";}
+  else if($this->uri->segment(2)=="infomagang"){echo "Tambah Info Magang - Admin E-Surat Mercu Buana";}  ?>
+
+  </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -43,7 +51,7 @@
    folder instead of downloading all of them to reduce the load. -->
    <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/_all-skins.min.css')?>">
    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css')?>">
-   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css')?>">
+   <link rel="stylesheet" href="<?php echo  base_url('assets/dist/css/style.css')?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.css">
    <!-- Untuk meng-email yang ditolak -->
    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')?>">
