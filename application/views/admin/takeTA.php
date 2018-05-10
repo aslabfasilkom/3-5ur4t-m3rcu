@@ -18,26 +18,7 @@
       <div class="col-xs-12">
         <!-- /.box -->
         <div class="box">
-          <div class="container">
-            <div class="row">
-              <button class="btn btn-primary btn-md " data-toggle="modal" data-target="#myModal">Cetak Laporan</button>
-              <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#myModal"> Hapus </button>
-            </div>
-           
-            <div class="container">
-              <div class="row">
-                 <div class="col-md-12">
-                  <?php if ($this->session->flashdata('gagal_tanggal')): ?>
-                    <div class="alert alert-danger alert-dismissible">
-                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                          <h4><i class="icon fa fa-close"></i>Info</h4>
-                          Maaf tanggal awal harus lebih kecil dari tanggal akhir
-                    </div>
-                  <?php endif ?>
-                </div>
-               </div>
-            </div>
-              <!-- /<div class="bo">/div>x-header -->
+         <!-- /<div class="bo">/div>x-header -->
               <div class="box-body table-responsive">
                 <table id="datatable" class="table table-bordered table-striped">
                   <thead>
@@ -89,7 +70,64 @@
                   </table>
               </div>
               <!-- /.box-body -->
-            </div>
+            <!-- /.box -->
+          </div>
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-xs-12">
+        <!-- /.box -->
+        <div class="box">
+              <!-- /<div class="bo">/div>x-header -->
+              <div class="box-body table-responsive">
+                <table id="datatable2" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th width="20px">No.</th>
+                      <th>Tanggal</th>
+                      <th>Nomor Surat</th>
+                      <th>NIM</th>
+                      <th>Nama</th>
+                      <th>E-Mail</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php $no=1; foreach ($surat as $u): ?>
+                    <tr>
+                      <td>
+                        <?php cetak($no++)?>
+                      </td>
+                      <td>
+                        <?php cetak(date('d-M-Y',strtotime($u->tanggal_diambil)))?>
+                      </td>
+                      <td>
+                        <?php cetak($u->no_surat)?>
+                      </td>
+                      <td>
+                        <?php cetak($u->nim)?>
+                      </td>
+                      <td>
+                        <?php cetak($u->nama_mahasiswa)?>
+                      </td>
+                      <td>
+                        <?php cetak($u->email)?>
+                      </td>
+                      <td>
+                        <?php cetak($u->prodi)?>
+                      </td>
+                      <td>
+                        <p class="label label-success" style="font-size: 15px">Selesai</p>
+                      </td>
+                      <td align="center">
+                        <!-- <button class="label btn label-default m-t--10" data-toggle="modal" data-target="#modal-detail" style="font-size: 16px;">Detail</button> -->
+                        <a href="<?php echo site_url("admin/detailkp/$u->id_surat") ?>" class="btn btn-default">Detail</a>
+                      </td>
+                    </tr>
+                    <?php endforeach ?>
+                  </tbody>
+                  </table>
+              </div>
+              <!-- /.box-body -->
             <!-- /.box -->
           </div>
         </div>

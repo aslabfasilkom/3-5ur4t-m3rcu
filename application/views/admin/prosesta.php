@@ -12,23 +12,70 @@
               <li class="active"><i class="fa fa-table"></i> Tabel Tugas Akhir</li>
             </ol>
           </section>
+           <!-- /.box -->
+                
           <!-- Main content -->
           <section class="content">
-            <div class="row">
-              <div class="col-xs-12">
-                <!-- /.box -->
-                <?php if ($this->session->flashdata('info')): ?>
+            <?php if ($this->session->flashdata('info')): ?>
                  <div class="alert alert-success alert-dismissible">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                   <h4><i class="icon fa fa-check"></i>Info</h4>
-                  Berhasil Merubah Status Tugas Akhir menjadi Proses
+                  Berhasil Merubah Status Tugas Akhir menjadi Finish
                 </div>  
-                <?php endif ?>
+            <?php endif ?>
+            <div class="row">
+              <div class="box">
+                  <!-- /<div class="bo">/div>x-header -->
+                  <div class="box-body table-responsive">
+                    <table id="datatable" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th width="20px">No.</th>
+                          <th>Nomor Surat</th>
+                          <th>NIM</th>
+                          <th>Nama</th>
+                          <th>E-Mail</th>
+                          <th>Program Studi</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php $no=1; ?>
+                        <?php foreach ($surat as $v): ?>
+                          <tr>
+                            <td><?php cetak($no++);?></td>
+                            <td><?php cetak($v->no_surat);?></td>
+                            <td><?php cetak($v->nim)?></td>
+                            <td><?php cetak($v->nama_mahasiswa)?></td>
+                            <td><?php cetak($v->email)?></td>
+                            <td><?php cetak($v->prodi)?></td>
+                            <td>
+                              <button class="btn btn-success col-sm-10" data-href="<?=site_url("surat/ubahFinishTA/$v->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+                               <span class="fa fa-check"></span> Finish
+                              </button>
+                              <a class="btn btn-primary col-sm-10 btn-finish"  target="_blank" href="<?=site_url("admin/printTA/$v->id_surat")?>">Print <span class="glyphicon glyphicon-print"></span></a>
+                             
+                            </td>
+                          </tr>
+                        <?php endforeach ?>
+                      </tbody>
+                      </table>
+                  </div>
+                  <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+              </div>
+              <!-- /.col -->
+            </div>
+            
+            <div class="row">
+              <div class="col-xs-12">
+               
 
                 <div class="box">
                   <!-- /<div class="bo">/div>x-header -->
                   <div class="box-body table-responsive">
-                    <table id="datatable" class="table table-bordered table-striped">
+                    <table id="datatable2" class="table table-bordered table-striped">
                       <thead>
                         <tr>
                           <th width="20px">No.</th>
