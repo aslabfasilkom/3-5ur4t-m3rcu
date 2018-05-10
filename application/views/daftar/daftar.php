@@ -1,6 +1,4 @@
 <div class="container form-login">
-
-  <div class="row">
     <h1 class="text-center">Daftar Akun E-surat</h1>
     <hr>
     <div class="row">
@@ -26,6 +24,7 @@
           <?php endif ?>
         </div>
       </div>
+       <div class="row">
     <div class="col-md-8 col-md-offset-3">
       <form class="form-horizontal" action="<?=site_url('daftar') ?>" method="post">
       <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
