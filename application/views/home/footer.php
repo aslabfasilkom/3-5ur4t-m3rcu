@@ -76,6 +76,8 @@
   function isChecked(checkbox, sub1) {
     document.getElementById(sub1).disabled = !checkbox.checked;
 }
+
+
 new WOW().init();
 
  $(function(){
