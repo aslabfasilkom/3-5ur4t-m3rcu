@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Report_model extends CI_Model {
 
-	public function printLAPORAN($startdate,$enddate,$jurusan)
+	public function printLAPORANta($startdate,$enddate,$jurusan)
 	{
 		$query = $this->db->query(
 			"SELECT surat.no_surat,surat.nim,surat.nama_perusahaan,surat.tanggal_diambil,user.nama_mahasiswa 

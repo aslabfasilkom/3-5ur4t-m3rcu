@@ -3,7 +3,7 @@
         <div class="row">
            <div class="col-md-4 col-md-offset-4 box-login">
              <?php echo form_open('login/kirim_reset'); ?> 
-              <!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>"  -->style="display: none">
+          
               <h3 class="text-center title-login">Masukkan Password Baru</h3>
               <input type="text" name="token" id="token" value="<?php echo $token ?>" hidden>
                 <div class="form-group has-feedback">

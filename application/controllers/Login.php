@@ -164,13 +164,13 @@ Admin E-Surat") ;
 
      public function reset(){
       date_default_timezone_set("Asia/jakarta");
-      $token = $this->uri->segment(4);
+      $token = $this->uri->segment(3);
+  
      
-      // get cek tokennya
       $cekToken = $this->user_model->cekToken($token);
       $rs = $cekToken->num_rows();
-     
-      // cek token ada atau engga
+    
+ 
       if ($rs > 0){
      
         $data = $cekToken->row();

@@ -18,15 +18,15 @@
 							mendaftar lagi
 						</div>
 					<?php elseif($this->session->flashdata('tidakvalid')): ?> 
-						<div class="alert alert-success alert-dismissible">
+						<div class="alert alert-danger alert-dismissible">
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-							<h4><i class="icon fa fa-check"></i>Info</h4>
+							<h4><i class="icon fa fa-close"></i>Info</h4>
 							Maaf anggota anda ada yang belum mengambil mata kuliah tugas akhir atau nama dan nim anggota anda tidak valid
 						</div>
 					<?php elseif($this->session->flashdata('tidakbisajoin')): ?> 
-					<div class="alert alert-success alert-dismissible">
+					<div class="alert alert-danger alert-dismissible">
 						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-						<h4><i class="icon fa fa-check"></i>Info</h4>
+						<h4><i class="icon fa fa-close"></i>Info</h4>
 						Maaf anggota anda sudah ada yang menyelesaikan mata kuliah tugas akhir
 					</div>    	
 					<?php endif ?>

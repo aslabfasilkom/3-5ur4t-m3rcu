@@ -26,8 +26,8 @@
       </div>
        <div class="row">
     <div class="col-md-8 col-md-offset-3">
-      <form class="form-horizontal" action="<?=site_url('daftar') ?>" method="post">
-      <!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
+
+      <?php echo form_open('daftar',array('method'=>'post','class'=>'form-horizontal')) ?>
       <div class="form-group">
           <label for="prodi" class="col-sm-2 control-label">Program Studi</label>
           <div class="col-sm-6">
@@ -74,13 +74,13 @@
             <input type="email" class="form-control" id="email" name="email" value="<?=set_value('email')?>" placeholder="Email nim@student.mercubuana.ac.id">
           </div>
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="email" class="col-sm-2 control-label">Re-Email</label>
           <div class="col-sm-6">
             <span class="text-danger"><?=form_error('reemail')?></span>
             <input type="email" class="form-control" id="reemail" name="reemail" placeholder="Re-Email" value="<?=set_value('email')?>">
           </div>
-        </div>
+        </div> -->
         <div class="form-group">
           <label for="password" class="col-sm-2 control-label">Password</label>
           <div class="col-sm-6">
@@ -101,11 +101,11 @@
             <input type="submit" class="btn btn-daftarkan btn-block" value="DAFTARKAN">
           </div>
         </div>
-        </form>
+        <?php echo form_close(); ?>
       </div>
     </div>
     <h5 class="text-center">Sudah punya akun? silahkan <b><a class="link-daftar" href="<?php echo site_url('login') ?>">login</a></b></h5>
-                        </div>
+  </div>
   </div>
 
 </div>

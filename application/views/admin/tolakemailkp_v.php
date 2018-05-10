@@ -17,7 +17,7 @@
             <div class="row">
               <?php echo form_open('surat/kirimpesantolakkp'); ?>
              <!-- Send Email -->
-              <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
+             
               <div class="col-md-12">
                 <div class="box box-danger">
                   <div class="box-header with-border">
