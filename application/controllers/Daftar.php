@@ -27,7 +27,7 @@ class Daftar extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|alpha_numeric');
 		$this->form_validation->set_rules('repassword', 'Re-Password', 'trim|required|matches[password]');
 		$this->form_validation->set_rules('email', 'Email', 'required');
-		$this->form_validation->set_rules('reemail', 'Re-Email', 'trim|required|matches[email]');
+		// $this->form_validation->set_rules('reemail', 'Re-Email', 'trim|required|matches[email]');
 		$this->form_validation->set_rules('kodenim', 'Program Studi', 'required');
 		$this->form_validation->set_rules('prodi', 'Program Studi', 'required');
 		
@@ -47,7 +47,9 @@ class Daftar extends CI_Controller {
 
 			if ($validasiemail != "@student.mercubuana.ac.id") {
 				$this->session->set_flashdata('emailmercu', 'true');
-				redirect('daftar');
+				$this->load->view('daftar/header');
+				$this->load->view('daftar/daftar');
+				$this->load->view('home/footer');
 			}elseif($nimlengkap != $validasiemailnim ){
 				$this->session->set_flashdata('emailmhs','true');
 				redirect('daftar');

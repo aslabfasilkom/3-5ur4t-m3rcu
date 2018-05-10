@@ -54,7 +54,7 @@ class Tampilsurat_model extends CI_Model
 
 		# Query menampilkan Data TA Status = 'Waiting'
 		public function tampil_datata_waiting(){
-			$sql = "SELECT a.tanggal_diajukan, a.nim,b.nama_mahasiswa,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Menunggu' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
+			$sql = "SELECT a.id_surat,a.tanggal_diajukan, a.nim,b.nama_mahasiswa,a.prodi FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Menunggu' AND a.jenis_surat ='Tugas Akhir' ORDER BY id_surat DESC";
 			$query = $this->db->query($sql);
 
 			return $query->result(); 
@@ -72,7 +72,7 @@ class Tampilsurat_model extends CI_Model
 		# Query menampilkan email user TA
 		public function get_email_user_ta($id_surat)
 		{
-			$sql = "SELECT b.email,a.id_surat FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Menunggu' AND a.jenis_surat ='Tugas Akhir' AND a.id_surat='$id_surat' ";
+			$sql = "SELECT b.email,a.id_surat,b.nama_mahasiswa,b.nim FROM surat a, user b WHERE a.nim = b.nim AND a.status ='Menunggu' AND a.jenis_surat ='Tugas Akhir' AND a.id_surat='$id_surat' ";
 			$query = $this->db->query($sql);
 
 			return $query->row(); 
@@ -94,13 +94,26 @@ class Tampilsurat_model extends CI_Model
 			return $query->result(); 
 		}
 
-		# Query Select data suratKP berdasarkan nim
+		# Query Select data surat and ta berdasarkan nim
 		public function SelectSurat($id_surat)
 		{
 			$this->db->select('*');
 			$this->db->from('surat');
 			$this->db->where('id_surat',$id_surat);
 			$query= $this->db->get();
+
+			return $query->row();
+		}
+
+		// GET identitas mahasiswa
+		public function GetIdentitasMahasiswa($id_surat)
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.id_surat',$id_surat);
+			$this->db->limit(1);
+			$query = $this->db->get();
 
 			return $query->row();
 		}
@@ -132,18 +145,6 @@ class Tampilsurat_model extends CI_Model
 			return $query->row_array();
 		}
 
-		public function GetIdentitasMahasiswa($id_surat)
-		{
-			$this->db->select('*');
-			$this->db->from('surat');
-			$this->db->join('user','user.nim=surat.nim');
-			$this->db->where('surat.id_surat',$id_surat);
-			$this->db->limit(1);
-			$query = $this->db->get();
-
-			return $query->row();
-		}
-
 		public function PrintMahasiswaKP($id_surat)
 		{
 			
@@ -154,6 +155,47 @@ class Tampilsurat_model extends CI_Model
 
 			return $query->result_array();
 		}
+
+		public function printta($id_surat)
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim =surat.nim');
+			$this->db->join('dosen','dosen.nik =surat.nik');
+			$this->db->where('id_surat',$id_surat);
+			$this->db->where('surat.status !=','Menunggu');
+			$this->db->where('surat.status !=','Di tolak');
+			$query = $this->db->get();
+			
+			return $query->row_array();
+		}
+
+		public function detailta($id_surat)
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim =surat.nim');
+			$this->db->join('dosen','dosen.nik =dosen.nik');
+			$this->db->where('id_surat',$id_surat);
+			$query = $this->db->get();
+			
+			return $query->row_array();
+		}
+
+		public function PrintMahasiswaTA($id_surat)
+		{
+			
+			$query = $this->db->query("SELECT m.nim,m.nama_mahasiswa,m.nohp FROM mahasiswa m JOIN surat s 
+								ON m.id_surat=s.id_surat WHERE 
+								m.id_surat='$id_surat' "
+							);
+
+			return $query->result_array();
+		}
+
+	
+
+	
 		
 
 }
