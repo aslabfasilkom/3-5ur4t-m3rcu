@@ -41,19 +41,19 @@
                       </thead>
                       <tbody>
                         <?php $no=1; ?>
-                        <?php foreach ($surat as $v): ?>
+                        <?php foreach ($suratsi as $vsi): ?>
                           <tr>
                             <td><?php cetak($no++);?></td>
-                            <td><?php cetak($v->no_surat);?></td>
-                            <td><?php cetak($v->nim)?></td>
-                            <td><?php cetak($v->nama_mahasiswa)?></td>
-                            <td><?php cetak($v->email)?></td>
-                            <td><?php cetak($v->prodi)?></td>
+                            <td><?php cetak($vsi->no_surat);?></td>
+                            <td><?php cetak($vsi->nim)?></td>
+                            <td><?php cetak($vsi->nama_mahasiswa)?></td>
+                            <td><?php cetak($vsi->email)?></td>
+                            <td><?php cetak($vsi->prodi)?></td>
                             <td>
-                              <button class="btn btn-success col-sm-10" data-href="<?=site_url("surat/ubahFinishTA/$v->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+                              <button class="btn btn-success col-sm-10" data-href="<?=site_url("surat/ubahFinishta/$vsi->id_surat")?>" data-toggle="modal" data-target="#confirm" >
                                <span class="fa fa-check"></span> Finish
                               </button>
-                              <a class="btn btn-primary col-sm-10 btn-finish"  target="_blank" href="<?=site_url("admin/printTA/$v->id_surat")?>">Print <span class="glyphicon glyphicon-print"></span></a>
+                              <a class="btn btn-primary col-sm-10 btn-finish"  target="_blank" href="<?=site_url("admin/printTA/$vsi->id_surat")?>">Print <span class="glyphicon glyphicon-print"></span></a>
                              
                             </td>
                           </tr>
@@ -66,12 +66,8 @@
                 <!-- /.box -->
               </div>
               <!-- /.col -->
-            </div>
-            
-            <div class="row">
+              <div class="row">
               <div class="col-xs-12">
-               
-
                 <div class="box">
                   <!-- /<div class="bo">/div>x-header -->
                   <div class="box-body table-responsive">
@@ -89,19 +85,19 @@
                       </thead>
                       <tbody>
                         <?php $no=1; ?>
-                        <?php foreach ($surat as $v): ?>
+                        <?php foreach ($suratti as $vti): ?>
                           <tr>
                             <td><?php cetak($no++);?></td>
-                            <td><?php cetak($v->no_surat);?></td>
-                            <td><?php cetak($v->nim)?></td>
-                            <td><?php cetak($v->nama_mahasiswa)?></td>
-                            <td><?php cetak($v->email)?></td>
-                            <td><?php cetak($v->prodi)?></td>
+                            <td><?php cetak($vti->no_surat);?></td>
+                            <td><?php cetak($vti->nim)?></td>
+                            <td><?php cetak($vti->nama_mahasiswa)?></td>
+                            <td><?php cetak($vti->email)?></td>
+                            <td><?php cetak($vti->prodi)?></td>
                             <td>
-                              <button class="btn btn-success col-sm-10" data-href="<?=site_url("surat/ubahFinishTA/$v->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+                              <button class="btn btn-success col-sm-10" data-href="<?=site_url("surat/ubahFinishta/$vti->id_surat")?>" data-toggle="modal" data-target="#confirm" >
                                <span class="fa fa-check"></span> Finish
                               </button>
-                              <a class="btn btn-primary col-sm-10 btn-finish"  target="_blank" href="<?=site_url("admin/printTA/$v->id_surat")?>">Print <span class="glyphicon glyphicon-print"></span></a>
+                              <a class="btn btn-primary col-sm-10 btn-finish"  target="_blank" href="<?=site_url("admin/printTA/$vti->id_surat")?>">Print <span class="glyphicon glyphicon-print"></span></a>
                              
                             </td>
                           </tr>
@@ -115,6 +111,7 @@
               </div>
               <!-- /.col -->
             </div>
+        
             <!-- /.row -->
           </section>
           <!-- /.content -->

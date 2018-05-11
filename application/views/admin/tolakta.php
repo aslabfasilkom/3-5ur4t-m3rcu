@@ -28,19 +28,17 @@
                             <th>Nim</th>
                             <th>Nama</th>
                             <th>E-Mail</th>
-                            <th>Program Studi</th>
-                            <th>Keterangan</th>
                           </tr>
                         </thead>
                         <tbody>
                           <?php $no = 1; ?>
-                          <?php foreach ($surat as $value): ?>
+                          <?php foreach ($suratsi as $valuesi): ?>
                             <tr>
                               <td><?php cetak($no++)?></td>
-                              <td><?php cetak($value->nim)?></td>
-                              <td><?php cetak($value->nama_mahasiswa)?></td>
-                              <td><?php cetak($value->email)?></td>
-                              <td><?php cetak($value->prodi)?></td>
+                              <td><?php cetak($valuesi->nim)?></td>
+                              <td><?php cetak($valuesi->nama_mahasiswa)?></td>
+                              <td><?php cetak($valuesi->email)?></td>
+                              <td><?php cetak($valuesi->prodi)?></td>
                             </tr>
                           <?php endforeach ?>
                        </tbody>
@@ -69,19 +67,17 @@
                             <th>Nim</th>
                             <th>Nama</th>
                             <th>E-Mail</th>
-                            <th>Program Studi</th>
-                            <th>Keterangan</th>
                           </tr>
                         </thead>
                         <tbody>
                           <?php $no = 1; ?>
-                          <?php foreach ($surat as $value): ?>
+                          <?php foreach ($suratti as $valueti): ?>
                             <tr>
                               <td><?php cetak($no++)?></td>
-                              <td><?php cetak($value->nim)?></td>
-                              <td><?php cetak($value->nama_mahasiswa)?></td>
-                              <td><?php cetak($value->email)?></td>
-                              <td><?php cetak($value->prodi)?></td>
+                              <td><?php cetak($valueti->nim)?></td>
+                              <td><?php cetak($valueti->nama_mahasiswa)?></td>
+                              <td><?php cetak($valueti->email)?></td>
+                              <td><?php cetak($valueti->prodi)?></td>
                             </tr>
                           <?php endforeach ?>
                        </tbody>

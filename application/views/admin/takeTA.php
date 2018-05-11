@@ -34,35 +34,35 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $no=1; foreach ($surat as $u): ?>
+                    <?php $no=1; foreach ($suratsi as $usi): ?>
                     <tr>
                       <td>
                         <?php cetak($no++)?>
                       </td>
                       <td>
-                        <?php cetak(date('d-M-Y',strtotime($u->tanggal_diambil)))?>
+                        <?php cetak(date('d-M-Y',strtotime($usi->tanggal_diambil)))?>
                       </td>
                       <td>
-                        <?php cetak($u->no_surat)?>
+                        <?php cetak($usi->no_surat)?>
                       </td>
                       <td>
-                        <?php cetak($u->nim)?>
+                        <?php cetak($usi->nim)?>
                       </td>
                       <td>
-                        <?php cetak($u->nama_mahasiswa)?>
+                        <?php cetak($usi->nama_mahasiswa)?>
                       </td>
                       <td>
-                        <?php cetak($u->email)?>
+                        <?php cetak($usi->email)?>
                       </td>
                       <td>
-                        <?php cetak($u->prodi)?>
+                        <?php cetak($usi->prodi)?>
                       </td>
                       <td>
                         <p class="label label-success" style="font-size: 15px">Selesai</p>
                       </td>
                       <td align="center">
                         <!-- <button class="label btn label-default m-t--10" data-toggle="modal" data-target="#modal-detail" style="font-size: 16px;">Detail</button> -->
-                        <a href="<?php echo site_url("admin/detailkp/$u->id_surat") ?>" class="btn btn-default">Detail</a>
+                        <a href="<?php echo site_url("admin/detailta/$usi->id_surat") ?>" class="btn btn-default">Detail</a>
                       </td>
                     </tr>
                     <?php endforeach ?>
@@ -92,35 +92,35 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <?php $no=1; foreach ($surat as $u): ?>
+                    <?php $no=1; foreach ($suratti as $usi): ?>
                     <tr>
                       <td>
                         <?php cetak($no++)?>
                       </td>
                       <td>
-                        <?php cetak(date('d-M-Y',strtotime($u->tanggal_diambil)))?>
+                        <?php cetak(date('d-M-Y',strtotime($usi->tanggal_diambil)))?>
                       </td>
                       <td>
-                        <?php cetak($u->no_surat)?>
+                        <?php cetak($usi->no_surat)?>
                       </td>
                       <td>
-                        <?php cetak($u->nim)?>
+                        <?php cetak($usi->nim)?>
                       </td>
                       <td>
-                        <?php cetak($u->nama_mahasiswa)?>
+                        <?php cetak($usi->nama_mahasiswa)?>
                       </td>
                       <td>
-                        <?php cetak($u->email)?>
+                        <?php cetak($usi->email)?>
                       </td>
                       <td>
-                        <?php cetak($u->prodi)?>
+                        <?php cetak($usi->prodi)?>
                       </td>
                       <td>
                         <p class="label label-success" style="font-size: 15px">Selesai</p>
                       </td>
                       <td align="center">
                         <!-- <button class="label btn label-default m-t--10" data-toggle="modal" data-target="#modal-detail" style="font-size: 16px;">Detail</button> -->
-                        <a href="<?php echo site_url("admin/detailkp/$u->id_surat") ?>" class="btn btn-default">Detail</a>
+                        <a href="<?php echo site_url("admin/detailta/$usi->id_surat") ?>" class="btn btn-default">Detail</a>
                       </td>
                     </tr>
                     <?php endforeach ?>
@@ -136,30 +136,3 @@
 </div>    
 
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Laporan Surat Selesai</h4>
-          </div>
-          <form action="<?php echo base_url('admin/cetakLAP')?>" method="POST" role="form">
-            <div class="form-group col-md-6">
-              <label for="startdate">Start Date</label>
-              <input type="text" name="startdate" class="form-control datepicker" placeholder="Tanggal awal">
-            </div>
-
-            <div class="form-group col-md-6">
-              <label for="enddate">End Date</label>
-              <input type="text" name="enddate" class="form-control datepicker" placeholder="Tanggal Akhir">
-            </div>
-
-            <div class="modal-footer">       
-              <button type="submit" class="btn btn-primary">Submit</button>
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </form>
-      </div>
-  </div>
-</div>
-                

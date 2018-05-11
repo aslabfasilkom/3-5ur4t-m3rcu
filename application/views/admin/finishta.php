@@ -41,17 +41,19 @@
                       </thead>
                       <tbody>
                         <?php $no=1;
-                        foreach ($surat as $u) {
+                        foreach ($suratsi as $usi) {
                         ?>
                         <tr>
                           <td><?php cetak($no++); ?></td>
-                          <td><?php cetak($u->tanggal_selesai);?></td>
-                          <td><?php cetak($u->nim); ?></td>
-                          <td><?php cetak($u->nama_mahasiswa); ?></td>
-                          <td><?php cetak($u->email); ?></td>
-                          <td><?php cetak($u->prodi); ?></td>
+                          <td><?php cetak($usi->tanggal_selesai);?></td>
+                          <td><?php cetak($usi->nim); ?></td>
+                          <td><?php cetak($usi->nama_mahasiswa); ?></td>
+                          <td><?php cetak($usi->email); ?></td>
+                          <td><?php cetak($usi->prodi); ?></td>
                           <td>
-                            <a class="btn btn-primary col-sm-10 col-sm-offset-1 btn-finish" href="<?=site_url("surat/ubahAmbilTA/$u->id_surat")?>"><span class="fa fa-check"></span>Take</a>
+                               <button class="btn btn-success col-sm-10" data-href="<?=site_url("surat/ubahAmbilta/$usi->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+                               <span class="fa fa-check"></span> Take
+                              </button>
                           </td>
                         </tr>
                         <?php } ?>
@@ -86,17 +88,19 @@
                       </thead>
                       <tbody>
                         <?php $no=1;
-                        foreach ($surat as $u) {
+                        foreach ($suratti as $uti) {
                         ?>
                         <tr>
                           <td><?php cetak($no++); ?></td>
-                          <td><?php cetak($u->tanggal_selesai);?></td>
-                          <td><?php cetak($u->nim); ?></td>
-                          <td><?php cetak($u->nama_mahasiswa); ?></td>
-                          <td><?php cetak($u->email); ?></td>
-                          <td><?php cetak($u->prodi); ?></td>
+                          <td><?php cetak($uti->tanggal_selesai);?></td>
+                          <td><?php cetak($uti->nim); ?></td>
+                          <td><?php cetak($uti->nama_mahasiswa); ?></td>
+                          <td><?php cetak($uti->email); ?></td>
+                          <td><?php cetak($uti->prodi); ?></td>
                           <td>
-                            <a class="btn btn-primary col-sm-10 col-sm-offset-1 btn-finish" href="<?=site_url("surat/ubahAmbilTA/$u->id_surat")?>"><span class="fa fa-check"></span>Take</a>
+                              <button class="btn btn-success col-sm-10" data-href="<?=site_url("surat/ubahAmbilta/$uti->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+                               <span class="fa fa-check"></span> Take
+                              </button>
                           </td>
                         </tr>
                         <?php } ?>
@@ -115,3 +119,25 @@
             <!-- /.content -->
           </div>
         </body>
+
+<div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Konfirmasi</h4>
+                </div>
+            
+                <div class="modal-body">
+                    <p>Apakah anda yakin ingin mengubah dari proses ke ambil</p>
+                    <p class="debug-url"></p>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary btn-ok">Konfirmasi</a>
+                </div>
+            </div>
+        </div>
+    </div>        
