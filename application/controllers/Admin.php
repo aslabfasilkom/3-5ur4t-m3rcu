@@ -66,15 +66,16 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function taketa()
+	public function takekp()
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_ambil();
-		$this->load->view('admin/taketa',$data);
+		$data['surat'] = $this->tampilsurat_model->tampil_datakp_ambil();
+		$this->load->view('admin/takeKP',$data);
 		$this->load->view('admin/footer');
 	}
 
+	
 	public function tolakkp()
 	{
 		$this->load->view('admin/header');
@@ -113,9 +114,11 @@ class Admin extends CI_Controller {
 	// BATAS AWAL DESKRIPSI TUGAS AKHIR
 	public function waitingta()
 	{
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_waiting_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_waiting_ti();
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_waiting();		
 		$this->load->view('admin/waitingta',$data);
 		$this->load->view('admin/footer');
 	}
@@ -123,9 +126,11 @@ class Admin extends CI_Controller {
 
 	public function prosesta()
 	{
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_proses_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_proses_ti();
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_proses();
 		$this->load->view('admin/prosesta',$data);
 		$this->load->view('admin/footer');
 	}
@@ -134,29 +139,33 @@ class Admin extends CI_Controller {
 
 	public function finishta()
 	{
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_selesai_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_selesai_ti();
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_finish();
 		$this->load->view('admin/finishta',$data);
 		$this->load->view('admin/footer');
 	}
 
-
-	public function takekp()
+	public function taketa()
 	{
-		$this->load->view('admin/header');
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_ambil_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_ambil_ti();
+
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_ambil();
-		$this->load->view('admin/takeKP',$data);
+		$this->load->view('admin/header');
+		$this->load->view('admin/taketa',$data);
 		$this->load->view('admin/footer');
 	}
 
-	
 	public function tolakta()
 	{
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_tolak_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_tolak_ti();
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_tolak();
 		$this->load->view('admin/tolakta',$data);
 		$this->load->view('admin/footer');
 	}

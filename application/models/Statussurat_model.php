@@ -159,7 +159,8 @@ class Statussurat_model extends CI_Model {
 	public function SuratTAToFinish($id_surat)
 	{
 		$data = array(
-			'status'=>'Selesai'	
+			'status'=>'Selesai',
+			'tanggal_selesai'=>date('Y-m-d'),	
 		);
 
 		$this->db->where('id_surat',$id_surat);
@@ -171,7 +172,8 @@ class Statussurat_model extends CI_Model {
 	public function SuratTAToTake($id_surat)
 	{
 		$data = array(
-			'status'=>'Selesai'	
+			'status'=>'Ambil',
+			'tanggal_diambil'=>date('Y-m-d'),	
 		);
 
 		$this->db->where('id_surat',$id_surat);

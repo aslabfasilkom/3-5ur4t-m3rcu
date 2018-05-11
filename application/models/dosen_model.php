@@ -16,12 +16,12 @@
         return $res;
       }
 
-      public function GetTandaTangan($prodi,$jenis)
+      public function GetTandaTangan($prodi,$jabatan)
       {
         $this->db->select('*');
         $this->db->from('dosen');
         $this->db->where('prodi',$prodi);
-        $this->db->where('jenis',$jenis);
+        $this->db->where('jabatan',$jabatan);
         $query = $this->db->get();
 
         return $query->row();

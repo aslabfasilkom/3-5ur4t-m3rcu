@@ -1,4 +1,4 @@
-	<?php
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mahasiswa extends CI_Controller {
@@ -118,15 +118,10 @@ class Mahasiswa extends CI_Controller {
 	  }else{
 	  			$prodi 			= $this->session->userdata('jurusan');
 	  			$jenis 			= $this->uri->segment(2);
-	  			$jenis_surat	="";
 	  			$namekota		= $this->input->post('kota_kabupaten');
 	  			$alamat_lengkap = $this->input->post('alamat').", ".$this->input->post('kelurahan').", ".$this->input->post('kecamatan');
-				if ($jenis =='daftarsuratkp') {
-	  				$jenissurat = "Kerja Praktek";
-	  			}else{
-	  				$jenissurat ="Tugas Akhir";
-	  			}
-	  			
+				
+				
 	  			$data = array (
 					'id_surat'			 => $this->nomorsurat_model->IDSurat(),
 					'no_surat'  		 => '',
@@ -144,7 +139,7 @@ class Mahasiswa extends CI_Controller {
 					'tahun'				 => date('Y'),	
 					'prodi'				 => $prodi,
 					'nim' 				 => $this->session->userdata('nim'),
-					'nik'				 => $this->dosen_model->GetTandaTangan($this->session->userdata('jurusan'),$jenissurat)->nik
+					'nik'				 => $this->dosen_model->GetTandaTangan($this->session->userdata('jurusan'),'Koordinator Kerja Praktek')->nik
 			   );
 
 		  	  $this->daftarsurat_model->daftarsuratkp($data,'surat');
@@ -229,9 +224,6 @@ class Mahasiswa extends CI_Controller {
 	  			$namekota		= $this->input->post('kota_kabupaten');
 	  			$alamat_lengkap = $this->input->post('alamat').", ".$this->input->post('kelurahan').", ".$this->input->post('kecamatan');
 			
-	  				$jenissurat ="Tugas Akhir";
-	  			
-	  			
 	  			$data = array (
 					'id_surat'			 => $this->nomorsurat_model->IDSurat(),
 					'no_surat'  		 => '',
@@ -249,7 +241,7 @@ class Mahasiswa extends CI_Controller {
 					'tahun'				 => date('Y'),	
 					'prodi'				 => $prodi,
 					'nim' 				 => $this->session->userdata('nim'),
-					'nik'				 => $this->dosen_model->GetTandaTangan($this->session->userdata('jurusan'),$jenissurat)->nik
+					'nik'				 => $this->dosen_model->GetTandaTangan($this->session->userdata('jurusan'),'Koordinator Tugas Akhir')->nik
 			   );
 
 		  	  $this->daftarsurat_model->daftarsuratta($data,'surat');

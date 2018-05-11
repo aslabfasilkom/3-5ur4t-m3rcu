@@ -356,14 +356,7 @@
 
 	<script>
 
-		function prodi(){
-			var jurusan=document.getElementById("jurusan").value;
-			document.getElementById("fnim1").value=jurusan;
-			document.getElementById("fnim2").value=jurusan;
-			document.getElementById("fnim3").value=jurusan;
-			document.getElementById("fnim4").value=jurusan;
-			document.getElementById("fnim5").value=jurusan;
-		}
+
 
 		function no(evt) {
 			var charCode = (evt.which) ? evt.which : event.keyCode
