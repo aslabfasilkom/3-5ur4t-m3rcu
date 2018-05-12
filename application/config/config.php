@@ -458,7 +458,7 @@ $config['csrf_token_name'] = 'csrf_token';
 $config['csrf_cookie_name'] = 'csrf_cookie';
 $config['csrf_expire'] = 1000;
 $config['csrf_regenerate'] = TRUE;
-$config['csrf_exclude_uris'] = array('mahasiswa/daftarsuratta','mahasiswa/daftarsuratkp');
+$config['csrf_exclude_uris'] = array('mahasiswa/daftarsuratta','mahasiswa/daftarsuratkp','admin/tambahinfomagang');
 
 /*
 |--------------------------------------------------------------------------

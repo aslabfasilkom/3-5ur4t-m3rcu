@@ -68,9 +68,8 @@
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 							<h4 class="modal-title">Buat List Baru Info Kerja Praktek</h4>
 						</div>
+						<?php echo form_open('admin/tambahinfomagang',array('class'=>'form','method'=>'post')) ?>	
 							<div class="modal-body">
-						<form class="form" method="post" action="<?php echo base_url("admin/tambahinfomagang"); ?>">
-								<input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
 								<div class="form-group col-md-6">
 									<label for="namaPerusahaan" class=" control-label">Nama Perusahaan</label>
 									<input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" placeholder="Nama Perusahaan">
@@ -83,28 +82,55 @@
 									<label class="control-label">Bagian</label>
 									<input type="text" class="form-control" id="bagian" name="bagian" placeholder="Bagian Rekrutmen Perusahaan">
 								</div>
-								<div class="form-group col-sm-12">
+								<div class="form-group col-md-6">
+									<label class="control-label">Provinsi</label>
+									<select class='form-control' id='provinsi' name="provinsi" required>
+										<option value=''>Pilih Provinsi</option>
+										<?php 
+										foreach ($provinsi as $prov) {
+											echo "<option value='$prov[id]'>$prov[nama]</option>";
+										}
+										?>
+									</select>
+								</div>
+								<div class="form-group col-md-6">
+									<label class="control-label">Kota/Kab</label>
+									<select class='form-control' id='kabupaten-kota' name="kota_kabupaten" required>
+										<option value=''>Pilih Kabupaten/Kota</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6">
+									<label class="control-label">Kecamatan</label>
+									<select class='form-control' id='kecamatan' name="kecamatan" required>
+										<option value=''>Pilih Kecamatan</option>
+									</select>
+								</div>
+								<div class="form-group col-md-6">
+									<label class="control-label">Kelurahan</label>
+									<select class='form-control' id='kelurahan-desa' name="kelurahan" required>
+										<option value=''>Pilih Kelurahan</option>
+									</select>
+								</div>
+								<div class="form-group col-md-12">
+									<label class="control-label">Kode Pos</label>
+									<select class='form-control' id='kodepos' name="kodepos" required>
+										<option value=''>Pilih Kode Pos</option>
+									</select>
+								</div>
+								<div class="form-group col-md-12">
 									<label class="control-label">Alamat Perusahaan</label>
 									<textarea class="form-control" id="alamat_perusahaan" name="alamat_perusahaan" placeholder="Alamat Lengkap Perusahaan"></textarea>
-								</div>
-								<div class="form-group col-md-6">
-									<label class="control-label">Kota</label>
-									<input type="text" class="form-control" id="kota" name="kota" placeholder="Kota Perusahaan">
-								</div>
-								<div class="form-group col-md-6">
-									<label class="control-label">Kode Pos</label>
-									<input type="text" class="form-control" id="kodepos" name="kodepos" onkeypress='validate(event)' placeholder="Kode Pos Perusahaan">
 								</div>
 								<div class="form-group col-md-12">
 									<label class="control-label">Pihak Tertuju</label>
 									<input type="text" class="form-control" id="pihak_tertuju" name="pihak_tertuju" placeholder="Pihak Tertuju">
 								</div>
 							</div>
-							<div class="modal-footer m-r-15">
+							<div class="modal-footer">
 								<button type="reset" class="btn btn-default" >Reset</button>
 								<input type="submit" class="btn btn-success m-l-100" name="simpan" value="Tambah">
-						</form>
 							</div>
+						<?php echo form_close(); ?>
 					</div>
 				</div>
 			</div>

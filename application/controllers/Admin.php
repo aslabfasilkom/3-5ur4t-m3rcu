@@ -438,6 +438,7 @@ class Admin extends CI_Controller {
 	public function infomagang()
 
 	{
+		$data['provinsi']=$this->daerah_model->provinsi();
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$data['info'] = $this->infomagang_model->tampil_info();
@@ -524,4 +525,28 @@ class Admin extends CI_Controller {
 	    }
 
 	  }
+
+	  public function select_daerah()
+	{
+
+		$modul=$this->input->post('modul');
+		$id=$this->input->post('id');
+
+		$this->security->get_csrf_token_name();
+		$this->security->get_csrf_hash();
+
+		if($modul=="kabupaten"){
+			echo $this->daerah_model->kabupaten($id);
+		}
+		else if($modul=="kecamatan"){
+			echo $this->daerah_model->kecamatan($id);
+
+		}
+		else if($modul=="kelurahan"){
+			echo $this->daerah_model->kelurahan($id);
+		}else if($modul=="kodepos"){
+			echo $this->daerah_model->kodepos($id);
+		}
+	}
+
 }

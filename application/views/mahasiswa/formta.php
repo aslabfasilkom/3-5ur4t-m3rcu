@@ -75,7 +75,7 @@
 
 			<div class="form-group inline">
 				<!-- Alamat Perusahaan -->
-				<label class="col-md-3" for="alamat" >Kabupaten/Kota</label>
+				<label class="col-md-3" for="kabupaten-kota" >Kabupaten/Kota</label>
 				<div class="col-md-6">
 					<select class='form-control' id='kabupaten-kota' name="kota_kabupaten" required>
 						<option value=''>Pilih Kabupaten/Kota</option>
