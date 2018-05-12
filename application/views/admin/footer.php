@@ -16,6 +16,7 @@
 <script src="<?php echo base_url('assets/plugins/datatables.net/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?php echo base_url('assets/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js')?>"></script>
 <script src="<?php echo base_url('assets/plugins/moment/moment.js')?>"></script>
+<script src="<?php echo base_url('assets/plugins/jquery/dist/jquery.cookie.js') ?>"></script>
 <script src="<?php echo base_url('assets/plugins/fullcalendar/dist/fullcalendar.min.js')?>"></script>
 <script src="<?php echo base_url('assets/dist/js/sweetalert.js')?>"></script>
 <script src="<?php echo base_url('assets/dist/js/toast.js')?>"></script>
@@ -109,7 +110,7 @@
 
     $.ajaxSetup({
       type:"POST",
-      url: "<?php echo base_url('mahasiswa/select_daerah') ?>",
+      url: "<?php echo base_url('admin/select_daerah') ?>",
     });
 
     $("#provinsi").change(function(){
