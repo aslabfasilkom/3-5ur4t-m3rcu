@@ -21,4 +21,10 @@ class Infomagang_model extends CI_Model {
 		$this->db->where('id_perusahaan', $id_perusahaan);
 		return $this->db->update($table,$data);
 	}
+
+
+	public function alamatmagang($kodepos){
+        $res=$this->db->query("SELECT * FROM perusahaan p INNER JOIN tbl_kodepos k ON p.kodepos = k.kodepos INNER JOIN tbl_propinsi t ON k.id_propinsi = t.id WHERE p.kodepos ='$kodepos'");
+        return $res->result_array();
+      }
 }
