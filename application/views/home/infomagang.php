@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/animate.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/plugins/Ionicons/css/ionicons.min.css') ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/style.css') ?>">
+    <link rel="stylesheet" href="<?php echo base_url('assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css')?>">
     <script defer src="<?php echo base_url('assets/plugins/font-awesome/svg-with-js/js/fontawesome-all.js') ?>"></script>
   </head>
   <body class="body">
@@ -56,14 +57,14 @@
   	<div class="container">
   		<h3 class="text-center intro">Daftar Perusahaan Partner Universitas Mercu Buana</h3>
   	</div><br><br>
-  	<table class="table-striped table-responsive" style="font-size: 15px;">
+  	<table class="table table-striped table-bordered table-responsive" id="datatable" style="font-size: 15px;">
   		<thead>
   			<tr>
-  				<th width="25%">Nama Institusi</th>
-  				<th width="35%">Alamat</th>
-          <th width="20%">Nomor Telepon</th>
-  				<th width="20%">Bagian</th>
-  				<th width="20%">Pihak Tertuju</th>
+  				<th>Nama Institusi</th>
+  				<th>Alamat</th>
+          <th>Nomor Telepon</th>
+  				<th>Bagian</th>
+  				<th>Pihak Tertuju</th>
   			</tr>
   		</thead>
   		<tbody>

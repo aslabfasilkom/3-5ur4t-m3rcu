@@ -143,6 +143,45 @@ class Statussurat_model extends CI_Model {
 		return $query->result();
 	}
 
+	public function SuratTAToProses($id_surat,$nomorsuratta)
+	{
+		$data = array (
+			'status'   => 'Proses',
+			'no_surat' => $nomorsuratta
+		);
+
+		$this->db->where('id_surat',$id_surat);
+		$this->db->where('jenis_surat','Tugas Akhir');
+		$this->db->limit(1);
+		return $this->db->update('surat',$data);
+	}
+
+	public function SuratTAToFinish($id_surat)
+	{
+		$data = array(
+			'status'=>'Selesai',
+			'tanggal_selesai'=>date('Y-m-d'),	
+		);
+
+		$this->db->where('id_surat',$id_surat);
+		$this->db->where('jenis_surat','Tugas Akhir');
+		$this->db->limit(1);
+		return $this->db->update('surat',$data);
+	}
+
+	public function SuratTAToTake($id_surat)
+	{
+		$data = array(
+			'status'=>'Ambil',
+			'tanggal_diambil'=>date('Y-m-d'),	
+		);
+
+		$this->db->where('id_surat',$id_surat);
+		$this->db->where('jenis_surat','Tugas Akhir');
+		$this->db->limit(1);
+		return $this->db->update('surat',$data);
+	}
+
 	public function SuratTAToTolak($id_surat)
 	{
 		$data = array(
@@ -155,41 +194,8 @@ class Statussurat_model extends CI_Model {
 		return $this->db->update('surat',$data);
 	}
 
-	public function SuratTAToProses($id_surat)
-	{
-		$data = array(
-			'status'=>'Selesai'	
-		);
 
-		$this->db->where('id_surat',$id_surat);
-		$this->db->where('jenis_surat','Tugas Akhir');
-		$this->db->limit(1);
-		return $this->db->update('surat',$data);
-	}
-
-	public function SuratTAToFinish($id_surat)
-	{
-		$data = array(
-			'status'=>'Selesai'	
-		);
-
-		$this->db->where('id_surat',$id_surat);
-		$this->db->where('jenis_surat','Tugas Akhir');
-		$this->db->limit(1);
-		return $this->db->update('surat',$data);
-	}
-
-	public function SuratTAToTake($id_surat)
-	{
-		$data = array(
-			'status'=>'Selesai'	
-		);
-
-		$this->db->where('id_surat',$id_surat);
-		$this->db->where('jenis_surat','Tugas Akhir');
-		$this->db->limit(1);
-		return $this->db->update('surat',$data);
-	}
+	// JULAH STATUS SURAT KERJA PRAKTEK DAN TUGAS AKHIR
 
 	public function JumlahSuratTAWaiting()
 	{

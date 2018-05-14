@@ -14,20 +14,26 @@
 						<div class="alert alert-danger alert-dismissible">
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 							<h4><i class="icon fa fa-close"></i>Info</h4>
-							Maaf Nim sudah terdaftar dan belum diambil atau anda baru mengambil dan harus jeda 1 hari untuk
+							Maaf Nim atau anggota sudah terdaftar pengajuan surat dan belum diambil atau anda baru mengambil dan harus jeda 1 hari untuk
 							mendaftar lagi
 						</div>
-					<?php elseif($this->session->flashdata('berhasil')): ?> 
-						<div class="alert alert-success alert-dismissible">
+					<?php elseif($this->session->flashdata('tidakvalid')): ?> 
+						<div class="alert alert-danger alert-dismissible">
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-							<h4><i class="icon fa fa-check"></i>Info</h4>
-							Anda Berhasil Mendaftar Surat Kerja Praktek
-						</div>  	
+							<h4><i class="icon fa fa-close"></i>Info</h4>
+							Maaf anggota anda ada yang belum mengambil mata kuliah tugas akhir atau nama dan nim anggota anda tidak valid
+						</div>
+					<?php elseif($this->session->flashdata('tidakbisajoin')): ?> 
+					<div class="alert alert-danger alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+						<h4><i class="icon fa fa-close"></i>Info</h4>
+						Maaf anggota anda sudah ada yang menyelesaikan mata kuliah tugas akhir
+					</div>    	
 					<?php endif ?>
 				</div>
 			</div>
 			<?php echo form_open('mahasiswa/daftarsuratkp',array('class'=>'form-test','method'=>'post')); ?>
-
+			<!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
 			<div class="form-group inline">
 				<!-- Nama Perusahaan -->
 				<label class="col-md-3" for="namaperusahaan">Nama Perusahaan yang dituju</label>
@@ -350,14 +356,7 @@
 
 	<script>
 
-		function prodi(){
-			var jurusan=document.getElementById("jurusan").value;
-			document.getElementById("fnim1").value=jurusan;
-			document.getElementById("fnim2").value=jurusan;
-			document.getElementById("fnim3").value=jurusan;
-			document.getElementById("fnim4").value=jurusan;
-			document.getElementById("fnim5").value=jurusan;
-		}
+
 
 		function no(evt) {
 			var charCode = (evt.which) ? evt.which : event.keyCode
