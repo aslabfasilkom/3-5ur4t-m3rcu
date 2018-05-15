@@ -4,7 +4,7 @@
         <div class="row">
            <div class="col-md-4 col-md-offset-4 box-login">
              <?php echo form_open('login/kirim_email'); ?> 
-              <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none">
+            
                 <?php if ($this->session->flashdata('email_tidak_ada')): ?>
                   <div class="row">
                       <div class="alert alert-danger alert-dismissible">
