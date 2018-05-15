@@ -43,7 +43,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_waiting();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_waiting_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_waiting_ti();
 		$this->load->view('admin/waitingkp',$data);
 		$this->load->view('admin/footer');
 	}
@@ -52,7 +53,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_proses();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_proses_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_proses_ti();
 		$this->load->view('admin/proseskp',$data);
 		$this->load->view('admin/footer');
 	}
@@ -61,7 +63,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_finish();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_selesai_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_selesai_ti();
 		$this->load->view('admin/finishkp',$data);
 		$this->load->view('admin/footer');
 	}
@@ -70,7 +73,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_ambil();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_ambil_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_ambil_ti();
 		$this->load->view('admin/takeKP',$data);
 		$this->load->view('admin/footer');
 	}
@@ -80,7 +84,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_tolak();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_tolak_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_tolak_ti();
 		$this->load->view('admin/tolakkp',$data);
 		$this->load->view('admin/footer');
 	}

@@ -49,32 +49,32 @@
 							</thead>
 							<tbody>
 								<?php $no=1;
-                      foreach ($surat as $u) {
+                      foreach ($suratsi as $u) {
                        ?>
 								<tr>
 									<td>
 										<?php echo $no++; ?>
 									</td>
 									<td>
-										<?php cetak(date('d-M-Y',strtotime($u->tanggal_selesai)));?>
+										<?php cetak(date('d-M-Y',strtotime($usi->tanggal_selesai)));?>
 									</td>
 									<td>
-										<?php cetak($u->no_surat);?>
+										<?php cetak($usi->no_surat);?>
 									</td>
 									<td>
-										<?php cetak($u->nim);?>
+										<?php cetak($usi->nim);?>
 									</td>
 									<td>
-										<?php cetak($u->nama_mahasiswa); ?>
+										<?php cetak($usi->nama_mahasiswa); ?>
 									</td>
 									<td>
-										<?php cetak($u->email); ?>
+										<?php cetak($usi->email); ?>
 									</td>
 									<td>
-										<?php cetak($u->prodi); ?>
+										<?php cetak($usi->prodi); ?>
 									</td>
 									<td>
-										<button class="btn btn-primary col-sm-9" data-href="<?=site_url("surat/ubahAmbilKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+										<button class="btn btn-primary col-sm-9" data-href="<?=site_url("surat/ubahAmbilKP/$usi->id_surat")?>" data-toggle="modal" data-target="#confirm" >
 											<span class="fa fa-check"></span> Take
 										</button>
 									</td>
@@ -89,8 +89,52 @@
 			</div>
 			<!-- /.col -->
 		</div>
-		<!-- /.col -->
-</div>
+		<!-- /row -->
+<div class="row">
+              <div class="col-xs-12">
+                <!-- /.box -->
+                <div class="box">
+                  <!-- /<div class="bo">/div>x-header -->
+                  <div class="box-body table-responsive">
+                    <table id="datatable2" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th width="20px">No.</th>
+                          <th>Tanggal</th>
+                          <th>NIM</th>
+                          <th>Nama</th>
+                          <th>E-Mail</th>
+                          <th>Program Studi</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php $no=1;
+                        foreach ($suratti as $uti) {
+                        ?>
+                        <tr>
+                          <td><?php cetak($no++); ?></td>
+                          <td><?php cetak($uti->tanggal_selesai);?></td>
+                          <td><?php cetak($uti->nim); ?></td>
+                          <td><?php cetak($uti->nama_mahasiswa); ?></td>
+                          <td><?php cetak($uti->email); ?></td>
+                          <td><?php cetak($uti->prodi); ?></td>
+                          <td>
+                              <button class="btn btn-success col-sm-10" data-href="<?=site_url("surat/ubahAmbilKP/$uti->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+                               <span class="fa fa-check"></span> Take
+                              </button>
+                          </td>
+                        </tr>
+                        <?php } ?>
+                      </tbody>
+                      </table>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.box -->
+                </div>
+                <!-- /.col -->
+              </div>
 <!-- /.row -->
 </section>
 <!-- /.content -->
