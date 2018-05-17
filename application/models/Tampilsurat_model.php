@@ -12,19 +12,126 @@ class Tampilsurat_model extends CI_Model
 			return $query->result(); 
 		}
 
-		public function tampil_datakpkp_waiting_si()
+		public function tampil_datakp_waiting_si()
 		{
 			$this->db->select('*');
 			$this->db->from('surat');
 			$this->db->join('user','user.nim=surat.nim');
-			$this->db->where('prodi','Sistem Informasi');
+			$this->db->where('surat.prodi','Sistem Informasi');
 			$this->db->where('jenis_surat','Kerja Praktek');
 			$this->db->where('status','Menunggu');
 			$query = $this->db->get();
 
-			return $query->row();
+			return $query->result();
 		}
+		public function tampil_datakp_waiting_ti()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Teknik Informatika');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Menunggu');
+			$query = $this->db->get();
 
+			return $query->result();
+		}
+		public function tampil_datakp_proses_si()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Sistem Informasi');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Proses');
+			$query = $this->db->get();
+
+			return $query->result();
+		}
+		public function tampil_datakp_proses_ti()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Teknik Informatika');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Proses');
+			$query = $this->db->get();
+
+			return $query->result();
+		}
+		public function tampil_datakp_selesai_si()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Sistem Informasi');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Selesai');
+			$query = $this->db->get();
+
+			return $query->result();
+		}
+		public function tampil_datakp_selesai_ti()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Teknik Informatika');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Selesai');
+			$query = $this->db->get();
+
+			return $query->result();
+		}
+		public function tampil_datakp_ambil_si()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Sistem Informasi');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Ambil');
+			$query = $this->db->get();
+
+			return $query->result();
+		}
+			public function tampil_datakp_ambil_ti()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Teknik Informatika');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Ambil');
+			$query = $this->db->get();
+
+			return $query->result();
+		}
+		public function tampil_datakp_tolak_si()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Sistem Informasi');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Di Tolak');
+			$query = $this->db->get();
+
+			return $query->result();
+		}
+		public function tampil_datakp_tolak_ti()
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->join('user','user.nim=surat.nim');
+			$this->db->where('surat.prodi','Teknik Informatika');
+			$this->db->where('jenis_surat','Kerja Praktek');
+			$this->db->where('status','Di Tolak');
+			$query = $this->db->get();
+
+			return $query->result();
+		}
 		# Query menampilkan email user KP
 		public function get_email_user_kp($id_surat)
 		{

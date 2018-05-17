@@ -51,33 +51,33 @@
 							<tbody>
 								<?php $no=1; ?>
 								<?php 
-								foreach ($surat as $u) {?>
+								foreach ($suratsi as $usi) {?>
 								<tr>
 									<td>
 										<?php cetak($no++); ?>
 									</td>
 									<td>
-										<?php cetak(date('d-M-Y',strtotime($u->tanggal_diajukan)))  ?>
+										<?php cetak(date('d-M-Y',strtotime($usi->tanggal_diajukan)))  ?>
 									</td>
 									<td>
-										<?php cetak($u->nim); ?>
+										<?php cetak($usi->nim); ?>
 									</td>
 									<td>
-										<?php cetak($u->nama_mahasiswa); ?>
+										<?php cetak($usi->nama_mahasiswa); ?>
 									</td>
 									<td>
-										<?php cetak($u->prodi); ?>
+										<?php cetak($usi->prodi); ?>
 									</td>
 									<td class="text-center">
 
 
-										<button class="btn btn-primary" data-href="<?=site_url("surat/ubahProsesKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" > Proses
+										<button class="btn btn-primary" data-href="<?=site_url("surat/ubahProsesKP/$usi->id_surat")?>" data-toggle="modal" data-target="#confirm" > Proses
 										</button>
-										<a href="<?php echo site_url("admin/detailkp/$u->id_surat") ?>" class="btn btn-default">Detail</a>
-										<!-- <button class="btn btn-danger" data-href="<?=site_url("surat/kirimpesantolakkp/$u->id_surat")?>" data-toggle="modal" data-target="#confirmtolak" >
+										<a href="<?php echo site_url("admin/detailkp/$usi->id_surat") ?>" class="btn btn-default">Detail</a>
+										<!-- <button class="btn btn-danger" data-href="<?=site_url("surat/kirimpesantolakkp/$usi->id_surat")?>" data-toggle="modal" data-target="#confirmtolak" >
                                 Tolak
                               </button> -->
-										<a href="<?php echo site_url("admin/tolakemailkp/$u->id_surat") ?>" class="btn btn-danger">TOLAK</a>
+										<a href="<?php echo site_url("admin/tolakemailkp/$usi->id_surat") ?>" class="btn btn-danger">TOLAK</a>
 
 									</td>
 								</tr>
@@ -90,6 +90,49 @@
 				<!-- /.box -->
 			</div>
 		</div>
+		 <div class="row">
+        <div class="col-sm-12">
+
+          <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body table-responsive">
+              <table id="datatable2" class="table table-bordered table-striped text-center">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Tanggal</th>
+                    <th>NIM</th>
+                    <th>Nama</th>
+                    <th>Program Studi</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php $no=1;
+                  foreach ($suratti as $uti) {
+                  ?>
+                  <tr>
+                    <td><?php cetak($no++); ?></td>
+                      <td><?php cetak($uti->tanggal_diajukan); ?></td>
+                      <td><?php cetak($uti->nim); ?></td>
+                      <td><?php cetak($uti->nama_mahasiswa); ?></td>
+                      <td><?php cetak($uti->prodi); ?></td>
+                    <td class="col-md-3">
+                        <button class="btn btn-primary" data-href="<?=site_url("surat/ubahProsesKP/$uti->id_surat")?>" data-toggle="modal" data-target="#confirm" > Proses
+                    </button>
+                        <a href="<?php echo site_url("admin/detailkp/$uti->id_surat") ?>" class="btn btn-default">Detail</a>
+                        <a href="<?php echo site_url("admin/tolakemailkp/$uti->id_surat") ?>" class="btn btn-danger">Tolak</a>
+                    </td>
+                  </tr>
+                   <?php } ?> 
+                  </tbody>
+                </table>
+              </div>
+               <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
 	</section>
 	<!-- /.row -->
 </div>
