@@ -17,10 +17,13 @@
 			line-height: 10px;
 		}
 		#kepadayth{
-			font-size: 10pt;
+			font-size: 10px;
 		}
 		.tanggal{
 			font-size:17px;
+		}
+		#kepadaalamat{
+			font-size: 10px;
 		}
 	 </style>
 </head>
@@ -84,10 +87,6 @@
 			</div>
 			<span class="hidden-print warning"><h1 class="text-center">Direkomendasikan Menggunakan Chrome Versi 64 Atau Lebih</h1></span>
 		</div>
-
-
-
-
 		<br /><br /> <br /> <br /> <br />			
 
 		<div class="container idsurat">
@@ -98,7 +97,7 @@
 				<div class="col-xs-12"><p class="lampiran">Lampiran	:------------</p></div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12"><p class="perihal">Perihal	:Riset Tugas Akhir</p></div>
+				<div class="col-xs-12"><p class="perihal">Perihal	:<b><u><i>Permohonan Observasi Data <?php if($surat['prodi']=='Teknik Informatika'){ echo "Dan Wawancara";} ?></i></u></b></p></div>
 			</div>
 		</div>
 
@@ -107,8 +106,8 @@
 		<div class="container kepadayth-cover">
 			<p>Kepada Yth,</p>
 			<p><?php cetak($surat['nama_perusahaan'])?></p>
-			<p id="kepadayth"><?php cetak($surat['alamat_perusahaan'])?></p>
-			<p id="kepadayth"><?php cetak($surat['kota'])?> <?php cetak($surat['kodepos'])?></p>
+			<p id="kepadaalamat"><?php cetak($surat['alamat_perusahaan'])?></p>
+			<p id="kepadaalamat"><?php cetak($surat['kota'])?> <?php cetak($surat['kodepos'])?></p>
 			<p>UP. <?php cetak($surat['orang_dituju'])?></p>
 			<p><?php cetak($surat['jabatan_dituju'])?></p>
 		</div>
@@ -116,9 +115,9 @@
 		<div class="container isipesan">
 			<p>Dengan Hormat,</p>
 			<p class="text-justify">
-				Dalam rangka menambah wawasan dan pengetahuan mahasiswa. Sehubungan dengan hal tersebut, bersama ini kami memohon bantuan Bapak/Ibu
-			agar dapat kiranya memberikan kesempatan kepada mahasiswa/i untuk mengikuti Riset Tugas AKhir di perusahaan Bapak/Ibu Pimpin. Adapun nama mahasiswa tersebut sebagai berikut:</p>
-			<div class="row">			
+				Dalam rangka memenuhi persyaratan kurikulum Kurikulum Program Stude Sistem Informasi Fakultas Ilmu Komputer Universitas Mercu Buana, Setiap mahasiswa yang akan menumpuh ujian Sarjana, Terlebih dahulu diwajibkan menyelesaikan TUGAS AKHIR</p>
+				<p class="text-justify">	Sehubungan dengan hal tersebut,bersama ini kami mohon bantuan Bapak/Ibu agar dapat kiranya memberikan data - data yang diperlukan mahasiswa kami</p>
+			<p class="text-justify"> 			
 			<table class="table table-borderless col-xs-12">
 				
 				<tr class="judul" style="border-bottom: 2px dashed!important;">
@@ -140,17 +139,27 @@
 			</table>
 			<p class="text-justify">Demikian Surat permohonan kami, atas perhatian dan bantuan Bapak/Ibu kami ucapkan terima kasih.</p>
 			<br /><br />
-			</div>
+			</p>
 		</div>
 
 		<div class="container ttd">
-			<p>Hormat Kami,</p>
-			<p>Fakultas Ilmu Komputer</p>
-			<p><b>Sek. Program Studi <?php cetak($surat['prodi'])?></b></p>
+			<p>Hormat Kami,<br>
+			  <?php if ($surat['prodi']=='Sistem Informasi'): ?>
+			  	<b> Kordinator Tugas Akhir </b> <br>		
+			    <b>Fakultas Ilmu Komputer </b> <br>	
+			    Program Studi Sistem Informasi <br>	
+			  <?php else: ?>
+				<b> Fakultas Ilmu Komputer </b> <br>		
+			   	Fakultas Ilmu Komputer Program Studi Teknik Informatika <br>	
+			  <?php endif ?>
+			</p>
+			
 			<br><br><br>
-			<p><b><u><?php cetak($surat['nama_dosen'])?></u></b></p>
-			<p class="koordinator">Koordinator Kerja Praktek</p>
-
+			<p>(<b><?php cetak($surat['nama_dosen'])?></b>)<br>
+			<?php if ($surat['prodi']=='Teknik Informatika'): ?>
+				<i>Koordinator Tugas Akhir</i>
+			<?php endif ?>
+			</p>
 		</div>
 	</div>
 </body>

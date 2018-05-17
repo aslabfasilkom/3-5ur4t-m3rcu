@@ -34,11 +34,12 @@
 			</div>
 			<?php echo form_open('mahasiswa/daftarsuratkp',array('class'=>'form-test','method'=>'post')); ?>
 			<!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
+			
 			<div class="form-group inline">
 				<!-- Nama Perusahaan -->
 				<label class="col-md-3" for="namaperusahaan">Nama Perusahaan yang dituju</label>
 				<div class="col-md-6">
-					<input type="text" name="namaperusahaan" class="form-control" required placeholder="Nama Perusahaan">
+					<input class='form-control' type="text" name="namaperusahaan" value="<?php echo $nama_perusahaan; ?>" readonly>
 				</div>
 			</div>
 
@@ -46,7 +47,7 @@
 				<!-- Orang yang dituju -->
 				<label class="col-md-3" for="namaygdituju" >Personal yang Dituju</label>
 				<div class="col-md-6">
-					<input type="text" name="namefor" class="form-control" required placeholder="Orang Dituju">
+					<input class='form-control' type="text" name="namefor" value="<?php echo $pihak_tertuju; ?>" readonly>
 				</div>
 			</div>
 
@@ -62,14 +63,7 @@
 				<!-- Alamat Perusahaan -->
 				<label class="col-md-3" for="propinsi" >Propinsi</label>
 				<div class="col-md-6">
-					<select class='form-control' id='provinsi' name="provinsi" required>
-						<option value=''>Pilih Provinsi</option>
-						<?php 
-						foreach ($provinsi as $prov) {
-							echo "<option value='$prov[id]'>$prov[nama]</option>";
-						}
-						?>
-					</select>
+					<input class='form-control' type="text" name="provinsi" value="<?php echo $nama; ?>" readonly>
 				</div>
 			</div>
 
@@ -77,9 +71,7 @@
 				<!-- Alamat Perusahaan -->
 				<label class="col-md-3" for="alamat" >Kabupaten/Kota</label>
 				<div class="col-md-6">
-					<select class='form-control' id='kabupaten-kota' name="kota_kabupaten" required>
-						<option value=''>Pilih Kabupaten/Kota</option>
-					</select>
+					<input class='form-control' type="text" name="kota_kabupaten" value="<?php echo $kota_kab; ?>" readonly>
 				</div>
 			</div>
 
@@ -87,9 +79,7 @@
 				<!-- Alamat Perusahaan -->
 				<label class="col-md-3" for="kecamatan" >Kecamatan</label>
 				<div class="col-md-6">
-					<select class='form-control' id='kecamatan' name="kecamatan" required>
-						<option value=''>Pilih Kecamatan</option>
-					</select>
+					<input class='form-control' type="text" name="kecamatan" value="<?php echo $kecamatan; ?>" readonly>
 				</div>
 			</div>
 
@@ -97,9 +87,7 @@
 				<!-- Alamat Perusahaan -->
 				<label class="col-md-3" for="kecamatan" >Kelurahan/Desan</label>
 				<div class="col-md-6">
-					<select class='form-control' id='kelurahan-desa' name="kelurahan" required>
-						<option value=''>Pilih Kelurahan</option>
-					</select>
+					<input class='form-control' type="text" name="kelurahan" value="<?php echo $kelurahan; ?>" readonly>
 				</div>
 			</div>
 
@@ -107,9 +95,7 @@
 				<!-- Alamat Perusahaan -->
 				<label class="col-md-3" for="kodepos" >Kode Pos</label>
 				<div class="col-md-6">
-					<select class='form-control' id='kodepos' name="kodepos" required>
-						<option value=''>Pilih Kode Pos</option>
-					</select>
+					<input class='form-control' type="text" name="kodepos" value="<?php echo $kodepos; ?>" readonly>
 				</div>
 			</div>
 
@@ -117,8 +103,7 @@
 				<!-- Alamat Perusahaan -->
 				<label class="col-md-3" for="alamat" >Alamat Jalan Perusahaan</label>
 				<div class="col-md-6">
-					contoh : Jl. Rebana No.9
-					<input type="text" name="alamat" class="form-control" required placeholder="contoh: Jln Galunggung no.xx">
+					<input class='form-control' type="text" name="alamat" value="<?php echo $alamat_perusahaan; ?>" readonly>
 				</div>
 			</div>
 

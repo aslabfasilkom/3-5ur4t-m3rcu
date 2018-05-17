@@ -66,15 +66,16 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	public function taketa()
+	public function takekp()
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_ambil();
-		$this->load->view('admin/taketa',$data);
+		$data['surat'] = $this->tampilsurat_model->tampil_datakp_ambil();
+		$this->load->view('admin/takeKP',$data);
 		$this->load->view('admin/footer');
 	}
 
+	
 	public function tolakkp()
 	{
 		$this->load->view('admin/header');
@@ -113,9 +114,11 @@ class Admin extends CI_Controller {
 	// BATAS AWAL DESKRIPSI TUGAS AKHIR
 	public function waitingta()
 	{
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_waiting_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_waiting_ti();
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_waiting();		
 		$this->load->view('admin/waitingta',$data);
 		$this->load->view('admin/footer');
 	}
@@ -123,9 +126,11 @@ class Admin extends CI_Controller {
 
 	public function prosesta()
 	{
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_proses_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_proses_ti();
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_proses();
 		$this->load->view('admin/prosesta',$data);
 		$this->load->view('admin/footer');
 	}
@@ -134,29 +139,33 @@ class Admin extends CI_Controller {
 
 	public function finishta()
 	{
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_selesai_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_selesai_ti();
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_finish();
 		$this->load->view('admin/finishta',$data);
 		$this->load->view('admin/footer');
 	}
 
-
-	public function takekp()
+	public function taketa()
 	{
-		$this->load->view('admin/header');
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_ambil_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_ambil_ti();
+
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_ambil();
-		$this->load->view('admin/takeKP',$data);
+		$this->load->view('admin/header');
+		$this->load->view('admin/taketa',$data);
 		$this->load->view('admin/footer');
 	}
 
-	
 	public function tolakta()
 	{
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datata_tolak_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datata_tolak_ti();
+
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datata_tolak();
 		$this->load->view('admin/tolakta',$data);
 		$this->load->view('admin/footer');
 	}
@@ -377,7 +386,7 @@ class Admin extends CI_Controller {
 		$alamat_perusahaan 	= $this->input->post('alamat_perusahaan');
 		$no_telepon 		= $this->input->post('no_telepon');
 		$bagian 			= $this->input->post('bagian');
-		$kota 				= $this->input->post('kota');
+		$kota 				= $this->input->post('kota_kabupaten');
 		$kodepos 			= $this->input->post('kodepos');
 		$pihak_tertuju 		= $this->input->post('pihak_tertuju');
 
@@ -429,6 +438,7 @@ class Admin extends CI_Controller {
 	public function infomagang()
 
 	{
+		$data['provinsi']=$this->daerah_model->provinsi();
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
 		$data['info'] = $this->infomagang_model->tampil_info();
@@ -515,4 +525,28 @@ class Admin extends CI_Controller {
 	    }
 
 	  }
+
+	  public function select_daerah()
+	{
+
+		$modul=$this->input->post('modul');
+		$id=$this->input->post('id');
+
+		$this->security->get_csrf_token_name();
+		$this->security->get_csrf_hash();
+
+		if($modul=="kabupaten"){
+			echo $this->daerah_model->kabupaten($id);
+		}
+		else if($modul=="kecamatan"){
+			echo $this->daerah_model->kecamatan($id);
+
+		}
+		else if($modul=="kelurahan"){
+			echo $this->daerah_model->kelurahan($id);
+		}else if($modul=="kodepos"){
+			echo $this->daerah_model->kodepos($id);
+		}
+	}
+
 }
