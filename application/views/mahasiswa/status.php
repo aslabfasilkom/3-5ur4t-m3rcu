@@ -1,6 +1,4 @@
-<h1 align="center"> STATUS PENGAJUAN RISET KP</h1>
-<br>
-<br>
+<h1 align="center"> STATUS PENGAJUAN SURAT</h1>
 <br>
 <?php  if($this->session->flashdata('berhasilkp')): ?>
   <div class="alert alert-success alert-dismissible">
@@ -18,10 +16,10 @@
 <?php endif; ?>
 <section>
 <div class="container p-t-30 p-b-30 p-r-30 p-l-30">
-  <div class="col-md-12">
+  <div class="col-md-12 panel panel-default" style="padding: 20px;">
     <div class="box box-solid">
       <div class="box-header with-border text-center">
-        <i class="fa fa-building fa-2x fa-fw"></i>&nbsp;<span class="font-30">Status Pengajuan Riset KP</span>&nbsp;<i class="fa fa-building fa-2x fa-fw"></i>
+        <span class="font-30">Kerja Praktek</span>
       </div>
       <?php $class=""; ?>
       <?php foreach ($statuskp as $value): ?>
@@ -46,39 +44,64 @@
         ?>
         <div class="box-body m-t-20 m-r-20">
           <dl>
-            <div class="col-md-4 text-center">
-              <dt style="font-size: 16px;">Nama Mahasiswa</dt>
-              <dd><?php cetak($value->nama_mahasiswa)?></dd>
+            <div class="col-md-4" style="border-right: 1px solid #E0E0E0">
+              <div class="col-md-3">
+                <i class="fa fa-user fa-3x fa-fw"></i>
+              </div>
+              <div class="col-md-9">
+                <table>
+                  <tr>
+                    <td width="50px">Nama</td>
+                    <td width="10px;">: </td>
+                    <td><?php cetak($value->nama_mahasiswa)?></td>
+                  </tr>
+                  <tr>
+                    <td>NIM</td>
+                    <td>:</td>
+                    <td>41514010077</td>
+                  </tr>
+                </table>
+              </div>
             </div>
-            <div class="col-md-4 text-center">
-              <dt style="font-size: 16px;">Nama Perusahaan</dt>
-              <dd><?php cetak($value->nama_perusahaan)?></dd>  
+            <div class="col-md-4">
+              <div class="col-md-3">
+                <i class="fa fa-building fa-3x fa-fw"></i>
+              </div>
+              <div class="col-md-9">
+                <table>
+                  <tr>
+                    <td width="60px">Instansi</td>
+                    <td width="10px;">: </td>
+                    <td><?php cetak($value->nama_perusahaan)?></td>
+                  </tr>
+                  <tr>
+                    <td>Alamat</td>
+                    <td>:</td>
+                    <td><?php cetak($value->alamat_perusahaan)?></td>
+                  </tr>
+                </table>
+              </div>
             </div>
-            <div class="col-md-4 text-center">
-              <dt style="font-size: 16px;">Tanggal Pengajuan</dt>
-              <dd><?php cetak(date('d-M-Y',strtotime($value->tanggal_diajukan)))?></dd>  
-            </div>
-            <div class="col-md-12 text-center">
-              <a class="btn btn-secondary" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1">Lihat Detail</a>
-              <div class="row">
-                <div class="col">
-                  <div class="collapse multi-collapse" id="multiCollapseExample1">
-                    <div class="card card-body">
-                      <div class="col-md-6">
-                        <b>Alamat Perusahaan</b><br>
-                        <?php cetak($value->alamat_perusahaan)?>
-                      </div>
-                      <div class="col-md-6">
-                        <b>Orang yang dituju</b><br>
-                        <?php cetak($value->orang_dituju)?>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="col-md-4" style="border-left: 1px solid #E0E0E0">
+              <div class="col-md-3">
+                <i class="fa fa-handshake fa-3x fa-fw"></i>
+              </div>
+              <div class="col-md-9">
+                <table>
+                  <tr>
+                    <td width="80px">Pengajuan</td>
+                    <td width="10px;">: </td>
+                    <td><?php cetak(date('d-M-Y',strtotime($value->tanggal_diajukan)))?></td>
+                  </tr>
+                  <tr>
+                    <td>Tertuju</td>
+                    <td>:</td>
+                    <td><?php cetak($value->orang_dituju)?></td>
+                  </tr>
+                </table>
               </div>
             </div>
             <div class="col-md-12 text-center m-t-15">
-              <dt style="font-size: 16px;">Status</dt>
               <dd></dd>
               <dd class=<?=$class?> style="text-align: center; color: white; border-radius: 4px; padding: 10px;">
                 <?php if ($value->status == 'Ambil'): ?>
@@ -94,10 +117,10 @@
       </div>
     </div>
 
-    <div class="m-t-50 col-md-12">
+    <div class="m-t-50 col-md-12 panel panel-default" style="padding: 20px;">
       <div class="box box-solid">
       <div class="box-header with-border text-center">
-        <i class="fa fa-book fa-2x fa-fw"></i>&nbsp;<span class="font-30">Status Pengajuan Riset TA</span>&nbsp;<i class="fa fa-book fa-2x fa-fw"></i>
+        <span class="font-30">Riset Tugas Akhir</span>
       </div>
       <?php $class=""; ?>
     <?php foreach ($statusta as $value): ?>
@@ -133,25 +156,6 @@
             <div class="col-md-4 text-center">
               <dt style="font-size: 16px;">Tanggal Pengajuan</dt>
               <dd><?php cetak(date('d-M-Y',strtotime($value->tanggal_diajukan)))?></dd>  
-            </div>
-            <div class="col-md-12 text-center">
-              <a class="btn btn-secondary" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1">Lihat Detail</a>
-              <div class="row">
-                <div class="col">
-                  <div class="collapse multi-collapse" id="multiCollapseExample1">
-                    <div class="card card-body">
-                      <div class="col-md-6">
-                        <b>Alamat Perusahaan</b><br>
-                        <?php cetak($value->alamat_perusahaan)?>
-                      </div>
-                      <div class="col-md-6">
-                        <b>Orang yang dituju</b><br>
-                        <?php cetak($value->orang_dituju)?>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="col-md-12 text-center m-t-15">
               <dt style="font-size: 16px;">Status</dt>
