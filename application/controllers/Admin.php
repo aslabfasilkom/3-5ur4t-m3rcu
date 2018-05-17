@@ -391,7 +391,7 @@ class Admin extends CI_Controller {
 		$alamat_perusahaan 	= $this->input->post('alamat_perusahaan');
 		$no_telepon 		= $this->input->post('no_telepon');
 		$bagian 			= $this->input->post('bagian');
-		$kota 				= $this->input->post('kota');
+		$kota 				= $this->input->post('kota_kabupaten');
 		$kodepos 			= $this->input->post('kodepos');
 		$pihak_tertuju 		= $this->input->post('pihak_tertuju');
 

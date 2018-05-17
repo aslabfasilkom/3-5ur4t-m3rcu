@@ -70,14 +70,16 @@
   		<tbody>
   			<?php
   			foreach ($info->result_array() as $u):
+          $id_perusahaan        = $u['id_perusahaan'];
   				$nama_perusahaan      = $u['nama_perusahaan'];
   				$alamat_perusahaan    = $u['alamat_perusahaan'];
           $no_telepon           = $u['no_telepon'];
   				$bagian               = $u['bagian'];
-  				$pihak_tertuju        = $u['pihak_tertuju'];
+          $pihak_tertuju        = $u['pihak_tertuju'];
+  				$kodepos              = $u['kodepos'];
   				?>
   				<tr>
-  					<td><?php echo $nama_perusahaan; ?></td>
+  					<td><a href="<?php echo base_url()."mahasiswa/pilihmagang/".$kodepos;?>"><?php echo $nama_perusahaan; ?></a></td>
   					<td><?php echo $alamat_perusahaan; ?></td>
             <td><?php echo $no_telepon; ?></td>
   					<td><?php echo $bagian; ?></td>

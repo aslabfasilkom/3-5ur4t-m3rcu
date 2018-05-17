@@ -289,6 +289,26 @@ class Mahasiswa extends CI_Controller {
 		$this->load->view('home/footer');
 	}
 
+	public function pilihmagang($kodepos)
+	{
+		$alamat = $this->infomagang_model->alamatmagang($kodepos);
+    	$data = array(
+    		"id_propinsi"		=>$alamat[0]['id_propinsi'],
+    		"kota_kab" 			=>$alamat[0]['kota_kab'],
+    		"kecamatan" 		=>$alamat[0]['kecamatan'],
+    		"kelurahan" 		=>$alamat[0]['kelurahan'],
+    		"kodepos" 			=>$alamat[0]['kodepos'],
+    		"nama_perusahaan" 	=>$alamat[0]['nama_perusahaan'],
+    		"alamat_perusahaan" =>$alamat[0]['alamat_perusahaan'],
+    		"pihak_tertuju" 	=>$alamat[0]['pihak_tertuju'],
+    		"nama" 				=>$alamat[0]['nama'],
+
+    	);
+		$this->load->view('mahasiswa/header');
+		$this->load->view('mahasiswa/formkp_perusahaan',$data);
+		$this->load->view('home/footer');
+	}
+
 	
 
 }
