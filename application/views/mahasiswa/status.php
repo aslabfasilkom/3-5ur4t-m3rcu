@@ -44,7 +44,7 @@
         ?>
         <div class="box-body m-t-20 m-r-20">
           <dl>
-            <div class="col-md-4" style="border-right: 1px solid #E0E0E0">
+            <div class="col-md-4">
               <div class="col-md-3">
                 <i class="fa fa-user fa-3x fa-fw"></i>
               </div>
@@ -63,7 +63,7 @@
                 </table>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" style="border-left: 1px solid #E0E0E0">
               <div class="col-md-3">
                 <i class="fa fa-building fa-3x fa-fw"></i>
               </div>
