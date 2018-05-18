@@ -9,7 +9,9 @@
   <link rel="manifest" href="<?php echo base_url('assets/favicon/site.webmanifest') ?>">
   <link rel="mask-icon" href="<?php echo base_url('assets/favicon/safari-pinned-tab.svg') ?>" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="msapplication-navbutton-color" content="#34495E">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#34495E">
+  <meta name="theme-color" content="#34495E">
   <title><?php if($this->uri->segment(2)==""){echo "Dashboard - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="waitingkp"){echo "Menunggu (KP) - Admin E-Surat Mercu Buana";}
   else if($this->uri->segment(2)=="tolakemail"){echo "Tolak (KP) - Admin E-Surat Mercu Buana";}

@@ -9,12 +9,12 @@ class Daftarsurat_model extends CI_Model {
 		parent::__construct();
 	}
 
-	public function validasimahasiswa($nim)
+	public function validasimahasiswa($nim,$jenis)
 	{
 		$query= $this->db->query(
 							    "SELECT * FROM mahasiswa m JOIN surat s 
 								ON m.id_surat=s.id_surat WHERE 
-								m.nim='$nim' AND 
+								m.nim='$nim' AND s.jenis_surat='$jenis' AND
 								(
 								 (status !='Ambil' AND status!='Di Tolak') OR
 								date(tanggal_diambil) >= CURDATE() - INTERVAL 1 DAY
@@ -34,7 +34,7 @@ class Daftarsurat_model extends CI_Model {
 		return $query->row();
 	}
 
-	public function daftarsuratTA($table,$data)
+	public function daftarsuratta($data,$table)
 	{
 		return $this->db->insert($table,$data);
 	}

@@ -28,20 +28,19 @@
                             <th>Nim</th>
                             <th>Nama</th>
                             <th>E-Mail</th>
-                            <th>Program Studi</th>
-                            <th>Keterangan</th>
                           </tr>
                         </thead>
                         <tbody>
+                          <?php $no = 1; ?>
+                          <?php foreach ($suratsi as $valuesi): ?>
                             <tr>
-                              <td>1</td>
-                              <td>nomor surat</td>
-                              <td>4181...</td>
-                              <td>ival</td>
-                              <td>email@gmail.com</td>
-                              <td>sistem informasi</td>
-                              <td>alasan penolakan</td>
-                           </tr>
+                              <td><?php cetak($no++)?></td>
+                              <td><?php cetak($valuesi->nim)?></td>
+                              <td><?php cetak($valuesi->nama_mahasiswa)?></td>
+                              <td><?php cetak($valuesi->email)?></td>
+                              <td><?php cetak($valuesi->prodi)?></td>
+                            </tr>
+                          <?php endforeach ?>
                        </tbody>
                      </table>
                    </div>
@@ -52,6 +51,46 @@
                <!-- /.col -->
              </div>
              <!-- /.row -->
+
+
+             <div class="row">
+              <div class="col-xs-12">
+
+                <div class="box">
+                  <!-- header -->
+                    <div class="box-body table-responsive">
+                      <table id="datatable2" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th width="20px">No.</th>
+                            <th>Nomor Surat</th>
+                            <th>Nim</th>
+                            <th>Nama</th>
+                            <th>E-Mail</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <?php $no = 1; ?>
+                          <?php foreach ($suratti as $valueti): ?>
+                            <tr>
+                              <td><?php cetak($no++)?></td>
+                              <td><?php cetak($valueti->nim)?></td>
+                              <td><?php cetak($valueti->nama_mahasiswa)?></td>
+                              <td><?php cetak($valueti->email)?></td>
+                              <td><?php cetak($valueti->prodi)?></td>
+                            </tr>
+                          <?php endforeach ?>
+                       </tbody>
+                     </table>
+                   </div>
+                   <!-- /.box-body -->
+                 </div>
+                 <!-- /.box -->
+               </div>
+               <!-- /.col -->
+             </div>
+             <!-- /.row -->
+
            </section>
            <!-- /.content -->
          </div>

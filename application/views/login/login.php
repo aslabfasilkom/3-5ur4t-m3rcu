@@ -1,5 +1,5 @@
-<div class="col-md-4" style="margin-top: 0px; border-radius: 0px;">
-  <?php echo form_open('login/ceklogin'); ?>
+<div class="col-md-12 m-t-20 m-b-20"><?php echo form_open('login/ceklogin'); ?>
+<!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
   <?php if($this->session->flashdata('info')): ?>
     <div class="row">
       <div class="alert alert-danger alert-dismissible">
@@ -26,6 +26,8 @@
       Maaf anda gagal mereset password
     </div>
   <?php endif; ?>
+</div>
+<div class="col-md-4" style="margin-top: 0px; border-radius: 0px;">
   <a href="<?php echo site_url('') ?>"><img class="img-responsive" src="<?php echo base_url('assets/image/logoesurat7v2.png')?>" alt="E-Surat" style="margin-right: auto; margin-left: auto; margin-top: 20px;"></a>
   <h3 class="text-center title-login" id="box-login">Silahkan Login Dengan menggunakan</h3>
   <h3 class="text-center title-login">NIM/E-MAIL</h3>
@@ -58,7 +60,7 @@
   <h3 class="text-center" style="color: #FFFFFF;">Step Mudah Membuat Surat</h3>
   <br>
   <div class="row">
-    <br />
+    <br>
     <div class="col-md-4">
       <div class="panel panel-default" style="height: 130px;">
         <div class="col-md-1 step-number text-center" style="padding-left: 10px;">
