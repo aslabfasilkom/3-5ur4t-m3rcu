@@ -191,7 +191,7 @@
             <p>Gambar belum tersedia</p>
           </div>
           <div id="suratta" class="tab-pane fade">
-            <img src="<?php echo base_url('assets/image/contoh-kp.jpg') ?>" class="img-responsive center-block wow fadeIn" alt="">
+            <img src="<?php echo base_url('assets/image/surat-ta.jpg') ?>" class="img-responsive center-block wow fadeIn" alt="">
           </div>
         </div>
       </div>
