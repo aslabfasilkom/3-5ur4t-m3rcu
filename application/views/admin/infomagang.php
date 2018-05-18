@@ -24,7 +24,8 @@
 							<th width="20%">Alamat</th>
 							<th width="10%">Nomor Telepon</th>
 							<th>Bagian</th>
-							<th width="20%">Pihak Tertuju</th>
+							<th width="10%">Pihak Tertuju</th>
+							<th width="10%">Jenis</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -38,6 +39,7 @@
 							$no_telepon 		= $u['no_telepon'];
 							$bagian 			= $u['bagian'];
 							$pihak_tertuju 		= $u['pihak_tertuju'];
+							$jenis		 		= $u['jenis'];
 							?>
 							<tr>
 								<td><?php echo $no++ ?></td>
@@ -46,6 +48,7 @@
 								<td><?php echo $no_telepon; ?></td>
 								<td><?php echo $bagian; ?></td>
 								<td><?php echo $pihak_tertuju; ?></td>
+								<td><?php echo $jenis; ?></td>
 								<td>
 									<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit<?php echo $id_perusahaan;?>"><i class="fa fa-edit" style="font-size:20px"></i></button>
 									<a class="btn btn-danger" href="<?php echo site_url('admin/hapusinfomagang/'.$id_perusahaan);?>" ><i class="fa fa-trash" style="font-size:20px"></i>
@@ -78,9 +81,17 @@
 									<label class="control-label">Nomor Telp Perusahaan</label>
 									<input type="text" class="form-control" id="no_telepon" onkeypress='validate(event)' name="no_telepon" placeholder="Nomor Telepon Perusahaan">
 								</div>
-								<div class="form-group col-md-12">
+								<div class="form-group col-md-6">
 									<label class="control-label">Bagian</label>
 									<input type="text" class="form-control" id="bagian" name="bagian" placeholder="Bagian Rekrutmen Perusahaan">
+								</div>
+								<div class="form-group col-md-6">
+									<label class="control-label">Jenis</label>
+									<select name="jenis" class="form-control" id="jenis">
+	              						<option >Pilih Program Studi</option>
+	              						<option value="Kerja Praktek">Kerja Praktek</option>
+	              						<option value="Tugas Akhir">Tugas Akhir</option>
+            						</select>
 								</div>
 								<div class="form-group col-md-6">
 									<label class="control-label">Provinsi</label>
@@ -121,9 +132,13 @@
 									<label class="control-label">Alamat Perusahaan</label>
 									<textarea class="form-control" id="alamat_perusahaan" name="alamat_perusahaan" placeholder="Alamat Lengkap Perusahaan"></textarea>
 								</div>
-								<div class="form-group col-md-12">
+								<div class="form-group col-md-6">
 									<label class="control-label">Pihak Tertuju</label>
 									<input type="text" class="form-control" id="pihak_tertuju" name="pihak_tertuju" placeholder="Pihak Tertuju">
+								</div>
+								<div class="form-group col-md-6">
+									<label class="control-label">Jabatan</label>
+									<input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Jabatan">
 								</div>
 							</div>
 							<div class="modal-footer">

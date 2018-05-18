@@ -15,7 +15,8 @@ class Infomagang extends CI_Controller {
 
 	public function index()
 	{
-		$data['info'] = $this->infomagang_model->tampil_info();
+		$data['infokp'] = $this->infomagang_model->tampilKPinfo();
+		$data['infota'] = $this->infomagang_model->tampilTAinfo();
 		$this->load->view('home/infomagang',$data);
 		$this->load->view('home/footer');
 	} 
