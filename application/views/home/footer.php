@@ -107,11 +107,19 @@ new WOW().init();
    $( ".form-test" ).append( "" );
  });
 
-   // Event handler for text input
-  $('#kodenim').on('input', function() {
-    //TODO Getiing option based on input value and setting it as selected
-    $('#prodi option:contains(' + this.value + ')').eq(0).prop('selected', true);
-  });
+  //  // Event handler for text input
+  // $('#kodenim').on('input', function() {
+  //   //TODO Getiing option based on input value and setting it as selected
+  //   $('#prodi option:contains(' + this.value + ')').eq(0).prop('selected', true);
+  // });
+
+$('#nim').change(function() {
+  var nimdepan = $('#kodenim').val();
+  var nimbelakang = $(this).val(); 
+  var email =nimdepan+nimbelakang+'@studentmercubuana.ac.id';
+  $('#email').prop('readonly', 'true');
+  $('#email').val(email);
+});
 
   // Event handler for select
   $('#prodi').change(function() {
