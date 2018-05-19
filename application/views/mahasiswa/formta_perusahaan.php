@@ -1,5 +1,5 @@
 <section class="content-header">
-	<h3 class="text-center" style="margin-bottom: 30px;">Form Pengisian Surat Kerja Praktek</h1>
+	<h3 class="text-center" style="margin-bottom: 30px;">Form Pengisian Surat Riset Tugas Akhir</h1>
 		<div class="col-md-3">
 		</div>
 		<div class="container alert alert-danger alert-dismissible fade in col-md-6 text-center">
@@ -32,8 +32,7 @@
 					<?php endif ?>
 				</div>
 			</div>
-			<?php echo form_open('mahasiswa/daftarsuratkp',array('class'=>'form-test','method'=>'post')); ?>
-			<!-- <input type="hidden" name="<?=$this->security->get_csrf_token_name();?>" value="<?=$this->security->get_csrf_hash();?>" style="display: none"> -->
+			<?php echo form_open('mahasiswa/daftarsuratta',array('class'=>'form-test','method'=>'post')); ?>
 			
 			<div class="form-group inline">
 				<!-- Nama Perusahaan -->
@@ -69,7 +68,7 @@
 
 			<div class="form-group inline">
 				<!-- Alamat Perusahaan -->
-				<label class="col-md-3" for="alamat" >Kabupaten/Kota</label>
+				<label class="col-md-3" for="kabupaten-kota" >Kabupaten/Kota</label>
 				<div class="col-md-6">
 					<input class='form-control' type="text" name="kota_kabupaten" value="<?php echo $kota_kab; ?>" readonly>
 				</div>
@@ -117,8 +116,6 @@
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
-						<option value="4">4</option>
-						<option value="5">5</option>
 					</select>
 				</div>
 			</div>
@@ -136,7 +133,7 @@
 				<div class="col-md-4 col-xs-8">
 					<select name="jurusan" class="form-control" id="jurusan" onchange="prodi()" disabled>
 						<option value="" selected>Pilih Jurusan</option>
-						<option value="Teknik Informatika" <?php if($this->session->userdata('jurusan')=='Teknik Informatika'){echo "selected";} ?> >Informatika</option>
+						<option value="Teknik Informatika" <?php if($this->session->userdata('jurusan')=='Teknik Informatika'){echo "selected";} ?> >Teknik Informatika</option>
 						<option value="Sistem Informasi" <?php if($this->session->userdata('jurusan')=='Sistem Informasi'){echo "selected";}?> >Sistem Informasi</option>
 					</select>
 				</div>
@@ -172,7 +169,7 @@
 				<label class="control-label col-md-offset-1 col-xs-3" for="nama">No Handphone</label>
 
 				<div class="col-md-4 col-xs-8">
-					<input type="text" name="nohp1" class="form-control" id="nohp1" value="" placeholder="No Handphone" onkeypress="return no(event)" required>
+					<input type="text" name="nohp1" class="form-control" id="nohp1" maxlength="13"  placeholder="No Handphone" onkeypress="return no(event)" required>
 				</div>
 
 			</div>
@@ -341,7 +338,14 @@
 
 	<script>
 
-
+		function prodi(){
+			var jurusan=document.getElementById("jurusan").value;
+			document.getElementById("fnim1").value=jurusan;
+			document.getElementById("fnim2").value=jurusan;
+			document.getElementById("fnim3").value=jurusan;
+			document.getElementById("fnim4").value=jurusan;
+			document.getElementById("fnim5").value=jurusan;
+		}
 
 		function no(evt) {
 			var charCode = (evt.which) ? evt.which : event.keyCode

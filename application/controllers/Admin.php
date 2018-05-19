@@ -43,7 +43,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_waiting();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_waiting_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_waiting_ti();
 		$this->load->view('admin/waitingkp',$data);
 		$this->load->view('admin/footer');
 	}
@@ -52,7 +53,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_proses();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_proses_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_proses_ti();
 		$this->load->view('admin/proseskp',$data);
 		$this->load->view('admin/footer');
 	}
@@ -61,7 +63,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_finish();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_selesai_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_selesai_ti();
 		$this->load->view('admin/finishkp',$data);
 		$this->load->view('admin/footer');
 	}
@@ -70,7 +73,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_ambil();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_ambil_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_ambil_ti();
 		$this->load->view('admin/takeKP',$data);
 		$this->load->view('admin/footer');
 	}
@@ -80,7 +84,8 @@ class Admin extends CI_Controller {
 	{
 		$this->load->view('admin/header');
 		$this->load->view('admin/sidebar');
-		$data['surat'] = $this->tampilsurat_model->tampil_datakp_tolak();
+		$data['suratsi'] = $this->tampilsurat_model->tampil_datakp_tolak_si();
+		$data['suratti'] = $this->tampilsurat_model->tampil_datakp_tolak_ti();
 		$this->load->view('admin/tolakkp',$data);
 		$this->load->view('admin/footer');
 	}
@@ -386,9 +391,11 @@ class Admin extends CI_Controller {
 		$alamat_perusahaan 	= $this->input->post('alamat_perusahaan');
 		$no_telepon 		= $this->input->post('no_telepon');
 		$bagian 			= $this->input->post('bagian');
+		$jenis	 			= $this->input->post('jenis');
 		$kota 				= $this->input->post('kota_kabupaten');
 		$kodepos 			= $this->input->post('kodepos');
 		$pihak_tertuju 		= $this->input->post('pihak_tertuju');
+		$jabatan	 		= $this->input->post('jabatan');
 
 		$data = array(
 			'id_perusahaan'			=> $nomor_perusahaan,
@@ -396,9 +403,11 @@ class Admin extends CI_Controller {
 			'alamat_perusahaan'   	=> $alamat_perusahaan,
 			'no_telepon'			=> $no_telepon,
 			'bagian'   				=> $bagian,
+			'jenis'   				=> $jenis,
 			'kota'     				=> $kota,
 			'kodepos'   			=> $kodepos,
-			'pihak_tertuju'  		=> $pihak_tertuju
+			'pihak_tertuju'  		=> $pihak_tertuju,
+			'jabatan'  				=> $jabatan
 		);
 
 		$this->daftar_model->formperusahaan($data);
