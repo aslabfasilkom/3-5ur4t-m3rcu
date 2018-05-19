@@ -27,6 +27,10 @@ class Mahasiswa extends CI_Controller {
 
 		$data['checktranskripta'] = $this->webservice->CheckTranskripTA($this->session->userdata('nim'));
 
+		$data['jumlahsuratmhsdiambil'] = $this->tampilsurat_model->pengajuansuratmhs($this->session->userdata('nim'));
+
+		$data['jumlahdiajukan'] = $this->tampilsurat_model->jumlahdiajukan($this->session->userdata('nim'));
+
 
 		$this->load->view('mahasiswa/header');
 		$this->load->view('mahasiswa/pilihan',$data);
