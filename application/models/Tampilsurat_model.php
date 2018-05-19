@@ -421,7 +421,28 @@ class Tampilsurat_model extends CI_Model
 			return $query->result_array();
 		}
 
-	
+		
+		public function pengajuansuratmhs($nim)
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->where('nim',$nim);
+			$this->db->limit(2);
+			$query = $this->db->get();
+
+			return $query->result_array();
+		}
+
+		public function jumlahdiajukan($nim)
+		{
+			$this->db->select('*');
+			$this->db->from('surat');
+			$this->db->where('nim',$nim);
+			$this->db->limit(2);
+			$query = $this->db->get();
+
+			return $query->num_rows();
+		}
 
 	
 		

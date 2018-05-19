@@ -7,11 +7,11 @@
 				<br>
 				<div class="col-md-4" style="margin-bottom: 30px;">
 					<h5><b>Nama :</b></h5>
-					<p><i>Nama Mahasiswa</i></p>
+					<p><i><?=$this->session->userdata('nama_mahasiswa')?></i></p>
 					<h5><b>NIM :</b></h5>
-					<p><i>NIM Mahasiswa</i></p>
+					<p><i><?=$this->session->userdata('nim')?></i></p>
 					<h5><b>Jurusan :</b></h5>
-					<p><i>NIM Mahasiswa</i></p>
+					<p><i><?=$this->session->userdata('jurusan')?></i></p>
 				</div>
 				<div class="col-md-4" style="margin-bottom: 20px;border-left: 1px solid #cdcdcd;; border-right: 1px solid #cdcdcd;">
 					<h4 class="text-center">DAFTAR SURAT YANG DIAJUKAN</h4>
@@ -21,16 +21,15 @@
 							<td>Nomor Surat</td>
 							<td>Status</td>
 						</tr>
+						<?php $no =1 ;?>
+						<?php foreach ($jumlahsuratmhsdiambil as $value): ?>
 						<tr>
-							<td>1</td>
-							<td>16-2-2/003/FSD/III/2018</td>
-							<td><span class="label label-success">Ambil</span></td>
+							<td><?=$no?></td>
+							<td><?=$value['no_surat']==NULL ? 'belum ada':$value['no_surat']?></td>
+							<td><?=$value['status']?></td>
 						</tr>
-						<tr>
-							<td>2</td>
-							<td>16-2-2/001/FSD/III/2018</td>
-							<td><span class="label label-success">Ambil</span></td>
-						</tr>
+						<?php endforeach ?>
+						
 					</table>	
 					<button class="btn btn-primary pull-right">Selengkapnya</button>
 					<br>
@@ -39,7 +38,7 @@
 				</div>
 				<div class="col-md-4" style="margin-bottom: 20px; text-align: right;">
 					<h4>Jumlah surat yang diajukan :</h4>
-					<h1 style="font-size: 50px;"><span class="label label-info">218</span></h1>
+					<h1 style="font-size: 50px;"><span class="label label-info"><?=$jumlahdiajukan?></span></h1>
 				</div>
 			</div>
 		</div>
@@ -98,7 +97,7 @@
 						<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?>
 							<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
 							<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?>
-								<button class="btn btn-success" href=<?php echo site_url('mahasiswa/formkp') ?>>Lanjutkan Proses</button>
+								<a class="btn btn-success" href=<?php echo site_url('mahasiswa/formkp') ?>>Lanjutkan Proses</a>
 								<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?>
 									<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
 								<?php endif ?>
@@ -113,11 +112,11 @@
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
 								<h4 class="modal-title">Status:
-									<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?>
+									<?php if ($checkmatkulta == 0 AND $checktranskripta ==0 ): ?>
 										<span class="label label-danger">BELUM AMBIL</span>
-										<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?> 
+										<?php elseif($checkmatkulta == 1 AND $checktranskripta == 0 ): ?> 
 											<span class="label label-success">SEDANG AMBIL</span>
-											<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?> 
+											<?php elseif($checkmatkulta == 1 AND $checktranskripta == 1 ): ?> 
 												<span class="label label-info">SUDAH AMBIL</span>
 											<?php endif ?> 
 										</h4>
@@ -137,11 +136,11 @@
 										<br>
 									</div>
 									<div class="modal-footer">
-										<?php if ($checkmatkulkp == 0 AND $checktranskripkp ==0 ): ?>
+										<?php if ($checkmatkulta == 0 AND $checktranskripta ==0 ): ?>
 											<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
-											<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 0 ): ?>
-												<button class="btn btn-success" href=<?php echo site_url('mahasiswa/formta') ?>>Lanjutkan Proses</button>
-												<?php elseif($checkmatkulkp == 1 AND $checktranskripkp == 1 ): ?>
+											<?php elseif($checkmatkulta == 1 AND $checktranskripta == 0 ): ?>
+												<a class="btn btn-success" href=<?php echo site_url('mahasiswa/formta') ?>>Lanjutkan Proses</a
+												<?php elseif($checkmatkulta == 1 AND $checktranskripta == 1 ): ?>
 													<button type="button" class="btn btn-default" data-dismiss="modal">Keluar</button>
 												<?php endif ?>
 											</div>

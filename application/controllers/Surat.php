@@ -26,7 +26,7 @@ class Surat extends CI_Controller {
 		$isi= html_entity_decode(
 				"<p>Halo ".$data['nama_mahasiswa']." </p>,
 
-		Berdasarkan pengajuan surat Anda, kami TU ".$this->session->userdata('fakultas')." sedang memproses pembuatan dan pengesahan Surat Kerja Praktek yang Anda ajukan kepada Koodinator Kerja Praktek Jurusan ".$SelectSurat['prodi'].". Anda akan mendapatkan pemberitahuan melalui surel dan notifikasi di situs E-Surat kembali saat Surat Kerja Praktek Anda selesai dan di sahkan oleh Koordinator Kerja Praktek
+		Berdasarkan pengajuan surat Anda, kami TU ".$this->session->userdata('fakultas')." sedang memproses pembuatan dan pengesahan Surat Kerja Praktek yang Anda ajukan kepada Koodinator Kerja Praktek Jurusan ".$SelectSurat->prodi.". Anda akan mendapatkan pemberitahuan melalui surel dan notifikasi di situs E-Surat kembali saat Surat Kerja Praktek Anda selesai dan di sahkan oleh Koordinator Kerja Praktek
 		Anda dapat mengecek status permohonan pembuatan Surat Kerja Praktek Anda melalui login di situs E-Surat: www.esurat.mercubuana.ac.id
 		<br><br>
 		Terima kasih.
