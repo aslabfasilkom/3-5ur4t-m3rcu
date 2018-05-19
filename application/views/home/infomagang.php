@@ -57,6 +57,7 @@
   	<div class="container">
   		<h3 class="text-center intro">Daftar Perusahaan Partner Universitas Mercu Buana</h3>
   	</div><br><br>
+    <h3>Partner Untuk Kerja Praktek</h3>
   	<table class="table table-striped table-bordered table-responsive" id="datatable" style="font-size: 15px;">
   		<thead>
   			<tr>
@@ -69,17 +70,18 @@
   		</thead>
   		<tbody>
   			<?php
-  			foreach ($info->result_array() as $u):
+  			foreach ($infokp->result_array() as $u):
           $id_perusahaan        = $u['id_perusahaan'];
   				$nama_perusahaan      = $u['nama_perusahaan'];
   				$alamat_perusahaan    = $u['alamat_perusahaan'];
           $no_telepon           = $u['no_telepon'];
-  				$bagian               = $u['bagian'];
+          $bagian               = $u['bagian'];
+  				$jenis                = $u['jenis'];
           $pihak_tertuju        = $u['pihak_tertuju'];
   				$kodepos              = $u['kodepos'];
   				?>
   				<tr>
-  					<td><a href="<?php echo base_url()."mahasiswa/pilihmagang/".$kodepos;?>"><?php echo $nama_perusahaan; ?></a></td>
+  					<td><a href="<?php echo base_url()."mahasiswa/pilihmagangkp/".$kodepos;?>"><?php echo $nama_perusahaan; ?></a></td>
   					<td><?php echo $alamat_perusahaan; ?></td>
             <td><?php echo $no_telepon; ?></td>
   					<td><?php echo $bagian; ?></td>
@@ -89,6 +91,43 @@
   				endforeach; ?>
   			</tbody>
   		</table>
-  		<br><br>
+  		<br><br><br>
+
+
+    <h3>Partner Untuk Tugas Akhir</h3>
+      <table class="table table-striped table-bordered table-responsive" id="datatable" style="font-size: 15px;">
+      <thead>
+        <tr>
+          <th>Nama Institusi</th>
+          <th>Alamat</th>
+          <th>Nomor Telepon</th>
+          <th>Bagian</th>
+          <th>Pihak Tertuju</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($infota->result_array() as $u):
+          $id_perusahaan        = $u['id_perusahaan'];
+          $nama_perusahaan      = $u['nama_perusahaan'];
+          $alamat_perusahaan    = $u['alamat_perusahaan'];
+          $no_telepon           = $u['no_telepon'];
+          $bagian               = $u['bagian'];
+          $jenis                = $u['jenis'];
+          $pihak_tertuju        = $u['pihak_tertuju'];
+          $kodepos              = $u['kodepos'];
+          ?>
+          <tr>
+            <td><a href="<?php echo base_url()."mahasiswa/pilihmagangta/".$kodepos;?>"><?php echo $nama_perusahaan; ?></a></td>
+            <td><?php echo $alamat_perusahaan; ?></td>
+            <td><?php echo $no_telepon; ?></td>
+            <td><?php echo $bagian; ?></td>
+            <td><?php echo $pihak_tertuju; ?></td>
+          </tr>
+          <?php
+          endforeach; ?>
+        </tbody>
+      </table>
+      <br><br>
   		<p style="font-size: 10px;"><i>*Untuk info lebih lanjut silahkan hubungi TU Fasilkom</i></p>
   	</div>

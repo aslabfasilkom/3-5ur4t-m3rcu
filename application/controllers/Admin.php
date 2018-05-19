@@ -391,9 +391,11 @@ class Admin extends CI_Controller {
 		$alamat_perusahaan 	= $this->input->post('alamat_perusahaan');
 		$no_telepon 		= $this->input->post('no_telepon');
 		$bagian 			= $this->input->post('bagian');
+		$jenis	 			= $this->input->post('jenis');
 		$kota 				= $this->input->post('kota_kabupaten');
 		$kodepos 			= $this->input->post('kodepos');
 		$pihak_tertuju 		= $this->input->post('pihak_tertuju');
+		$jabatan	 		= $this->input->post('jabatan');
 
 		$data = array(
 			'id_perusahaan'			=> $nomor_perusahaan,
@@ -401,9 +403,11 @@ class Admin extends CI_Controller {
 			'alamat_perusahaan'   	=> $alamat_perusahaan,
 			'no_telepon'			=> $no_telepon,
 			'bagian'   				=> $bagian,
+			'jenis'   				=> $jenis,
 			'kota'     				=> $kota,
 			'kodepos'   			=> $kodepos,
-			'pihak_tertuju'  		=> $pihak_tertuju
+			'pihak_tertuju'  		=> $pihak_tertuju,
+			'jabatan'  				=> $jabatan
 		);
 
 		$this->daftar_model->formperusahaan($data);
