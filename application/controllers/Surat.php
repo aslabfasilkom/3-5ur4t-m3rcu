@@ -37,15 +37,14 @@ class Surat extends CI_Controller {
 					) ;
 
 			$config = Array(  
-		        'protocol' => 'smtp',  
-		        'smtp_host' => 'ssl://smtp.gmail.com',  
-		        'smtp_port' =>  465,  
-		        'smtp_user' => 'esurat@mercubuana.ac.id',   
-		        'smtp_pass' => 'esurat18',  
-		        'smtp_keepalive'=>'TRUE',
-		        'mailtype' => 'html',   
-				'charset' => 'utf-8',
-				'useragent'=> 'Codeigniter'   
+				'protocol' => 'smtp',  
+				'smtp_host' => 'https://www.mohagustiar.info/',  
+				'smtp_port' =>  465,  
+				'smtp_user' => 'contactme@mohagustiar.info',   
+				'smtp_pass' => 'project2m123!@#',  
+				'smtp_keepalive'=>'TRUE',
+				'mailtype' => 'html',   
+				'charset' => 'iso-8859-1'   
 	        );
 
 	        $this->load->library('email', $config);  
