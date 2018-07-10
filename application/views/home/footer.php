@@ -116,7 +116,7 @@ new WOW().init();
 $('#nim').change(function() {
   var nimdepan = $('#kodenim').val();
   var nimbelakang = $(this).val(); 
-  var email =nimdepan+nimbelakang+'@studentmercubuana.ac.id';
+  var email =nimdepan+nimbelakang+'@student.mercubuana.ac.id';
   $('#email').prop('readonly', 'true');
   $('#email').val(email);
 });
