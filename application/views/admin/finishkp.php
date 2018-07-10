@@ -56,25 +56,25 @@
 										<?php echo $no++; ?>
 									</td>
 									<td>
-										<?php cetak(date('d-M-Y',strtotime($usi->tanggal_selesai)));?>
+										<?php cetak(date('d-M-Y',strtotime($u->tanggal_selesai)));?>
 									</td>
 									<td>
-										<?php cetak($usi->no_surat);?>
+										<?php cetak($u->no_surat);?>
 									</td>
 									<td>
-										<?php cetak($usi->nim);?>
+										<?php cetak($u->nim);?>
 									</td>
 									<td>
-										<?php cetak($usi->nama_mahasiswa); ?>
+										<?php cetak($u->nama_mahasiswa); ?>
 									</td>
 									<td>
-										<?php cetak($usi->email); ?>
+										<?php cetak($u->email); ?>
 									</td>
 									<td>
-										<?php cetak($usi->prodi); ?>
+										<?php cetak($u->prodi); ?>
 									</td>
 									<td>
-										<button class="btn btn-primary col-sm-9" data-href="<?=site_url("surat/ubahAmbilKP/$usi->id_surat")?>" data-toggle="modal" data-target="#confirm" >
+										<button class="btn btn-primary col-sm-9" data-href="<?=site_url("surat/ubahAmbilKP/$u->id_surat")?>" data-toggle="modal" data-target="#confirm" >
 											<span class="fa fa-check"></span> Take
 										</button>
 									</td>
